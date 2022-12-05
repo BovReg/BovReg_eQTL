@@ -1,7 +1,7 @@
 
    /*
                                   STEP 3 - Read alignment with STAR and the output BAM files are supplied
-                                            to Stringtie , features counts and leafcutter for read quantification
+                                            to Stringtie , features counts and leafcutter for read quanti
                                             */
 
 
