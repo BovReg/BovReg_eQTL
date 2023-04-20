@@ -14,7 +14,7 @@ nextflow.enable.dsl=2
 Channel
      .from (25..26)
      .map{chr -> tuple("${chr}",file("$projectDir/Demodata/Demo_genotype/ImpWGS_Ars1.2_Chr${chr}.vcf.gz"))}
-     .set {genotypeFBN_input_ch}
+     .set {genotype_input_ch}
 
 
 
@@ -44,7 +44,7 @@ params.outputGeno = "$projectDir/Output"
 /* Channel objects */
 /* single channel objects */
 
-sample_infoFBN_ch = Channel.fromPath(params.Corresponding_SampleInfo)
+sample_info_ch = Channel.fromPath(params.Corresponding_SampleInfo)
 
 
 
@@ -56,7 +56,7 @@ include {tissuewise_extractGenotype} from './modules_dsl2/Tissuewise_Extract_Mer
 
 workflow {
 
- tissuewise_extractGenotype(genotypeFBN_input_ch,sample_infoFBN_ch.collect())
+ tissuewise_extractGenotype(genotype_input_ch,sample_info_ch.collect())
 
 }
 
