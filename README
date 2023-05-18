@@ -1,4 +1,5 @@
-# BovReg_eQTL Repository
+# BovReg_eQTL 
+Repository
 This is the BovReg_eQTL analysis.
 - This repository provide the nextflow scripts and demo data to test eQTL analysis and run with large datasets.
 - User should have a linux environment with the lastest nextflow and docker installed to run these scripts.
