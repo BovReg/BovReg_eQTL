@@ -13,8 +13,6 @@ process trans_eQTL_nominal {
 
  tuple val(chr), file (phenotype_g), file (covariate_g),file (genotype_g) ,file (phenotype_t),file (covariate_t),file (genotype_t), file (phenotype_s), file (covariate_s), file (genotype_s)
  
- val(nominal_trans)
-
  val(threshold_trans)
 
  output:

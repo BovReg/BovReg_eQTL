@@ -1,4 +1,4 @@
-*/
+
 
 /* 
 
@@ -170,3 +170,168 @@ process tissuewise_extractGenotype {
  """
 
 }
+
+
+
+
+/*
+
+1. Extract genotype data from each individual partner and rename the samples based on RNAseq samples ID
+2. Extract SNPs common across all partners
+3. Filter common varaints from each partner genotype data
+4. # bcftools isec -n=4 -w1 extract and write records from first vcf file shared by all other vcfs using exact allele match #
+*/
+
+
+process tissuewise_extractGenotype_Rumen {
+ tag " on chromosome $chr"
+ publishDir "${params.outputGeno}/eQTLGenoData", mode:'copy'
+ container 'praveen/qtltools1.3'
+
+ input:
+      tuple val(chr), file(FBN), file(LUKE)
+      
+      file(sample_FBN)
+
+      file(sample_LUKE)
+      
+   
+
+ output:
+
+      tuple val(chr), file ("Rumen_genotypesChr${chr}.vcf.gz")
+
+      file ("GenoSamplesChr${chr}.txt")
+      
+
+ script:
+
+ """
+
+
+  awk '{print \$1}' ${sample_FBN} > Rumen_FBN_Common_GenoIds.txt
+
+  vcftools --gzvcf ${FBN} --keep Rumen_FBN_Common_GenoIds.txt  --recode  --out FBN_Rumen_Geno${chr}
+
+  bcftools reheader -s ${sample_FBN} -o FBN_reheader_Rumen_Geno${chr}.vcf  \
+  FBN_Rumen_Geno${chr}.recode.vcf
+
+  bgzip -f FBN_reheader_Rumen_Geno${chr}.vcf
+
+  tabix -p vcf  FBN_reheader_Rumen_Geno${chr}.vcf.gz
+
+
+   ### LUKE data set has duplicate RNA seq sample for a genotype sample which has to be collected ##
+
+
+  cp $sample_LUKE temp
+
+for i in {1..17}
+do
+  awk '!seen[\$1]++' temp  > Rumen_RNA_WGS_LUKE_CorresID_set\${i}.txt
+ 
+
+  awk '{print \$1}' Rumen_RNA_WGS_LUKE_CorresID_set\${i}.txt > Rumen_LUKE_Common_GenoIds.txt
+
+
+  vcftools --vcf ${LUKE} --keep Rumen_LUKE_Common_GenoIds.txt  --recode  --out Rumen_LUKE_Common_GenoIds_set\${i}_Geno${chr}
+
+
+   bcftools reheader -s Rumen_RNA_WGS_LUKE_CorresID_set\${i}.txt  -o LUKE_reheader_Rumen_Geno${chr}_set\${i}.vcf  \
+   Rumen_LUKE_Common_GenoIds_set\${i}_Geno${chr}.recode.vcf
+
+   bgzip -f LUKE_reheader_Rumen_Geno${chr}_set\${i}.vcf 
+
+   tabix -p vcf LUKE_reheader_Rumen_Geno${chr}_set\${i}.vcf.gz
+
+
+  awk 'NR==FNR {a[\$2]=\$2;next} !(\$2 in a) {print }' Rumen_RNA_WGS_LUKE_CorresID_set\${i}.txt temp > temp2
+
+  mv temp2 temp
+
+ done
+
+  bcftools merge LUKE_reheader_Rumen_Geno${chr}_set*.vcf.gz -o LUKE_reheader_Rumen_Geno${chr}.vcf
+
+
+  bgzip -f LUKE_reheader_Rumen_Geno${chr}.vcf
+
+  tabix -p vcf  LUKE_reheader_Rumen_Geno${chr}.vcf.gz
+
+
+
+   bcftools isec -n=2 -w1  FBN_reheader_Rumen_Geno${chr}.vcf.gz LUKE_reheader_Rumen_Geno${chr}.vcf.gz \
+   | bgzip -f -c > Rumen_Merged_Chr${chr}.vcf.gz
+
+  bcftools query -f '%CHROM\t%POS \n' Rumen_Merged_Chr${chr}.vcf.gz > Rumen_CommonVariants${chr}.txt
+  
+  bcftools filter --regions-file Rumen_CommonVariants${chr}.txt FBN_reheader_Rumen_Geno${chr}.vcf.gz \
+  > FBN_Rumen_CommVar_Geno${chr}.vcf
+
+  bgzip -f FBN_Rumen_CommVar_Geno${chr}.vcf
+
+  tabix -p vcf  FBN_Rumen_CommVar_Geno${chr}.vcf.gz
+
+  bcftools filter --regions-file Rumen_CommonVariants${chr}.txt LUKE_reheader_Rumen_Geno${chr}.vcf.gz \
+  > LUKE_Rumen_CommVar_Geno${chr}.vcf
+
+  bgzip -f LUKE_Rumen_CommVar_Geno${chr}.vcf
+
+  tabix -p vcf  LUKE_Rumen_CommVar_Geno${chr}.vcf.gz
+
+
+  bcftools merge -R Rumen_CommonVariants${chr}.txt  *CommVar_Geno${chr}.vcf.gz > Rumen_genotypesChr${chr}.vcf
+
+  bgzip -f Rumen_genotypesChr${chr}.vcf
+
+  bcftools query -l Rumen_genotypesChr${chr}.vcf.gz | awk '{print \$1".junc"}' > GenoSamplesChr${chr}.txt
+
+ """
+
+}
+
+
+
+process tissuewise_extractGenotype_Jejunum {
+ tag " on chromosome $chr"
+ publishDir "${params.outputGeno}/eQTLGenoData", mode:'copy'
+ container 'praveen/qtltools1.3'
+
+ input:
+      tuple val(chr), file(FBN)
+      
+      file(sample_FBN)
+      
+   
+
+ output:
+
+      tuple val(chr), file ("Jejunum_genotypesChr${chr}.vcf.gz")
+
+      file ("GenoSamplesChr${chr}.txt")
+      
+
+ script:
+
+ """
+
+  awk '{print \$1}' ${sample_FBN} > Jejunum_FBN_Common_GenoIds.txt
+
+  vcftools --gzvcf ${FBN} --keep Jejunum_FBN_Common_GenoIds.txt  --recode  --out FBN_Jejunum_Geno${chr}
+
+  bcftools reheader -s ${sample_FBN} -o Jejunum_genotypesChr${chr}.vcf  \
+  FBN_Jejunum_Geno${chr}.recode.vcf
+
+  bgzip -f Jejunum_genotypesChr${chr}.vcf
+
+  tabix -p vcf  Jejunum_genotypesChr${chr}.vcf.gz
+
+
+  bcftools query -l Jejunum_genotypesChr${chr}.vcf.gz | awk '{print \$1".junc"}' > GenoSamplesChr${chr}.txt
+
+ """
+
+}
+
+
+
