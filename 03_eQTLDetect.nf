@@ -24,11 +24,11 @@ params.junc = "$projectDir/Output/leafcutter_bamtojunc/*.junc"
 
 /* List of samples common in genotype data. NOTE: The list can be extracted from any chromosome file */
 
-params.sampleIND_gene = "$projectDir/Output/eQTLGenoData/GenoSamples_tsv_Chr26.txt"
+params.sampleIND_gene = "$projectDir/Output/eQTLGenoData/GenoSamples_tsv_Chr2.txt"
 
-params.sampleIND_transcript = "$projectDir/Output/eQTLGenoData/GenoSamples_gtf_Chr26.txt"
+params.sampleIND_transcript = "$projectDir/Output/eQTLGenoData/GenoSamples_gtf_Chr2.txt"
 
-params.sampleIND_splice="$projectDir/Output/eQTLGenoData/GenoSamples_splice_Chr26.txt"
+params.sampleIND_splice="$projectDir/Output/eQTLGenoData/GenoSamples_splice_Chr2.txt"
 
 
                                   /*  --Output: Path to output files-- */

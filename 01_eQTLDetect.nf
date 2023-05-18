@@ -14,7 +14,7 @@ nextflow.enable.dsl=2
 /*NOTE: Care should be taken to have unique sample ID for each sample before first "_" to extract each sample pair properly  */
 
 /*  1. RNAseq: paired-end library first stranded */
-params.reads_FBN="$projectDir/Demodata/Demo_RNAseq_data/B00*_liver_R{1,2}.fastq.gz"
+params.reads="$projectDir/Demodata/Demo_RNAseqData_BovReg/*_R{1,2}_subset.fastq.gz"
 
 /*  2. RNAseq: paired-end library unstranded */
 //empty
@@ -65,7 +65,7 @@ params.adapter_SE = "$projectDir/Softwares/Trimmomatic-0.39/adapters/TruSeq3-SE.
                                          log.info """\
                                                  R N A S E Q - N F   P I P E L I N E  F O R eQTL DSL2
                                                  ======================================================
-                                                 Input        : ${params.reads_FBN}
+                                                 Input        : ${params.reads}
                                                  output       : ${params.outdir}
                                                  gtf          : ${params.gtf}
 
@@ -100,7 +100,7 @@ Channel
 
      /* Reads with first stranded library */
 
-read_pairs_FBN_ch = Channel.fromFilePairs(params.reads_FBN)     
+read_pairs_ch = Channel.fromFilePairs(params.reads)     
 
 
 
@@ -173,7 +173,7 @@ workflow {
 
     main:
 
-     PAIREDEND_READS_FIRST_STRANDED_LIBRARY(read_pairs_FBN_ch, trimmomaticjar_ch,adapter_PE_ch,gtf_ARS,star_index,anchor_length_ch,intron_length_minimum_ch,intron_length_maximum_ch)
+     PAIREDEND_READS_FIRST_STRANDED_LIBRARY(read_pairs_ch, trimmomaticjar_ch,adapter_PE_ch,gtf_ARS,star_index,anchor_length_ch,intron_length_minimum_ch,intron_length_maximum_ch)
 
      //SINGELEND_READS_FIRST_STRANDED_LIBRARY(sample_ch,trimmomaticjar_ch,adapter_SE_ch,gtf_ARS,star_index,anchor_length_ch,intron_length_minimum_ch,intron_length_maximum_ch)
 

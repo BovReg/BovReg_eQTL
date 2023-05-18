@@ -12,15 +12,15 @@ nextflow.enable.dsl=2
 /**  --Input: Input genotype data  **/
 /* NOTE: The number of chromsomes can be altered based on user requirements or spcies on interest */
 Channel
-     .from (25..26)
-     .map{chr -> tuple("${chr}",file("$projectDir/Demodata/Demo_genotype/ImpWGS_Ars1.2_Chr${chr}.vcf.gz"))}
+     .from (2..3)
+     .map{chr -> tuple("${chr}",file("$projectDir/Demodata/Demo_genotype_BovReg/Bovreg_demogeno_Chr${chr}.vcf.gz"))}
      .set {genotype_input_ch}
 
 
 
 /**  --Input: Text file with the list of coressponding sample identifiers with genotype and RNAseq data in two columns -- **/ 
 
-params.Corresponding_SampleInfo = "$projectDir/Demodata/RNA_WGS_CorresID.txt"
+params.Corresponding_SampleInfo = "$projectDir/Demodata/RNA_WGS_CorresID_BovReg.txt"
 
                                 /*  --Output: Path to output files-- */
 
