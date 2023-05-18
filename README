@@ -1,5 +1,4 @@
-# BovReg_eQTL
-Repository
+# BovReg_eQTL Repository
 This is the BovReg_eQTL analysis.
 - This repository provide the nextflow scripts and demo data to test eQTL analysis and run with large datasets.
 - User should have a linux environment with the lastest nextflow and docker installed to run these scripts.
@@ -8,3 +7,7 @@ This is the BovReg_eQTL analysis.
 - To run a test analysis, demodata is available in the folder with the same name.
 - The script 1,3 and 4 contain json files for calling parmaeters, whcih can run using the command 
         nextflow run script.nf -params-file file.json 
+-All the software tools required for the pipeline are installed using docker container from  docker repositories, some other tools eg: QTLtools can be installed uisng the dockerfile present in the given folder
+- To create the index for the reference genome the fasta and gtf file can be downloaded from
+fasta: https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz
+gtf: https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz
