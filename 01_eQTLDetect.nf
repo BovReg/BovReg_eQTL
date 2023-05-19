@@ -14,7 +14,7 @@ nextflow.enable.dsl=2
 /*NOTE: Care should be taken to have unique sample ID for each sample before first "_" to extract each sample pair properly  */
 
 /*  1. RNAseq: paired-end library first stranded */
-params.reads="$projectDir/Demodata/Demo_RNAseqData_BovReg/*_R{1,2}_subset.fastq.gz"
+params.reads="$projectDir/Demo_RNAseqData_BovReg/*_R{1,2}_subset.fastq.gz"
 
 /*  2. RNAseq: paired-end library unstranded */
 //empty
