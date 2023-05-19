@@ -13,7 +13,7 @@ nextflow.enable.dsl=2
 /* NOTE: The number of chromsomes can be altered based on user requirements or spcies on interest */
 Channel
      .from (2..3)
-     .map{chr -> tuple("${chr}",file("$projectDir/Demodata/Demo_genotype_BovReg/Bovreg_demogeno_Chr${chr}.vcf.gz"))}
+     .map{chr -> tuple("${chr}",file("$projectDir/Demo_genotype_BovReg/Bovreg_demogeno_Chr${chr}.vcf.gz"))}
      .set {genotype_input_ch}
 
 
