@@ -1,6 +1,6 @@
 # BovReg_eQTL analysis
 - This repository provide the nextflow scripts and demo data to test eQTL analysis and run with large datasets
-- This workflow was developed as sub-workflow design to make the workflow distributable 
+- This workflow was developed as a sub-workflow design (in five different nextflow scripts ordered numerically from 00 to 04) to make the workflow distributable across different research units.
 - This workflow was primarily developed for cattle (Bos Taurus), but it can adopted for any other species by changing the reference genome and gtf files
 - User should have a linux environment with the lastest nextflow and docker installed to run these scripts.
 - Care should be taken with the input and output paths while running with new data.
