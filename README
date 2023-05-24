@@ -1,4 +1,4 @@
-# BovReg_eQTL analysis
+# BovReg_eQTL analysis : eQTL-Detect-Nextflow based pipeline for eQTL detection 
 - This repository provide the nextflow scripts and demo data to test eQTL analysis and run with large datasets
 - This workflow was developed as a sub-workflow design (in five different nextflow scripts ordered numerically from 00 to 04) to make the workflow distributable across different research units.
 - This workflow was primarily developed for cattle (Bos Taurus), but it can adopted for any other species by changing the reference genome and gtf files
