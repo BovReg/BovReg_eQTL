@@ -1,0 +1,14 @@
+{
+
+     "comment" : "Parameters sQTL ",
+
+
+      "phenotype_PCs_sQTL" : 10, 
+
+      "intron_length_minimum" : 50,
+
+      "intron_length_maximum" : 500000
+
+
+}
+
