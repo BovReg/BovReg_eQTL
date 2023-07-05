@@ -17,7 +17,9 @@
       some other tools 
      eg: QTLtools can be installed uisng the dockerfile present in the given folder
 	- To create the index for the reference genome the fasta and gtf file can be downloaded from
+ 
 		[fasta](https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz) 
+	
 		[gtf](https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz) 
 
 ## Demo data:
@@ -27,7 +29,7 @@
 	-The genotype-phenotype corresponding samples can be found in the text file "RNA_WGS_CorresID_BovReg.txt"
 
 ## Commands to run scripts:
-  - Pre-requisite: Install Docker version >=  20.10.8 and nextflow, Nextflow version > 21.04. 
+ Pre-requisite: Install Docker version >=  20.10.8 and nextflow, Nextflow version > 21.04. 
 
  	Script 01: nextflow run 01_eQTLDetect.nf -params-file 01_eQTLDetect.json
 
