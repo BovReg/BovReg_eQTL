@@ -12,8 +12,8 @@
         nextflow run script.nf -params-file file.json 
 	-All the software tools required for the pipeline are installed using docker container from docker repositories, some other tools eg: QTLtools can be installed uisng the dockerfile present in the given folder
 	- To create the index for the reference genome the fasta and gtf file can be downloaded from
-		fasta: https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz
-		gtf: https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz
+		fasta: _https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz
+		gtf: _https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz
 
 ## Demo data:
 	-The genotype demodata is available in the folder "Demo_genotype_BovReg"
