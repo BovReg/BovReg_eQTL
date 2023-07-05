@@ -1,4 +1,5 @@
-# BovReg_eQTL analysis 
+# BovReg_eQTL analysis ![image](https://github.com/BovReg/BovReg_eQTL/assets/74717722/581771a0-2581-445e-abd8-0538663b1bdc)
+
 
 ## eQTL-Detect-Nextflow based pipeline for eQTL detection 
 	- This repository provide the nextflow scripts and demo data to test eQTL analysis and run with large datasets
@@ -12,8 +13,8 @@
         nextflow run script.nf -params-file file.json 
 	- All the software tools required for the pipeline are installed using docker container from docker repositories, some other tools eg: QTLtools can be installed uisng the dockerfile present in the given folder
 	- To create the index for the reference genome the fasta and gtf file can be downloaded from
-		_fasta: https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz_
-		_gtf: https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz_
+		fasta: https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz
+		gtf: https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz
 
 ## Demo data:
 	-The genotype demodata is available in the folder "Demo_genotype_BovReg"
