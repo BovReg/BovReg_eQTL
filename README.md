@@ -1,6 +1,6 @@
 # BovReg_eQTL analysis 
 
- eQTL-Detect-Nextflow based pipeline for eQTL detection 
+## eQTL-Detect-Nextflow based pipeline for eQTL detection 
 	- This repository provide the nextflow scripts and demo data to test eQTL analysis and run with large datasets
 	- This workflow was developed as a sub-workflow design (in five different nextflow scripts ordered numerically from 00 to 04) to make the workflow distributable across different research units.
 	- This workflow was primarily developed for cattle (Bos Taurus), but it can adopted for any other species by changing the reference genome and gtf files
@@ -15,12 +15,12 @@
 		fasta: https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz
 		gtf: https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz
 
-Demo data:
+## Demo data:
 	-The genotype demodata is available in the folder "Demo_genotype_BovReg"
 	-The Phenotype data (RNAseq expression data in fastq format) can be downloaded from research data open repository Zenodo  https://zenodo.org/record/7949616
 	-The genotype-phenotype corresponding samples can be found in the text file "RNA_WGS_CorresID_BovReg.txt"
 
-Commands to run scripts:
+## Commands to run scripts:
     -Pre-requisite: Install Docker version >=  20.10.8 and nextflow, Nextflow version > 21.04. 
 
  	Script 01: nextflow run 01_eQTLDetect.nf -params-file 01_eQTLDetect.json
