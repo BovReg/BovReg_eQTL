@@ -1,4 +1,4 @@
-# BovReg_eQTL analysis # 
+# BovReg_eQTL analysis 
 
  eQTL-Detect-Nextflow based pipeline for eQTL detection 
 	- This repository provide the nextflow scripts and demo data to test eQTL analysis and run with large datasets
