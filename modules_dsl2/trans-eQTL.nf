@@ -118,13 +118,13 @@ process trans_eQTL_permu {
 
 """
 
- QTLtools trans --vcf $genotype_g --bed $phenotype_g --cov $covariate_g --threshold $threshold_trans --permute $permutations_trans  --normal --out  ${output_g_mod}_trans.permu
+ QTLtools trans --vcf $genotype_g --bed $phenotype_g --cov $covariate_g  --permute $permutations_trans  --normal --out  ${output_g_mod}_trans.permu
 
 
- QTLtools trans --vcf $genotype_t --bed $phenotype_t --cov $covariate_t --threshold $threshold_trans --permute $permutations_trans   --normal --out  ${output_t_mod}_trans.permu
+ QTLtools trans --vcf $genotype_t --bed $phenotype_t --cov $covariate_t  --permute $permutations_trans   --normal --out  ${output_t_mod}_trans.permu
 
 
- QTLtools trans --vcf $genotype_s --bed $phenotype_s  --cov $covariate_s --threshold $threshold_trans --permute $permutations_trans  --normal --out  ${output_s_mod}_trans.permu
+ QTLtools trans --vcf $genotype_s --bed $phenotype_s  --cov $covariate_s --permute $permutations_trans  --normal --out  ${output_s_mod}_trans.permu
 
 """
  
