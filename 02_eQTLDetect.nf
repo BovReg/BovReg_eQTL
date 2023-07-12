@@ -11,9 +11,14 @@ nextflow.enable.dsl=2
 
 /**  --Input: Input genotype data  **/
 /* NOTE: The number of chromsomes can be altered based on user requirements or spcies on interest */
+
+starChr_ch = params.starChr
+
+endChr_ch = params.endChr
+/* alter the path of genotype file based on user requirement*/
 Channel
-     .from (2..3)
-     .map{chr -> tuple("${chr}",file("$projectDir/Demo_genotype_BovReg/Bovreg_demogeno_Chr${chr}.vcf.gz"))}
+     .from (starChr_ch..endChr_ch)
+     .map{chr -> tuple("${chr}",file("$projectDir/Demodata/Demo_genotype_BovReg/Bovreg_demogeno_Chr${chr}.vcf.gz"))}
      .set {genotype_input_ch}
 
 

@@ -1,5 +1,13 @@
 {
 
+
+     "comment" : "Parameters Chromosome ",
+
+      "starChr" : 2, 
+
+      "endChr" : 3,
+
+
      "comment" : "Parameters principle components ",
 
       "genotype_pcs" : 10,
@@ -26,7 +34,7 @@
  
      "trans_threshold" : 1e-5,
 
-     "trans_permutations" : 10
+     "trans_permutations" : 100
 
 }
 
