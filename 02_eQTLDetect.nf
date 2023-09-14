@@ -18,14 +18,14 @@ endChr_ch = params.endChr
 /* alter the path of genotype file based on user requirement*/
 Channel
      .from (starChr_ch..endChr_ch)
-     .map{chr -> tuple("${chr}",file("$projectDir/Demodata/Demo_genotype_BovReg/Bovreg_demogeno_Chr${chr}.vcf.gz"))}
+     .map{chr -> tuple("${chr}",file("$projectDir/Demo_genotype_BovReg/Bovreg_demogeno_Chr${chr}.vcf.gz"))}
      .set {genotype_input_ch}
 
 
 
 /**  --Input: Text file with the list of coressponding sample identifiers with genotype and RNAseq data in two columns -- **/ 
 
-params.Corresponding_SampleInfo = "$projectDir/Demodata/RNA_WGS_CorresID_BovReg.txt"
+params.Corresponding_SampleInfo = "$projectDir/RNA_WGS_CorresID_BovReg.txt"
 
                                 /*  --Output: Path to output files-- */
 
