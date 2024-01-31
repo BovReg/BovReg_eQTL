@@ -5,9 +5,11 @@ This repository provide the [Nextflow](https://www.nextflow.io/) scripts and dem
                             To run a test analysis, a demo data is also provided. The script 1,3 and 4 contain json files for calling parameters, which can run using the command _nextflow run script.nf -params-file file.json_. All the software tools required for the pipeline are installed using docker container and for [QTLtools](https://qtltools.github.io/qtltools/) a docker container version was not available, so we generated container using Dockerfile which was also provided in the repository.
 The reference genome and annotation file for this demo analysis can be downloaded here [reference genome: fasta format ](https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz) and [reference annotation: gtf format](https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz).
  
+
+
   
 ## Demo data:
-- The genotype demodata is available in the folder [Demo_genotype_BovReg](https://github.com/BovReg/BovReg_eQTL/tree/main/Demo_genotype_BovReg)
+- The genotype demodata is available in the folder [Demo_genotype_BovReg](https://github.com/BovReg/BovReg_eQTL/tree/main/Demo_genotype_BovReg). The genotype data can be supplied in raw reads (FastQ), read counts,  and normalized expression levels (e.g., TPM).
 - The Phenotype data (RNAseq expression data in fastq format) can be downloaded from research data open repository 
  [Zenodo](https://zenodo.org/record/7949616) 
 - The genotype-phenotype corresponding samples can be found in the text file [RNA_WGS_CorresID_BovReg.txt](https://github.com/BovReg/BovReg_eQTL/blob/main/RNA_WGS_CorresID_BovReg.txt)
