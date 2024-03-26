@@ -17,7 +17,7 @@
 process cisQTL_nominal {
  
  tag "on chromosome ${chr}"
- publishDir "${params.outputQTL}/cisQTLResults", mode:'copy'
+ publishDir "${params.outdir}/cisQTLResults", mode:'copy'
  container 'praveen/qtltools1.3'
 
  input:
@@ -79,7 +79,7 @@ NOTE: The default number of permutations  --permute 1000 can be modified based o
 
 process cisQTL_permutation {
  tag "on chromosome ${chr}"
- publishDir "${params.outputQTL}/cisQTLResults", mode:'copy'
+ publishDir "${params.outdir}/cisQTLResults", mode:'copy'
  container 'praveen/qtltools1.3'
 
  input:
@@ -146,7 +146,7 @@ QTLtools cis --vcf $genotype_s  --bed $phenotype_s --cov $covariate_s --normal -
 
 process cisQTL_conditional {
  tag "on chromosome ${chr}"
- publishDir "${params.outputQTL}/cisQTLResults", mode:'copy'
+ publishDir "${params.outdir}/cisQTLResults", mode:'copy'
  container 'praveen/qtltools1.3'
 
  input:

@@ -6,17 +6,17 @@ process Genetsvfiles:
 */
 
 process geneTSVfiles {
-  tag " $gene_input"
+  tag "gene_input on $sample_id"
   input:
-  // tuple val(sample_id), file (gene_input) 
-     file (gene_input)
+ 
+     tuple val(sample_id), file (gene_input)
   output:
 
-   file ("${sample_id}_gene.txt") 
+    file ("${sample_id}_gene.txt") 
 
   script:
 
-  sample_id = gene_input[0].toString() - ~/(\_stringtie.tsv)?$/
+  //sample_id = gene_input[0].toString() - ~/(\_stringtie.tsv)?$/
   """
   awk -v OFS='\t' 'NR==1 {print \$1="Chr",\$2="start",\$3="end",\$4="pid",\$5="gid",\$6="strand","${sample_id}" }; \
   NR>1{ print \$3,\$5,\$6,\$1,\$1,\$4,\$9 }' ${gene_input}  > ${sample_id}_gene.txt
@@ -33,7 +33,6 @@ process geneTSVfiles {
 */
 
 process mergeNormalizedGeneCountMatrices {
-
    publishDir "${params.outdir}/Count_Matrices", mode:'copy'
    container 'quay.io/biocontainers/csvtk:0.21.0--0'
 
@@ -43,6 +42,7 @@ process mergeNormalizedGeneCountMatrices {
   output:
   
   file ("Gene_count_Matrices_filtered.tsv")
+  
   script:
 
   def single = input_files instanceof Path ? 1 : input_files.size()

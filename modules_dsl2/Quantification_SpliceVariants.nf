@@ -23,7 +23,7 @@ process leafcutter_bamtojunc_library_firststranded {
          
         
         output:
-          file ("${sample_id}.junc") 
+          tuple val(sample_id), file ("${sample_id}.junc"), emit: junc_ch 
         
 
         script:
@@ -54,7 +54,7 @@ process leafcutter_bamtojunc_library_secondstranded {
         val(inton_max_len)         
         
         output:
-          file ("${sample_id}.junc") 
+         tuple val(sample_id), file ("${sample_id}.junc"), emit: junc_ch
         
 
         script:
@@ -85,7 +85,9 @@ process leafcutter_bamtojunc_library_unstranded {
         val(inton_max_len)         
         
         output:
-          file ("${sample_id}.junc") 
+          //file ("${sample_id}.junc") 
+
+          tuple val(sample_id), file ("${sample_id}.junc"), emit: junc_ch
         
 
         script:
@@ -110,11 +112,11 @@ process leafcutter_bamtojunc_library_unstranded {
 
 process rnaspliceFilterJunc {
      
-
+   tag "junc_input on $sample_id"
    input:
       
 
-    file (juncfile)
+    tuple val(sample_id),file (juncfile)
 
    output:
 
@@ -155,9 +157,14 @@ process leafcutter_cluster_junctions {
         val(intron_min_len)
         val(inton_max_len)
         val(pheno_pcs) 
+        
+
         output:
         
-        file ("*") 
+        path("output_perind.counts.gz.PCs"), emit: splicepcs
+
+        path("Splice_count_Matrices_filtered.tsv"), emit: spliceCounts
+
 
         script:
 
@@ -165,10 +172,50 @@ process leafcutter_cluster_junctions {
 
         //NOTE: User can change the deault number of PCs in the command below python ${phenotype_table} -p X
         """   
-   
+
         python ${leafcutter_cluster} -j ${junc_file} -m $intron_min_len -l $inton_max_len  -o output
         
         python ${phenotype_table} -p $pheno_pcs output_perind.counts.gz
+
+        awk 'FNR>1 || NR==1' output_perind.counts.gz.qqnorm_chr* > mergedCounts_tmp.txt
+
+        cat mergedCounts_tmp.txt | awk -F'\t' 'NR>1{print \$1,\$2,\$3,\$4}' | awk -F'_' '{print \$1"_"\$2"\t"\$3}' | awk -v OFS='\t' '{print \$1,\$2,\$3,\$1":"\$2"-"\$3,\$4,\$5}' | sed '1i#Chr\tstart\tend\tpid\tgid\tstrand' > header.txt
+
+        cat mergedCounts_tmp.txt | awk  '{for(i=5;i<=NF;i++) printf \$i"\t"; print ""}'  > counts.txt
+
+        paste -d '\t' header.txt counts.txt | awk -v OFS='\t' 'NR==1 {print}' > xx
+
+        paste -d'\t'  header.txt counts.txt |  awk -v OFS='\t' 'NR>1 {print}' | sort -k1,1d -k2,2n -k3,3n > xy
+
+        cat xx xy | sed 's/#Chr/Chr/g' > Splice_count_Matrices_filtered.tsv
+
+
         """
 }
 
+
+
+
+process filter_Splicecounts {
+        tag "on chromosome ${chr}"
+        publishDir "${params.outdir}/Splicecounts_filtered", mode: 'copy'
+
+        input:
+        file (splcieCounts)
+        
+        output:
+        
+
+        tuple val(chr), file("fil_splcieCounts${chr}"), emit: spliceCounts_filt
+
+
+        script:
+
+        //prefix = splcieCounts[0].toString() - ~/(_R1)?(\.clean)?(\.fastq)?(\.gz)?$/
+
+        """   
+
+        cp $splcieCounts fil_splcieCounts${chr}
+
+        """
+}

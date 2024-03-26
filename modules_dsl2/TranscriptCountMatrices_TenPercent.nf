@@ -7,20 +7,20 @@ process TranscriptGTFfiles:
 */
 
 process transcriptGTFfiles {
-  tag "$gtf_input"
+  tag "gtf_input on $sample_id"
   input:
     
    // tuple val(sample_id), file (gene_input)
     
-    file (gtf_input)  
+   tuple val(sample_id), file (gtf_input)  
 
   output:
 
-   file ("${sample_id}_transcriptCounts.txt") 
+    file ("${sample_id}_transcriptCounts.txt") 
 
   script:
 
-  sample_id = gtf_input[0].toString() - ~/(\_stringtie.gtf)?$/
+  //sample_id = gtf_input[0].toString() - ~/(\_stringtie.gtf)?$/
   """
   awk -v OFS='\t' 'NR==1 {gsub(/_stringtie.gtf/,"",\$11) ;print \$1="Chr",\$2="start",\$3="end",\$4="pid",\$5="gid",\$6="strand",\$7="temp" }; \
   NR>1{if(\$3=="transcript" && \$19=="TPM") print \$1,\$4,\$5,\$12,\$10,\$7,\$20 ; \
@@ -44,7 +44,6 @@ process transcriptGTFfiles {
 */
 
 process mergeNormalizedTranscriptCountMatrices {
-   tag "$input_files"
    publishDir "${params.outdir}/Count_Matrices", mode:'copy'
    container 'quay.io/biocontainers/csvtk:0.21.0--0'
 

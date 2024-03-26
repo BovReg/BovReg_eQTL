@@ -19,7 +19,8 @@ process TranscriptCountsPCA: The continer used for this process is preperared wi
 */
 
 process transcriptCountsPCA {
- publishDir "${params.outputQTL}", mode:'copy'
+ tag "on chromosome ${chr}"
+ publishDir "${params.outdir}", mode:'copy'
  container 'praveen/qtltools1.3'
 
  input:
@@ -40,8 +41,8 @@ process transcriptCountsPCA {
 
  script:
 
- """
-
+ 
+  """
   bcftools query -l ${genotype} > samplelist
 
   sed '1iSampleID' samplelist > sample_listpca.txt
@@ -209,7 +210,8 @@ process GeneCountsPCA: The continer used for this process is preperared with the
 */
 
 process geneCountsPCA {
- publishDir "${params.outputQTL}", mode:'copy'
+ tag "on chromosome ${chr}"
+ publishDir "${params.outdir}", mode:'copy'
  container 'praveen/qtltools1.3'
 
  input:
@@ -396,18 +398,20 @@ awk 'FNR==NR && FNR==1{ for(i=1;i<=NF;i++){ b[i]=\$i}; print;  i--; next } \
  - Extract samples common to phenotype data from genotype vcf file using vcftools.
  - create a new variable for each chromosome excluding the .vcf extension.
 
-
 */
 
 process rnaSplicePCS {
-
-  publishDir "${params.outputQTL}", mode:'copy'
+  tag "on chromosome ${chr}"
+  publishDir "${params.outdir}", mode:'copy'
   container 'praveen/qtltools1.3'
+
    input:
 
-   file (covariate_s) 
+   file (phenotype_s)
+   
+   tuple val(chr), file (genotype), file (genoCovfile)
 
-   tuple val(chr), file (phenotype_s),  file (genotype),  file (genoCovfile)
+   file (covariate_s) 
 
    output:
 
@@ -419,28 +423,36 @@ process rnaSplicePCS {
 
   script:
 
- """
-
+ 
+    """
     bcftools query -l ${genotype} > samplelist
 
     sed '1iid' samplelist > sample_listpca.txt
 
+    
+    awk ' NR == FNR { header[\$0]=1; next } 
+    FNR == 1 { 
+    for (i=1; i<=NF; i++) if (\$i in header) wanted[i]=1 }
+    { for (i=1; i<=NF; i++) if (i in wanted) printf "%s ", \$i;  print "" }' samplelist ${phenotype_s} > xx
 
-     sed 's/comm_//g' $phenotype_s | awk -F'\t' 'NR>1{print \$1,\$2,\$3,\$4}' | awk -F'_' '{print \$1"_"\$2"\t"\$3}' | awk -v OFS='\t' '{print \$1,\$2,\$3,\$1":"\$2"-"\$3,\$4,\$5}' | sed '1i#Chr\tstart\tend\tpid\tgid\tstrand' > ${phenotype_s}_MOD.bed.header
+   awk '{for(i=1;i<=6;i++) printf \$i" "; print ""}' ${phenotype_s} > xy
 
-     sed 's/comm_//g' $phenotype_s  | awk  '{for(i=5;i<=NF;i++) printf \$i"\t"; print ""}'  > ${phenotype_s}_MOD.bed.counts
+   paste -d ' ' xy xx | awk -v OFS="\t" '\$1=\$1' >  splice_count_Matrices_CommonSamples.tsv
 
-     paste -d '\t' ${phenotype_s}_MOD.bed.header ${phenotype_s}_MOD.bed.counts | awk -v OFS='\t' 'NR==1 {print}' > xx
+  ## Extract bed file for each chromosome to perform chromsomal wise cis-eQTL analysis ##
+ 
+  awk -v OFS='\t' 'NR==1 {\$1="#Chr";print }' splice_count_Matrices_CommonSamples.tsv  > xy
 
-     paste -d'\t' ${phenotype_s}_MOD.bed.header ${phenotype_s}_MOD.bed.counts |  awk -v OFS='\t' 'NR>1 {print}' | sort -k1,1d -k2,2n -k3,3n > xy
+  awk -v OFS='\t' 'NR>1 && \$1==${chr} {print}' splice_count_Matrices_CommonSamples.tsv | sort -k1,1d -k2,2n -k3,3n > xx
 
-     cat xx xy | sed 's/geno_//g' > ${phenotype_s}.bed
+  cat xy xx > QTLpheno_splice_chr${chr}.bed
 
-     rm ${phenotype_s}_MOD.bed.header ${phenotype_s}_MOD.bed.counts
+  sed -i 's/Chr/#CHROM/g' QTLpheno_splice_chr${chr}.bed
 
-     awk -F'\t' '{for(i=1;i<=6;i++){printf "%s ", \$i}; printf "\\n"}' ${phenotype_s}.bed > bed_pos
 
-     awk -F'\t' '{for(i=7;i<=NF;i++){printf "%s ", \$i}; printf "\\n"}' ${phenotype_s}.bed > bed_data 
+  awk -F'\t' '{for(i=1;i<=6;i++){printf "%s ", \$i}; printf "\\n"}' QTLpheno_splice_chr${chr}.bed> bed_pos
+
+  awk -F'\t' '{for(i=7;i<=NF;i++){printf "%s ", \$i}; printf "\\n"}' QTLpheno_splice_chr${chr}.bed > bed_data 
      
      ## Transpose file 
       awk '

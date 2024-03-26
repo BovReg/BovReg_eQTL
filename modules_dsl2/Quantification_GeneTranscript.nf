@@ -17,7 +17,8 @@ process stringtieQuant_library_firststranded {
 
     //tuple  file ("*.gtf") , file ("*.tsv") 
     
-    tuple  val(sample_id), file ("*.gtf") , file ("*.tsv")
+    tuple  val(sample_id), file ("*.tsv") ,  emit: gene_St_counts_ch
+    tuple  val(sample_id), file ("*.gtf") ,  emit: transcript_counts_ch
 
     script:
   
@@ -48,7 +49,10 @@ process stringtieQuant_library_unstranded {
 
     output:
     
-    tuple val(sample_id), file ("*.gtf") , file ("*.tsv")
+   // tuple val(sample_id), file ("*.gtf") , file ("*.tsv")
+
+    tuple  val(sample_id), file ("*.tsv") ,  emit: gene_St_counts_ch
+    tuple  val(sample_id), file ("*.gtf") ,  emit: transcript_counts_ch
 
     script:
 
@@ -80,7 +84,10 @@ process stringtieQuant_library_secondstranded {
 
     //tuple  file ("*.gtf") , file ("*.tsv") 
     
-    tuple  val(sample_id), file ("*.gtf") , file ("*.tsv")
+   // tuple  val(sample_id), file ("*.gtf") , file ("*.tsv")
+
+    tuple  val(sample_id), file ("*.tsv") ,  emit: gene_St_counts_ch
+    tuple  val(sample_id), file ("*.gtf") ,  emit: transcript_counts_ch
 
     script:
 

@@ -19,7 +19,8 @@ process TranscriptCountsPCA: The continer used for this process is preperared wi
 */
 
 process transcriptCountsPCA_trans {
- publishDir "${params.outputQTL}", mode:'copy'
+ tag "on chromosome ${chr}"
+ publishDir "${params.outdir}", mode:'copy'
  container 'praveen/qtltools1.3'
 
  input:
@@ -211,7 +212,8 @@ process GeneCountsPCA: The continer used for this process is preperared with the
 */
 
 process geneCountsPCA_trans {
- publishDir "${params.outputQTL}", mode:'copy'
+ tag "on chromosome ${chr}"
+ publishDir "${params.outdir}", mode:'copy'
  container 'praveen/qtltools1.3'
 
  input:
@@ -402,8 +404,8 @@ awk 'FNR==NR && FNR==1{ for(i=1;i<=NF;i++){ b[i]=\$i}; print;  i--; next } \
 */
 
 process rnaSplicePCS_trans {
-
-  publishDir "${params.outputQTL}", mode:'copy'
+  tag "on chromosome ${chr}"
+  publishDir "${params.outdir}", mode:'copy'
   container 'praveen/qtltools1.3'
    input:
 
@@ -423,38 +425,35 @@ process rnaSplicePCS_trans {
 
   script:
 
+//## Merge the data of all the phenotype to perform trans-eQTL with all the phenotypes acoss genome for each variant ##
+// for phenosplice in ${phenotype_s}
+//  do
+
+ //  cat \$phenosplice | awk 'FNR>1{print}' >> pheno_splice_QTL_chr.bed 
+
+  // cat \$phenosplice | awk 'FNR==1{print}' > pheno_splice_QTL_chr_header.bed
+ //done
+
+//sort -n -k1,1 -k2,2 pheno_splice_QTL_chr.bed > pheno_splice_QTL_chr_sorted.bed
+
+//cat pheno_splice_QTL_chr_header.bed pheno_splice_QTL_chr_sorted.bed > phenochr${chr}_splice_QTL_Allchr.bed
+
+
 
  """
- 
- ## Merge the data of all the phenotype to perform trans-eQTL with all the phenotypes acoss genome for each variant ##
- for phenosplice in ${phenotype_s}
-  do
-
-   cat \$phenosplice | awk 'FNR>1{print}' >> pheno_splice_QTL_chr.bed 
-
-   cat \$phenosplice | awk 'FNR==1{print}' > pheno_splice_QTL_chr_header.bed
- done
-
-sort -n -k1,1 -k2,2 pheno_splice_QTL_chr.bed > pheno_splice_QTL_chr_sorted.bed
-
-cat pheno_splice_QTL_chr_header.bed pheno_splice_QTL_chr_sorted.bed > phenochr${chr}_splice_QTL_Allchr.bed
-
 
  bcftools query -l ${genotype} > samplelist
 
  sed '1iid' samplelist > sample_listpca.txt
 
- sed 's/comm_//g' phenochr${chr}_splice_QTL_Allchr.bed | awk -F'\t' 'NR>1{print \$1,\$2,\$3,\$4}' | awk -F'_' '{print \$1"_"\$2"\t"\$3}' | awk -v OFS='\t' '{print \$1,\$2,\$3,\$1":"\$2"-"\$3,\$4,\$5}' | sed '1i#Chr\tstart\tend\tpid\tgid\tstrand' > phenochr${chr}_splice_QTL_Allchr.bed_MOD.bed.header
+ awk ' NR == FNR { header[\$0]=1; next } 
+    FNR == 1 { 
+    for (i=1; i<=NF; i++) if (\$i in header) wanted[i]=1 }
+    { for (i=1; i<=NF; i++) if (i in wanted) printf "%s ", \$i;  print "" }' samplelist ${phenotype_s} > xx
 
- sed 's/comm_//g' phenochr${chr}_splice_QTL_Allchr.bed  | awk  '{for(i=5;i<=NF;i++) printf \$i"\t"; print ""}'  > phenochr${chr}_splice_QTL_Allchr.bed_MOD.bed.counts
+ awk '{for(i=1;i<=6;i++) printf \$i" "; print ""}' ${phenotype_s} > xy
 
- paste -d '\t' phenochr${chr}_splice_QTL_Allchr.bed_MOD.bed.header phenochr${chr}_splice_QTL_Allchr.bed_MOD.bed.counts | awk -v OFS='\t' 'NR==1 {print}' > xx
-
- paste -d'\t' phenochr${chr}_splice_QTL_Allchr.bed_MOD.bed.header phenochr${chr}_splice_QTL_Allchr.bed_MOD.bed.counts |  awk -v OFS='\t' 'NR>1 {print}' | sort -k1,1d -k2,2n -k3,3n > xy
-
- cat xx xy | sed 's/geno_//g' > phenochr${chr}_splice_QTL_Allchr.bed
-
- rm phenochr${chr}_splice_QTL_Allchr.bed_MOD.bed.header phenochr${chr}_splice_QTL_Allchr.bed_MOD.bed.counts
+ paste -d ' ' xy xx | awk -v OFS="\t" '\$1=\$1' | sed 's/Chr/#CHROM/g'  >  phenochr${chr}_splice_QTL_Allchr.bed
 
  awk -F'\t' '{for(i=1;i<=6;i++){printf "%s ", \$i}; printf "\\n"}' phenochr${chr}_splice_QTL_Allchr.bed > bed_pos
 

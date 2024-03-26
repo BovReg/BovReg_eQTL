@@ -6,7 +6,8 @@
 */
 
 process trans_eQTL_nominal {
- publishDir "${params.outputQTL}/transQTLResults", mode:'copy'
+ tag "on chromosome ${chr}"
+ publishDir "${params.outdir}/transQTLResults", mode:'copy'
  container 'praveen/qtltools1.3'
 
  input:
@@ -82,7 +83,8 @@ QTLtools trans --vcf $genotype_s --cov $covariate_s --bed $phenotype_s  --normal
 */
 
 process trans_eQTL_permu {
- publishDir "${params.outputQTL}/transQTLResults", mode:'copy'
+ tag "on chromosome ${chr}"    
+ publishDir "${params.outdir}/transQTLResults", mode:'copy'
  container 'praveen/qtltools1.3'
 
  input:
@@ -138,7 +140,8 @@ process trans_eQTL_permu {
 
 
 process trans_eQTL_FDR {
- publishDir "${params.outputQTL}/transQTLResults", mode:'copy'
+ tag "on chromosome ${chr}"
+ publishDir "${params.outdir}/transQTLResults", mode:'copy'
  container 'praveen/qtltools1.3'
 
  input:

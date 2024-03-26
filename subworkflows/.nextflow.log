@@ -1,0 +1,14 @@
+Mar-18 11:36:57.727 [main] DEBUG nextflow.cli.Launcher - $> nextflow run Complete_eQTLDetect.nf -params-file Complete_eQTLDetect.json -resume
+Mar-18 11:36:57.775 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.0
+Mar-18 11:36:57.793 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/chitneedi/.nextflow/plugins; core-plugins: nf-amazon@1.16.1,nf-azure@1.0.0,nf-codecommit@0.1.3,nf-console@1.0.5,nf-ga4gh@1.0.4,nf-google@1.7.2,nf-tower@1.5.11,nf-wave@0.8.1
+Mar-18 11:36:57.801 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-18 11:36:57.802 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-18 11:36:57.805 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Mar-18 11:36:57.812 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-18 11:36:57.825 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/chitneedi/.nextflow/scm
+Mar-18 11:36:57.833 [main] DEBUG nextflow.cli.Launcher - Operation aborted
+nextflow.exception.AbortOperationException: Cannot find script file: Complete_eQTLDetect.nf
+	at nextflow.cli.CmdRun.getScriptFile(CmdRun.groovy:462)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:314)
+	at nextflow.cli.Launcher.run(Launcher.groovy:494)
+	at nextflow.cli.Launcher.main(Launcher.groovy:653)

@@ -1,5 +1,7 @@
 
-/* process GenotypeStratificationPCA: Perform pca analysis using R package SNPRelate for genotype data.
+/* 
+
+process GenotypeStratificationPCA: Perform pca analysis using R package SNPRelate for genotype data.
    - The input is the imputed WGS performed per chromosome and top 10 PCs were filtered.
    - The top 10 PCs were forwared to the processes : TranscriptCountsPCA,RNAsplicePCS and GeneCountsPCA.
    - In these processes these genotype PCs were combined with PCs from RNAseq at transcript, splce and gene level per chromsome.
@@ -7,7 +9,8 @@
 */
 
 process genotypeStratificationPCA {
- publishDir "${params.outputQTL}/GenotypeCov", mode:'copy'
+ tag "on chromosome ${chr}"
+ publishDir "${params.outdir}/GenotypeCov", mode:'copy'
  container 'praveen/rpackages-eqtl' 
 
 
