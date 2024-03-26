@@ -1,0 +1,48 @@
+{
+    
+
+     "comment" : "Parameters",
+
+      "anchor_length" : 8, 
+
+      "intron_length_minimum" : 50,
+
+      "intron_length_maximum" : 500000,
+
+      "starChr" : 2, 
+
+      "endChr" : 3,
+
+
+      "comment" : "Parameters principle components ",
+
+      "genotype_pcs" : 10,
+
+      "phenotype_PCs_cis" : 10,
+
+      "phenotype_Pcs_trans" : 10,
+
+      "phenotype_PCs_sQTL" : 10, 
+
+
+     "comment" : "Parameters eQTL analysis ",
+      
+     "comment" : "Parameters cis-eQTL",
+
+     "cis_nominal" : 0.01,
+
+     "cis_permutations" : 1000,
+
+     "cis_FDR" : 0.05,
+
+
+
+     "comment": "Parameters trans-eQTL",
+
+     "trans_threshold" : 1e-5,
+
+     "trans_permutations" : 100,
+
+
+
+}

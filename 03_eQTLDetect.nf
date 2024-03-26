@@ -105,7 +105,6 @@ include { mergeNormalizedTranscriptCountMatrices } from './modules_dsl2/Transcri
 
 include { rnaspliceFilterJunc } from './modules_dsl2/Quantification_SpliceVariants'
 
-/* NOTE: The default PCs for sQTL were defined as 10 but user can modify it in this script */
 include { leafcutter_cluster_junctions } from './modules_dsl2/Quantification_SpliceVariants'
 
 
