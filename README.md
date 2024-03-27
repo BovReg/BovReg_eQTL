@@ -35,14 +35,14 @@ The analysis can run with a single script or using modular scripts based on user
   - Parameters 
      - Strandedness: --firstStranded, --secondStranded and --unStranded
 
-  **Script main with bam input:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
+  **Script main with bam files as input:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
 -params-file [main.json] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.json) --bamFiles_input --firstStranded_
 
 - This script can also run by provinding the expression count matrices using the following command
    - Parameters 
      - --countMatrices_input_
 
-  **Script main bam input:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
+  **Script main with count matrices as input:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
 -params-file [main.json] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.json) --countMatrices_input_
 
 
