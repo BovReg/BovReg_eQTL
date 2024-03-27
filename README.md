@@ -22,28 +22,29 @@ This repository provide the [Nextflow](https://www.nextflow.io/) scripts and dem
 
 The analysis can run with a single script or using modular scripts based on user preferences.
 
-For single script analysis, the user should use the following command by read type and read strandedness:
+For single script analysis, the user should use the following command and should provide the read type and read strandedness for the RNAseq data:
 
 - The options include 
    - readtype: --pairedEnd_reads, --singleEnd_reads, 
    - Strandedness: --firstStranded, --secondStranded and --unStranded
 
-**Main Script:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
+   **Script main:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
 -params-file [main.json] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.json) --pairedEnd_reads --firstStranded_
 
-- If the user has aligned bam files, the alignment step can be skipped using the following command
+If the user has aligned bam files, the alignment step can be skipped using the following command
   - The options include 
      Strandedness: --firstStranded, --secondStranded and --unStranded
 
-**Main Script bam input:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
+  **Script main with bam input:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
 -params-file [main.json] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.json) --bamFiles_input --firstStranded_
 
 - This script can also run by provinding the expression count matrices using the following command
-  **Main Script bam input:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
+
+  **Script main bam input:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
 -params-file [main.json] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.json) --countMatrices_input_
 
 
-- For modular analysis users can opt for the follwoing scripts.
+- For modular analysis users can opt for the following scripts.
 
   **Script 00:** _nextflow run [00_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/00_eQTLDetect.nf)_  for indexing the reference genome.
 
