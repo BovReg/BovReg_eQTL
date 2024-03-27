@@ -22,16 +22,16 @@ This repository provide the [Nextflow](https://www.nextflow.io/) scripts and dem
 
 The analysis can run with a single script or using modular scripts based on user preferences.
 
-For single script analysis, the user should use the following command and should provide the read type and read strandedness for the RNAseq data:
+- For single script analysis, the user should use the following command and should provide the read type and read strandedness for the RNAseq data:
 
-- The options include 
-   - readtype: --pairedEnd_reads, --singleEnd_reads, 
-   - Strandedness: --firstStranded, --secondStranded and --unStranded
+  - The options include 
+    - readtype: --pairedEnd_reads, --singleEnd_reads, 
+    - Strandedness: --firstStranded, --secondStranded and --unStranded
 
    **Script main:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
 -params-file [main.json] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.json) --pairedEnd_reads --firstStranded_
 
-If the user has aligned bam files, the alignment step can be skipped using the following command
+- If the user has aligned bam files, the alignment step can be skipped using the following command
   - The options include 
      Strandedness: --firstStranded, --secondStranded and --unStranded
 
