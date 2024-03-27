@@ -24,7 +24,7 @@ The analysis can run with a single script or using modular scripts based on user
 
 - For single script analysis, the user should use the following command and should provide the read type and read strandedness for the RNAseq data:
 
-  - The options include 
+  - Parameters 
     - readtype: --pairedEnd_reads, --singleEnd_reads, 
     - Strandedness: --firstStranded, --secondStranded and --unStranded
 
@@ -32,13 +32,15 @@ The analysis can run with a single script or using modular scripts based on user
 -params-file [main.json] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.json) --pairedEnd_reads --firstStranded_
 
 - If the user has aligned bam files, the alignment step can be skipped using the following command
-  - The options include 
-     Strandedness: --firstStranded, --secondStranded and --unStranded
+  - Parameters 
+     - Strandedness: --firstStranded, --secondStranded and --unStranded
 
   **Script main with bam input:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
 -params-file [main.json] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.json) --bamFiles_input --firstStranded_
 
 - This script can also run by provinding the expression count matrices using the following command
+   - Parameters 
+     - --countMatrices_input_
 
   **Script main bam input:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
 -params-file [main.json] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.json) --countMatrices_input_
@@ -46,13 +48,18 @@ The analysis can run with a single script or using modular scripts based on user
 
 - For modular analysis users can opt for the following scripts.
 
-  **Script 00:** _nextflow run [00_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/00_eQTLDetect.nf)_  for indexing the reference genome.
+  **Script 00:** for indexing the reference genome.
+  _nextflow run [00_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/00_eQTLDetect.nf)_  
 
-  **Script 01:** _nextflow run [01_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/01_eQTLDetect.nf) -params-file [01_eQTLDetect.json](https://github.com/BovReg/BovReg_eQTL/blob/main/01_eQTLDetect.json)_  for alignment and quantification of expression data.
+  **Script 01:** for alignment and quantification of expression data.
+  _nextflow run [01_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/01_eQTLDetect.nf) -params-file [01_eQTLDetect.json](https://github.com/BovReg/BovReg_eQTL/blob/main/01_eQTLDetect.json)_  
 
 
-  **Script 02:**  _nextflow run [02_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/02_eQTLDetect.nf)_  for extracting the genotype data from samples having corresponding RNAseq samples.
+  **Script 02:** for extracting the genotype data from samples having corresponding RNAseq samples.
+   _nextflow run [02_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/02_eQTLDetect.nf)_  
 
-  **Script 03:**  _nextflow run [03_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/03_eQTLDetect.nf) -params-file [03_eQTLDetect.json](https://github.com/BovReg/BovReg_eQTL/blob/main/03_eQTLDetect.json)_  for merging the read and transcript counts generated from stringtie and cluster introns found in junction files estimate covriates for splicing sites based on PCs.
+  **Script 03:** for merging the read and transcript counts generated from stringtie and cluster introns found in junction files estimate covriates for splicing sites based on PCs.
+   _nextflow run [03_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/03_eQTLDetect.nf) -params-file [03_eQTLDetect.json](https://github.com/BovReg/BovReg_eQTL/blob/main/03_eQTLDetect.json)_  
 
-  **Script 04:** _nextflow run [04_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/04_eQTLDetect.nf) -params-file [04_eQTLDetect.json](https://github.com/BovReg/BovReg_eQTL/blob/main/04_eQTLDetect.json)_  for performing cis and trans QTL mapping using the RNA seq and corresponding genotype data.
+  **Script 04:** for performing cis and trans QTL mapping using the RNA seq and corresponding genotype data.
+  _nextflow run [04_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/04_eQTLDetect.nf) -params-file [04_eQTLDetect.json](https://github.com/BovReg/BovReg_eQTL/blob/main/04_eQTLDetect.json)_  
