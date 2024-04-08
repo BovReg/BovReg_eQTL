@@ -60,7 +60,8 @@ The analysis can run with a single script or using modular scripts based on user
 
 - The Phenotype data can be provided in the following formats 1. Raw data (RNAseq expression data in fastq format), 2. Aligned reads (RNAseq expression data in bam format)  and 3. Expression counts across samples (expression count matrices in text file).\
 These files can be downloaded from research data open repository 
- [Zenodo](https://zenodo.org/record/7949616) 
+ [Zenodo](https://zenodo.org/record/7949616) (Fastq),
+ [Zenodo](https://zenodo.org/records/7950181) (expression counts and aligned bam files).
 
 - The genotype-phenotype corresponding samples information can be found in the text file [RNA_WGS_CorresID_BovReg.txt](https://github.com/BovReg/BovReg_eQTL/blob/main/RNA_WGS_CorresID_BovReg.txt)
 
