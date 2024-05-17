@@ -18,17 +18,15 @@ process  makeSTARindex {
      file gtf 
 
     output:
-    file "star" 
+    file "starIndex" 
 
     script:
-      def avail_mem = task.memory ? "--limitGenomeGenerateRAM ${task.memory.toBytes() - 100000000}" : ''
       """
-      mkdir star
+      mkdir starIndex
       STAR  --runMode genomeGenerate \
-            --runThreadN ${task.cpus} \
+            --runThreadN 10 \
             --sjdbGTFfile $gtf \
-            --genomeDir star/ \
+            --genomeDir starIndex/ \
             --genomeFastaFiles $fasta \
-            $avail_mem
         """
 }

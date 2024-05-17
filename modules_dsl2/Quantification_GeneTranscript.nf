@@ -13,9 +13,7 @@ process stringtieQuant_library_firststranded {
 
     file(gtf) 
 
-    output:
-
-    //tuple  file ("*.gtf") , file ("*.tsv") 
+    output: 
     
     tuple  val(sample_id), file ("*.tsv") ,  emit: gene_St_counts_ch
     tuple  val(sample_id), file ("*.gtf") ,  emit: transcript_counts_ch

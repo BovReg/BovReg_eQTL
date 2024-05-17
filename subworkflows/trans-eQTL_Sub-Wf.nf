@@ -35,8 +35,6 @@ workflow transeQTL_workflow {
 
        phenotypeSplice_ch
 
-       ch_FDR_trans
-
        phenotype_PCs_trans
 
        threshold_trans_ch
@@ -65,7 +63,7 @@ workflow transeQTL_workflow {
 
    trans_eQTL_permu(qtlmap_trans_geneCount.join(qtlmap_trans_transcriptCount).join(qtlmap_trans_spliceCount), permutations_trans_ch,threshold_trans_ch )
    
-   trans_eQTL_FDR(trans_eQTL_nominal.out.gene_trans_nominal_hits_ch.join(trans_eQTL_permu.out.gene_trans_permu_hits_ch).join(trans_eQTL_nominal.out.transcript_trans_nominal_hits_ch).join(trans_eQTL_permu.out.transcript_trans_permu_hits_ch).join(trans_eQTL_nominal.out.splice_trans_nominal_hits_ch).join(trans_eQTL_permu.out.splice_trans_permu_hits_ch),ch_FDR_trans)
+   trans_eQTL_FDR(trans_eQTL_nominal.out.gene_trans_nominal_hits_ch.join(trans_eQTL_permu.out.gene_trans_permu_hits_ch).join(trans_eQTL_nominal.out.transcript_trans_nominal_hits_ch).join(trans_eQTL_permu.out.transcript_trans_permu_hits_ch).join(trans_eQTL_nominal.out.splice_trans_nominal_hits_ch).join(trans_eQTL_permu.out.splice_trans_permu_hits_ch))
 
   }
 

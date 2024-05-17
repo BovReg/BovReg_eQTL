@@ -23,20 +23,11 @@ include {samtools_merge_forleafcutter } from '../modules_dsl2/Indexing'
 
 
 
-
-params.bamFiles_input  = false
-
-
-
 workflow PAIREDEND_END_READS {
 
         take:
 
           paired_reads
-
-          trimmjar_file
-
-          adapter_file
 
           gtf_file
 
@@ -54,8 +45,6 @@ workflow PAIREDEND_END_READS {
 
           leafcutter_ip_idx_ch
 
-
-
         main:
 
     
@@ -71,7 +60,7 @@ workflow PAIREDEND_END_READS {
            else{
              fastqc_PE(paired_reads)
 
-             trimmomatic(paired_reads,trimmjar_file,adapter_file)
+             trimmomatic(paired_reads)
 
              starAlign_GeneTranscript(trimmomatic.out.forward_strand_trim.join(trimmomatic.out.revese_strand_trim),gtf_file.collect(),star_index.collect())
 
@@ -95,6 +84,4 @@ workflow PAIREDEND_END_READS {
          stringtie_ip
 
          leafcutter_bamtojunc_ip
-
-
 }

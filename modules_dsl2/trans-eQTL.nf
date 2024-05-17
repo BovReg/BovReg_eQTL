@@ -8,7 +8,7 @@
 process trans_eQTL_nominal {
  tag "on chromosome ${chr}"
  publishDir "${params.outdir}/transQTLResults", mode:'copy'
- container 'praveen/qtltools1.3'
+ container 'praveenchitneedi/qtltoolkit:v1.0.1'
 
  input:
 
@@ -85,7 +85,7 @@ QTLtools trans --vcf $genotype_s --cov $covariate_s --bed $phenotype_s  --normal
 process trans_eQTL_permu {
  tag "on chromosome ${chr}"    
  publishDir "${params.outdir}/transQTLResults", mode:'copy'
- container 'praveen/qtltools1.3'
+ container 'praveenchitneedi/qtltoolkit:v1.0.1'
 
  input:
 
@@ -142,13 +142,13 @@ process trans_eQTL_permu {
 process trans_eQTL_FDR {
  tag "on chromosome ${chr}"
  publishDir "${params.outdir}/transQTLResults", mode:'copy'
- container 'praveen/qtltools1.3'
+ container 'praveenchitneedi/qtltoolkit:v1.0.1'
 
  input:
 
  tuple val(chr), file(gene_hits), file(gene_hits_permu), file(transcript_hits), file(transcript_hits_permu), file(splice_hits), file(splice_hits_permu)
  
- file(fdr_trans)
+ //file(fdr_trans)
 
  output:
 
@@ -163,7 +163,7 @@ process trans_eQTL_FDR {
     zcat $gene_hits_permu\
     | sed '1igene_Phenotype Phenotype_Chr Phenotype_Start Varinat_ID Variant_Chr Variant_Position Pvalue approxMap Regression_slope' | gzip > gene_hits_permu_mod.gz
 
-    Rscript $fdr_trans $gene_hits gene_hits_permu_mod.gz gene_full_pass_trans_eQTL_FDR_output_Chr${chr}_permu.txt
+    Rscript $projectDir/bin/qtltools_runFDR_ftrans_Mod.R $gene_hits gene_hits_permu_mod.gz gene_full_pass_trans_eQTL_FDR_output_Chr${chr}_permu.txt
 
     sed -i '1igene_Phenotype Phenotype_Chr Phenotype_Start Varinat_ID Variant_Chr Variant_Position Pvalue approxMap Regression_slope FDR' gene_full_pass_trans_eQTL_FDR_output_Chr${chr}_permu.txt
 
@@ -172,7 +172,7 @@ process trans_eQTL_FDR {
     zcat $transcript_hits_permu\
     | sed '1itranscript_Phenotype Phenotype_Chr Phenotype_Start Varinat_ID Variant_Chr Variant_Position Pvalue approxMap Regression_slope' | gzip > transcript_hits_permu_mod.gz
 
-    Rscript $fdr_trans $transcript_hits transcript_hits_permu_mod.gz transcript_full_pass_trans_eQTL_FDR_output_Chr${chr}_permu.txt
+    Rscript $projectDir/bin/qtltools_runFDR_ftrans_Mod.R $transcript_hits transcript_hits_permu_mod.gz transcript_full_pass_trans_eQTL_FDR_output_Chr${chr}_permu.txt
 
     sed -i '1itranscript_Phenotype Phenotype_Chr Phenotype_Start Varinat_ID Variant_Chr Variant_Position Pvalue approxMap Regression_slope FDR' transcript_full_pass_trans_eQTL_FDR_output_Chr${chr}_permu.txt
 
@@ -180,7 +180,7 @@ process trans_eQTL_FDR {
     zcat $splice_hits_permu\
     | sed '1isplice_Phenotype Phenotype_Chr Phenotype_Start Varinat_ID Variant_Chr Variant_Position Pvalue approxMap Regression_slope' | gzip > splice_hits_permu_mod.gz
 
-    Rscript $fdr_trans $splice_hits splice_hits_permu_mod.gz splice_full_pass_trans_eQTL_FDR_output_Chr${chr}_permu.txt
+    Rscript $projectDir/bin/qtltools_runFDR_ftrans_Mod.R $splice_hits splice_hits_permu_mod.gz splice_full_pass_trans_eQTL_FDR_output_Chr${chr}_permu.txt
 
     sed -i '1isplice_Phenotype Phenotype_Chr Phenotype_Start Varinat_ID Variant_Chr Variant_Position Pvalue approxMap Regression_slope FDR' splice_full_pass_trans_eQTL_FDR_output_Chr${chr}_permu.txt
 

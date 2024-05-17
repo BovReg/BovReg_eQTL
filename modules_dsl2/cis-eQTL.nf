@@ -18,7 +18,7 @@ process cisQTL_nominal {
  
  tag "on chromosome ${chr}"
  publishDir "${params.outdir}/cisQTLResults", mode:'copy'
- container 'praveen/qtltools1.3'
+ container 'praveenchitneedi/qtltoolkit:v1.0.1'
 
  input:
  tuple val(chr), file (phenotype_g), file (covariate_g),file (genotype_g) ,file (phenotype_t),file (covariate_t),file (genotype_t), file (phenotype_s), file (covariate_s), file (genotype_s)
@@ -80,7 +80,7 @@ NOTE: The default number of permutations  --permute 1000 can be modified based o
 process cisQTL_permutation {
  tag "on chromosome ${chr}"
  publishDir "${params.outdir}/cisQTLResults", mode:'copy'
- container 'praveen/qtltools1.3'
+ container 'praveenchitneedi/qtltoolkit:v1.0.1'
 
  input:
   tuple val(chr),file (phenotype_g), file (covariate_g),file (genotype_g) ,file (phenotype_t),file (covariate_t),file (genotype_t),file (phenotype_s), file (covariate_s), file (genotype_s)
@@ -147,12 +147,12 @@ QTLtools cis --vcf $genotype_s  --bed $phenotype_s --cov $covariate_s --normal -
 process cisQTL_conditional {
  tag "on chromosome ${chr}"
  publishDir "${params.outdir}/cisQTLResults", mode:'copy'
- container 'praveen/qtltools1.3'
+ container 'praveenchitneedi/qtltoolkit:v1.0.1'
 
  input:
  tuple val(chr),file (phenotype_g), file (covariate_g),file (genotype_g), file(permu_g) ,file (phenotype_t),file (covariate_t),file (genotype_t),file(permu_t),file (phenotype_s), file (covariate_s),file (genotype_s),file(permu_s)
 
- file(fdr_cis)
+ //file(fdr_cis)
 
  val(fdr_rate)
 
@@ -174,7 +174,7 @@ process cisQTL_conditional {
 """
 
 
- Rscript $fdr_cis $permu_g 0.05 permu_g_Chr${chr}
+ Rscript $projectDir/bin/runFDR_cis_QTLtools.R  $permu_g 0.05 permu_g_Chr${chr}
 
 
  QTLtools cis --vcf $genotype_g --bed $phenotype_g --cov $covariate_g --normal --mapping permu_g_Chr${chr}.thresholds.txt  --out ${output_g}
@@ -188,7 +188,7 @@ process cisQTL_conditional {
 
  sed -i '1iPheno_gene Chr Start End Strand TotalTestVar Distance VarId VarChrId VarStart VarEnd AssoRank ForwardNomPval ForwardRegSlope Dummy BinaryFlagRank BinFlagPval BackwardNomPval BackRegSlope Dummy BinaryFlagRank BinaryFlagP-val' ${output_g_mod}_cis.cond_topvar.txt
 
- Rscript $fdr_cis $permu_t 0.05 permu_t_Chr${chr}
+ Rscript $projectDir/bin/runFDR_cis_QTLtools.R $permu_t 0.05 permu_t_Chr${chr}
 
 
  QTLtools cis --vcf $genotype_t  --bed $phenotype_t --cov $covariate_t  --normal  --mapping permu_t_Chr${chr}.thresholds.txt  --out ${output_t}
@@ -202,7 +202,7 @@ process cisQTL_conditional {
 
  sed -i '1iPheno_gene Chr Start End Strand TotalTestVar Distance VarId VarChrId VarStart VarEnd AssoRank ForwardNomPval ForwardRegSlope Dummy BinaryFlagRank BinFlagPval BackwardNomPval BackRegSlope Dummy BinaryFlagRank BinaryFlagP-val'  ${output_t_mod}_cis.cond_topvar.txt
 
- Rscript $fdr_cis $permu_s 0.05 permu_s_Chr${chr}
+ Rscript $projectDir/bin/runFDR_cis_QTLtools.R $permu_s 0.05 permu_s_Chr${chr}
 
  QTLtools cis --vcf $genotype_s  --bed $phenotype_s --cov $covariate_s  --normal  --mapping permu_s_Chr${chr}.thresholds.txt  --out ${output_s}
 

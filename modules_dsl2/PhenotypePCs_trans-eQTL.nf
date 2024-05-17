@@ -21,7 +21,7 @@ process TranscriptCountsPCA: The continer used for this process is preperared wi
 process transcriptCountsPCA_trans {
  tag "on chromosome ${chr}"
  publishDir "${params.outdir}", mode:'copy'
- container 'praveen/qtltools1.3'
+ container 'praveenchitneedi/qtltoolkit:v1.0.1'
 
  input:
   file (phenotype) 
@@ -214,7 +214,7 @@ process GeneCountsPCA: The continer used for this process is preperared with the
 process geneCountsPCA_trans {
  tag "on chromosome ${chr}"
  publishDir "${params.outdir}", mode:'copy'
- container 'praveen/qtltools1.3'
+ container 'praveenchitneedi/qtltoolkit:v1.0.1'
 
  input:
  file (phenotype) 
@@ -406,7 +406,7 @@ awk 'FNR==NR && FNR==1{ for(i=1;i<=NF;i++){ b[i]=\$i}; print;  i--; next } \
 process rnaSplicePCS_trans {
   tag "on chromosome ${chr}"
   publishDir "${params.outdir}", mode:'copy'
-  container 'praveen/qtltools1.3'
+  container 'praveenchitneedi/qtltoolkit:v1.0.1'
    input:
 
    file (covariate_s) 

@@ -152,8 +152,8 @@ process leafcutter_cluster_junctions {
 
         input:
         file (junc_file) 
-        file (leafcutter_cluster) 
-        file (phenotype_table)
+        //file (leafcutter_cluster) 
+        //file (phenotype_table)
         val(intron_min_len)
         val(inton_max_len)
         val(pheno_pcs) 
@@ -171,11 +171,19 @@ process leafcutter_cluster_junctions {
         // -m 50 -l 500000 adopted from script 5 cGTEx paper DOI: 10.1038/s41588-022-01153-5
 
         //NOTE: User can change the deault number of PCs in the command below python ${phenotype_table} -p X
+
+        /* leafcutter_cluster_Bovine_regtools.py will cluster together the introns fond in the junc files listed in junction_files.txt (created below in workflow), 
+        requiring 50 split reads supporting each cluster and allowing introns of up to 500kb */
+
+        /* prepare_phenotype_table.py script a) calculates intron excision ratios 
+          b) filter out introns used in less than 40% of individuals or with almost no variation 
+          c) output these ratios as gzipped txt files along with a user-specified number of PCs*/
+
         """   
 
-        python ${leafcutter_cluster} -j ${junc_file} -m $intron_min_len -l $inton_max_len  -o output
+        python $projectDir/bin/leafcutter/scripts/leafcutter_cluster_Bovine_regtools.py -j ${junc_file} -m $intron_min_len -l $inton_max_len  -o output
         
-        python ${phenotype_table} -p $pheno_pcs output_perind.counts.gz
+        python $projectDir/bin/leafcutter/scripts/prepare_phenotype_table.py -p $pheno_pcs output_perind.counts.gz
 
         awk 'FNR>1 || NR==1' output_perind.counts.gz.qqnorm_chr* > mergedCounts_tmp.txt
 

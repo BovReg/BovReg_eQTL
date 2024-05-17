@@ -8,19 +8,19 @@ process fastqc_PE {
     container 'nextflow/rnaseq-nf'
     publishDir "${params.outdir}/fastqc_results", mode:'copy'
     input:
-    tuple val(prefix), path(pairedEndread_files) 
+    tuple val(prefix), file(read1), file(read2)
 
     output:
      tuple val(prefix), file("fastqc_${prefix}_logs") 
 
     script:
-     name = pairedEndread_files[0].toString()
-     prefix = name.split('_')[0]
+     //name = pairedEndread_files[0].toString()
+     //prefix = name.split('_')[0]
 
     """
    
     mkdir fastqc_${prefix}_logs
-    fastqc -o fastqc_${prefix}_logs -f fastq -q ${pairedEndread_files}
+    fastqc -o fastqc_${prefix}_logs -f fastq -q ${read1} ${read2}
     """
 }
 
@@ -58,9 +58,9 @@ process trimmomatic{
   publishDir "${params.outdir}/Trimmomatic", mode:'copy'
 
   input:
-      tuple val(prefix), path(readPair_files) 
-      file trimmjar  
-      file adapter 
+      tuple val(prefix), file(read1), file(read2) 
+      // file trimmjar  
+      //file adapter 
   output:
      tuple val(prefix), file ("${prefix}_R1.clean.fastq.gz"), emit: forward_strand_trim
      tuple val(prefix), file ("${prefix}_R2.clean.fastq.gz"), emit: revese_strand_trim
@@ -72,13 +72,13 @@ process trimmomatic{
    //prefix = reads[0].toString() - ~/(_R1)?(\.fastq)?(\.gz)?$/
    //sample = prefix.split('_')[0]
 
-    name = readPair_files[0].toString()
-    prefix = name.split('_')[0]
+    //name = readPair_files[0].toString()
+   // prefix = name.split('_')[0]
 
 
   """
-   java -jar ${trimmjar} PE -phred33 ${readPair_files} ${prefix}_R1.clean.fastq.gz ${prefix}_R1_unpaired.fastq.gz ${prefix}_R2.clean.fastq.gz ${prefix}_R2_unpaired.fastq.gz -threads 10 \
-   ILLUMINACLIP:${adapter}:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 2> ${prefix}_trimomatic.log
+   java -jar $projectDir/bin/Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 ${read1} ${read2} ${prefix}_R1.clean.fastq.gz ${prefix}_R1_unpaired.fastq.gz ${prefix}_R2.clean.fastq.gz ${prefix}_R2_unpaired.fastq.gz -threads 10 \
+   ILLUMINACLIP:$projectDir/bin/Trimmomatic-0.39/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 2> ${prefix}_trimomatic.log
   """
 }
 
@@ -95,8 +95,8 @@ process trimmomatic_singleEnd{
 
   input:
       file(singelEndread_files) 
-      file trimmjar  
-      file adapter 
+      //file trimmjar  
+      //file adapter 
   output:
      tuple val(prefix), file ("${prefix}_SingleEnd.clean.fastq.gz"), emit: forward_strand_trim
      tuple val(prefix), file ("${prefix}_trimomatic.log")
@@ -106,7 +106,7 @@ process trimmomatic_singleEnd{
    prefix = name.split('_')[0]
 
   """
-   java -jar ${trimmjar} SE -phred33 ${singelEndread_files} ${prefix}_SingleEnd.clean.fastq.gz -threads 10 \
-   ILLUMINACLIP:${adapter}:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 2> ${prefix}_trimomatic.log
+   java -jar $projectDir/bin/Trimmomatic-0.39/trimmomatic-0.39.jar SE -phred33 ${singelEndread_files} ${prefix}_SingleEnd.clean.fastq.gz -threads 10 \
+   ILLUMINACLIP:$projectDir/bin/Trimmomatic-0.39/TruSeq3-SE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 2> ${prefix}_trimomatic.log
   """
 }
