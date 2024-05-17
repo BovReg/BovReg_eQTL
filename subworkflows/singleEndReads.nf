@@ -26,10 +26,6 @@ workflow SINGLE_END_READS{
 
           singelend_reads
 
-          trimmjar_file
-
-          adapter_file
-
           gtf_file
 
           star_index
@@ -61,7 +57,7 @@ workflow SINGLE_END_READS{
          else{
          fastqc_SE(singelend_reads)
 
-         trimmomatic_singleEnd(singelend_reads,trimmjar_file,adapter_file)
+         trimmomatic_singleEnd(singelend_reads)
 
          starAlign_singleEnd_GeneTranscript(trimmomatic_singleEnd.out.forward_strand_trim ,gtf_ARS.collect(),star_index.collect())
 

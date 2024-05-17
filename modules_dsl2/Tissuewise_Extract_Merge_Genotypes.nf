@@ -2,6 +2,8 @@
 /*
    If the input data is from one source this process should be used
    - to extract genotype data from different sources
+   - Quality control geenotype data at individual level (--mind 0.01) and variant level (--geno 0.5)
+   - Filter for Minor allele frequency (0.005) and  Hardy-Weinberg equilibrium (--hwe 1e-6 )
 
 */
 
@@ -9,7 +11,7 @@
 process tissuewise_extractGenotype {
  tag " on chromosome $chr"
  publishDir "${params.outdir}/eQTLGenoData", mode:'copy'
- container 'praveen/qtltools1.3'
+ container 'praveenchitneedi/qtltoolkit:v1.0.1'
 
  input:
       tuple val(chr), file(dataSet)
@@ -32,10 +34,13 @@ process tissuewise_extractGenotype {
 
   vcftools --gzvcf ${dataSet} --keep dataSet_Common_GenoIds.txt  --recode  --out dataSet_Geno${chr}
 
+  plink --cow --vcf dataSet_Geno${chr}.recode.vcf  --maf 0.005 --geno 0.5  --mind 0.01 --hwe 1e-6 --keep-allele-order  --recode vcf --out dataSet_QC_Geno${chr}
+
+
 ### rename genotype ids to RNAseq ids ##
 
   bcftools reheader -s ${sample_dataSet} -o dataSet_genotypesChr${chr}.vcf  \
-  dataSet_Geno${chr}.recode.vcf
+  dataSet_QC_Geno${chr}.vcf
 
   bgzip -f dataSet_genotypesChr${chr}.vcf
 

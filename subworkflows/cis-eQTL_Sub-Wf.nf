@@ -35,8 +35,6 @@ workflow ciseQTL_workflow {
 
        phenotypeSplice_ch
 
-       ch_FDR_cis
-
        phenotype_PCs_cis
    
        nominal_cis_ch
@@ -75,6 +73,6 @@ workflow ciseQTL_workflow {
 
    qtlmap_cis_spliceCount_cond = qtlmap_cis_spliceCount.join(cisQTL_permutation.out.cis_permu_splicingResults_ch)
 
-   cisQTL_conditional(qtlmap_cis_geneCount_cond.join(qtlmap_cis_transcriptCount_cond).join(qtlmap_cis_spliceCount_cond),ch_FDR_cis,fdr_rate_cis_ch)
+   cisQTL_conditional(qtlmap_cis_geneCount_cond.join(qtlmap_cis_transcriptCount_cond).join(qtlmap_cis_spliceCount_cond),fdr_rate_cis_ch)
 */
 }

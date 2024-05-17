@@ -28,7 +28,7 @@
 
     """
      STAR --genomeDir ${index} \
-             --sjdbGTFfile ${gtf} \
+             --sjdbGTFfile $gtf \
              --readFilesIn ${read1} ${read2} \
              --runThreadN 10 \
              --outSAMtype BAM SortedByCoordinate \
@@ -68,7 +68,7 @@
     """
       
      STAR --genomeDir ${index} \
-             --sjdbGTFfile ${gtf} \
+             --sjdbGTFfile $gtf \
              --readFilesIn  ${read1} ${read2} \
              --twopassMode Basic \
              --outSAMstrandField intronMotif \
@@ -110,7 +110,7 @@
 
     """
       STAR --genomeDir ${index} \
-             --sjdbGTFfile ${gtf} \
+             --sjdbGTFfile $gtf \
              --readFilesIn ${unpaired_read1}  \
              --runThreadN 10 \
             --outSAMtype BAM SortedByCoordinate \
@@ -119,7 +119,7 @@
 
 
        STAR --genomeDir ${index} \
-             --sjdbGTFfile ${gtf} \
+             --sjdbGTFfile $gtf \
             --readFilesIn ${unpaired_read2}  \
              --runThreadN 10 \
              --outSAMtype BAM SortedByCoordinate \
@@ -127,7 +127,7 @@
             --outFileNamePrefix ${sample_id}_unpaired_R2_
   
         STAR --genomeDir ${index} \
-             --sjdbGTFfile ${gtf} \
+             --sjdbGTFfile $gtf \
              --readFilesIn  ${unpaired_read1} \
              --twopassMode Basic \
              --outSAMstrandField intronMotif \
@@ -138,7 +138,7 @@
         
 
         STAR --genomeDir ${index} \
-             --sjdbGTFfile ${gtf} \
+             --sjdbGTFfile $gtf \
              --readFilesIn  ${unpaired_read2} \
              --twopassMode Basic \
              --outSAMstrandField intronMotif \
@@ -177,7 +177,7 @@
 
     """
      STAR --genomeDir ${index} \
-             --sjdbGTFfile ${gtf} \
+             --sjdbGTFfile $gtf \
              --readFilesIn ${read1}  \
              --runThreadN 10 \
              --outSAMtype BAM SortedByCoordinate \
@@ -216,7 +216,7 @@ process starAlign_singleEnd_Splicing{
     """
       
      STAR --genomeDir ${index} \
-             --sjdbGTFfile ${gtf} \
+             --sjdbGTFfile $gtf \
              --readFilesIn  ${read1}  \
              --twopassMode Basic \
              --outSAMstrandField intronMotif \

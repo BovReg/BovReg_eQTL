@@ -34,12 +34,6 @@ include { leafcutter_cluster_junctions } from '../modules_dsl2/Quantification_Sp
 
 
 
-params.firstStranded = false
-
-params.secondStranded = false
-
-params.unStranded = false
-
 
 workflow QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS {
 
@@ -61,11 +55,7 @@ workflow QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS {
 
            sample_info
 
-          phenotype_PCs_sQTL
-
-          leafcutter_cluster_py
-
-          leafcutter_table_py
+           phenotype_PCs_sQTL
 
 
       main:
@@ -147,7 +137,7 @@ workflow QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS {
   
          splice_junc_sample_tuple.join(geno_sample_list).set{juncfiles_ch}
 
-         leafcutter_cluster_junctions(juncfiles_ch.map{ it[1].toString() }.collectFile(name: "junction_files.txt", newLine: true),leafcutter_cluster_py,leafcutter_table_py,intron_length_minimum,intron_length_maximum, phenotype_PCs_sQTL)
+         leafcutter_cluster_junctions(juncfiles_ch.map{ it[1].toString() }.collectFile(name: "junction_files.txt", newLine: true),intron_length_minimum,intron_length_maximum, phenotype_PCs_sQTL)
         
          leafcutter_cluster_junctions.out.spliceCounts
         

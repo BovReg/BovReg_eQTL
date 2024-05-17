@@ -11,7 +11,7 @@ process GenotypeStratificationPCA: Perform pca analysis using R package SNPRelat
 process genotypeStratificationPCA {
  tag "on chromosome ${chr}"
  publishDir "${params.outdir}/GenotypeCov", mode:'copy'
- container 'praveen/rpackages-eqtl' 
+ container 'praveenchitneedi/rpackages-eqtl:1.0.1' 
 
 
   input:
