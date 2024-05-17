@@ -1,0 +1,57 @@
+[![Nextflow version](https://img.shields.io/badge/Nextflow-v20.01.0-brightgreen)](https://www.nextflow.io/) [![Docker version](https://img.shields.io/badge/Docker-v20.10.8-blue)](https://www.docker.com/) [![Singularity-ce version](https://img.shields.io/badge/Singularity-v3.11.4-green.svg)](https://www.sylabs.io/) [![Podman version](https://img.shields.io/badge/Podman-v3.4.4-violet.svg)](https://podman.io/)
+
+
+# eQTL-Detect: Nextflow based pipeline for eQTL detection
+
+eQTL-Detect is a Nextflow based bioinformatics workflow to detect the cis, trans and splicing eQTLs (expresssion quantitative trait loci) by perfoming associations with genotype and expression data.
+This repository provides the [Nextflow](https://www.nextflow.io/) scripts and demo data to test the eQTL analyses and run with large datasets. In this updated version user can run the whole analysis with a single command or in three separate modules and long with docker the user can opt for either singularity of podman container technologies to install all the required tools for the pipeline.
+ It was primarily developed to detect eQTLs in cattle (Bos taurus), but it can be adopted for any other species by providing the reference genome assembly and transcriptome annotation gtf files of the species of interest.
+
+## Software required
+- Users need to install  [Nextflow](https://www.nextflow.io/)  and a container tool either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
+
+
+## Demo data
+Users can download the demo data to run the pipeline and to make sure that all the required dependencies are downloaded and installed.
+
+- The genotype should be provided in [vcf](https://samtools.github.io/hts-specs/VCFv4.3.pdf) format a demodata is available in the folder [Demo_genotype_BovReg](https://github.com/BovReg/BovReg_eQTL/tree/main/Demo_genotype_BovReg). 
+
+- The Phenotype data can be provided in any of the following formats
+   1. Raw data (RNAseq expression data in fastq format)
+   2. Aligned reads (RNAseq expression data in bam format)  or
+   3. Expression counts across samples (expression count matrices in text file)
+  the demo files of the corresponding format can be downloaded from research data open repository Zenodo.
+ ( [Fastq](https://zenodo.org/record/7949616), [Aligned bam files and Expression counts ](https://zenodo.org/records/7950181)).
+
+- The genotype-phenotype corresponding samples information can be found in the text file [RNA_WGS_CorresID_BovReg.txt](https://github.com/BovReg/BovReg_eQTL/blob/main/RNA_WGS_CorresID_BovReg.txt)
+
+- The reference genome and annotation file for the demo analysis can be downloaded here [reference genome: fasta format ](https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz) and [reference annotation: gtf format](https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz).
+
+## Commands to run scripts:
+
+This analysis can run with a single script or by using modular scripts based on user preferences.
+
+-  Users should provide the read type and read strandedness for the RNAseq data with boolean logic true or false in the nextflow.config file:
+
+  - Parameters 
+    - read type: --pairedEnd_reads, --singleEnd_reads, 
+    - Strandedness: --firstStranded, --secondStranded and --unStranded
+
+   **Script main:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
+
+- The alignment step can be skipped if the user has aligned bam files as input and can be mentioned as boolean logic 'true'  in nextflow.config.
+
+- This script can also run only by providing the expression count matrices and can be mentioned as boolean logic 'true'  in nextflow.config.
+
+
+- For modular analysis users can opt for the following scripts.
+
+  **Module 1:** Indexing the reference genome and aligning the RNAseq reads \
+  _nextflow run [module_1_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/00_eQTLDetect.nf)_  
+
+  **Module 2:** Extract genotypes from samples having corresponding RNAseq data, Quantification and merging RNAseq samples counts\
+  _nextflow run [module_2_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/01_eQTLDetect.nf) -params-file [01_eQTLDetect.json](https://github.com/BovReg/BovReg_eQTL/blob/main/01_eQTLDetect.json)_  
+
+  **Module 3:**  Perform cis, trans and sQTL mapping.\
+   _nextflow run [module_3_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/02_eQTLDetect.nf)_  
+
