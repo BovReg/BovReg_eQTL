@@ -21,7 +21,7 @@ Users can download the demo data to run the pipeline and to make sure that all t
    2. Aligned reads (RNAseq expression data in bam format)  or
    3. Expression counts across samples (expression count matrices in text file)
   the demo files of the corresponding format can be downloaded from research data open repository Zenodo.
- ( [Fastq](https://zenodo.org/record/7949616), [Aligned bam files and Expression counts ](https://zenodo.org/records/7950181)).
+ ( [Fastq (Demo_RNAseqData_BovReg.tar.gz)](https://zenodo.org/record/7949616), [Aligned bam files and Expression counts ](https://zenodo.org/records/7950181)).
 
 - The genotype-phenotype corresponding samples information can be found in the text file [RNA_WGS_CorresID_BovReg.txt](https://github.com/BovReg/BovReg_eQTL/blob/main/RNA_WGS_CorresID_BovReg.txt)
 

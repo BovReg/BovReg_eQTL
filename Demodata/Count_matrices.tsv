@@ -1,0 +1,2 @@
+count_matrices	gene_count_matrix	transcript_count_matrix	splice_count_matrix	splice_count_pcs
+testData	https://zenodo.org/records/10987276/files/Gene_count_Matrices_filtered.tsv?download=1	https://zenodo.org/records/10987276/files/Transcript_count_Matrices_filtered.tsv?download=1	https://zenodo.org/records/10987276/files/Splice_count_Matrices_filtered.tsv?download=1	https://zenodo.org/records/10987276/files/Splice_pcs.txt?download=1
