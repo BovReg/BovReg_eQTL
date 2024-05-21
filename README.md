@@ -37,21 +37,20 @@ This analysis can run with a single script or by using modular scripts based on 
     - read type: --pairedEnd_reads, --singleEnd_reads, 
     - Strandedness: --firstStranded, --secondStranded and --unStranded
 
-   **Script main:** _nextflow run [main.nf] (https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)
+   **Script main:** _nextflow run [main.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)_
 
 - The alignment step can be skipped if the user has aligned bam files as input and can be mentioned as boolean logic 'true'  in nextflow.config.
 
 - This script can also run only by providing the expression count matrices and can be mentioned as boolean logic 'true'  in nextflow.config.
 
-
 - For modular analysis users can opt for the following scripts.
 
   **Module 1:** Indexing the reference genome and aligning the RNAseq reads \
-  _nextflow run [module_1_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/00_eQTLDetect.nf)_  
+  _nextflow run [module_1_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/module_1_eQTLDetect.nf)_  
 
   **Module 2:** Extract genotypes from samples having corresponding RNAseq data, Quantification and merging RNAseq samples counts\
-  _nextflow run [module_2_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/01_eQTLDetect.nf) -params-file [01_eQTLDetect.json](https://github.com/BovReg/BovReg_eQTL/blob/main/01_eQTLDetect.json)_  
+  _nextflow run [module_2_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/module_2_eQTLDetect.nf)_
 
   **Module 3:**  Perform cis, trans and sQTL mapping.\
-   _nextflow run [module_3_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/02_eQTLDetect.nf)_  
+   _nextflow run [module_3_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/module_3_eQTLDetect.nf)_  
 
