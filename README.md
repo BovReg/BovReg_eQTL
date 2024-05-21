@@ -8,7 +8,7 @@ This repository provides the [Nextflow](https://www.nextflow.io/) scripts and de
  It was primarily developed to detect eQTLs in cattle (Bos taurus), but it can be adopted for any other species by providing the reference genome assembly and transcriptome annotation gtf files of the species of interest.
 
 ## Software required
-- Users need to install  [Nextflow](https://www.nextflow.io/)  and a container tool either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
+- Users need to install  [Nextflow](https://www.nextflow.io/)  and a container tool, which is either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
 
 
 ## Demo data
