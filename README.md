@@ -16,14 +16,15 @@ Users can download the demo data to run the pipeline and to make sure that all t
 
 - The genotype should be provided in [vcf](https://samtools.github.io/hts-specs/VCFv4.3.pdf) format a demodata for test run can be downloaded here: Demo_genotype_data [download](https://zenodo.org/records/10997393/files/Demo_genotype_BovReg.tar.gz?download=1). 
 
-- The Phenotype data can be provided in any of the following formats
+- The Phenotype data can be provided in any of the following formats and all the input files paths should be provides in a tsv file. An example tsv files with demodata is available in the folder [Demodata](https://github.com/BovReg/BovReg_eQTL/tree/main/Demodata)
+
    1. Raw data (RNAseq expression data in fastq format): Demo_data [download](https://zenodo.org/records/7949616/files/Demo_RNAseqData_BovReg.tar.gz?download=1)
-   Note: A Demodata/fastq_paired_input.tsv file was provided with the file paths for different fastq samples, for the test run the downloaded fastq folder "Demo_RNAseqData_BovReg.tar.gz" should be saved and uncompressed in this folder. 
+   <p>Note: A [Demodata/fastq_paired_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/fasta_paired_input.tsv) file was provided with the file paths for different fastq samples, for the test run the downloaded fastq folder "Demo_RNAseqData_BovReg.tar.gz" should be saved and uncompressed in this folder. 
 
-   2. Aligned reads (RNAseq expression data in bam format): Demo_data [download](https://zenodo.org/records/7950181/files/Demo_RNAseqBam_BovReg.tar.gz?download=1) 
-   Note: A Demodata/Bam_input.tsv file was provided with the file paths for different fastq samples, for the test run the downloaded fastq folder "Demo_RNAseqBam_BovReg.tar.gz" should be saved and uncompressed in this folder.
+   2. Aligned reads (RNAseq expression data in bam format): Demo_data [download](https://zenodo.org/records/7950181/files/Demo_RNAseqBam_BovReg.tar.gz?download=1)
+   <p>Note: A [Demodata/Bam_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Bam_input.tsv) file was provided with the file paths for different fastq samples, for the test run the downloaded fastq folder "Demo_RNAseqBam_BovReg.tar.gz" should be saved and uncompressed in this folder.
 
-   3. Expression counts across samples (expression count matrices in text file): Demo_data [download](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Count_matrices.tsv)
+   3. Expression counts across samples for genelevel, transcript level and spilcing counts (expression count matrices as text file): Demo_data [Demodata/Count_matrices.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Count_matrices.tsv). 
    
 
 - The genotype-phenotype corresponding samples information should be provided as text file : Demo_data [download](https://zenodo.org/records/10997393/files/RNA_WGS_CorresID_BovReg.txt?download=1)
