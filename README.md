@@ -14,16 +14,14 @@ This repository provides the [Nextflow](https://www.nextflow.io/) scripts and de
 ## Demo data
 Users can download the demo data to run the pipeline and to make sure that all the required dependencies are downloaded and installed.
 
-- The genotype should be provided in [vcf](https://samtools.github.io/hts-specs/VCFv4.3.pdf) format a demodata is can be downloaded here Demo_genotype_data [Download](https://zenodo.org/records/10997393/files/Demo_genotype_BovReg.tar.gz?download=1). 
+- The genotype should be provided in [vcf](https://samtools.github.io/hts-specs/VCFv4.3.pdf) format a demodata for test run can be downloaded here: Demo_genotype_data [download](https://zenodo.org/records/10997393/files/Demo_genotype_BovReg.tar.gz?download=1). 
 
 - The Phenotype data can be provided in any of the following formats
-   1. Raw data (RNAseq expression data in fastq format)
-   2. Aligned reads (RNAseq expression data in bam format)  or
-   3. Expression counts across samples (expression count matrices in text file)
-  the demo files of the corresponding format can be downloaded from research data open repository Zenodo.
- ( [Fastq](https://zenodo.org/records/7949616/files/Demo_RNAseqData_BovReg.tar.gz?download=1), [Aligned bam files and Expression counts ](https://zenodo.org/records/7950181)).
+   1. Raw data (RNAseq expression data in fastq format): Demo_data [download](https://zenodo.org/records/7949616/files/Demo_RNAseqData_BovReg.tar.gz?download=1)
+   2. Aligned reads (RNAseq expression data in bam format): Demo_data [download](https://zenodo.org/records/7950181/files/Demo_RNAseqBam_BovReg.tar.gz?download=1)  or
+   3. Expression counts across samples (expression count matrices in text file): Demo_data [download](https://zenodo.org/records/7950181/files/Demo_RNAseqNormCountsNdJunc_BovReg.tar.gz?download=1)
 
-- The genotype-phenotype corresponding samples information can be found in the text file [RNA_WGS_CorresID_BovReg.txt](https://github.com/BovReg/BovReg_eQTL/blob/main/RNA_WGS_CorresID_BovReg.txt)
+- The genotype-phenotype corresponding samples information should be provided as text file : Demo_data [download](https://zenodo.org/records/10997393/files/RNA_WGS_CorresID_BovReg.txt?download=1)
 
 - The reference genome and annotation file for the demo analysis can be downloaded here [reference genome: fasta format ](https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz) and [reference annotation: gtf format](https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz).
 
