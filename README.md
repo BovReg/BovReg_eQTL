@@ -11,25 +11,27 @@ This repository provides the [Nextflow](https://www.nextflow.io/) scripts and de
 - Users need to install  [Nextflow](https://www.nextflow.io/)  and a container tool, which is either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
 
 
-## Demo data
-Users can download the demo data to run the pipeline and to make sure that all the required dependencies are downloaded and installed.
+## Required specifications for input files and demo data for trail run
+Users can download the demo data and can perform a trail run of the pipeline in order to make sure that all the required dependencies are downloaded and installed.
 
-- The genotype should be provided in [vcf](https://samtools.github.io/hts-specs/VCFv4.3.pdf) format a demodata for test run can be downloaded here: Demo_genotype_data [download](https://zenodo.org/records/10997393/files/Demo_genotype_BovReg.tar.gz?download=1). 
+- The genotype should be provided in [vcf](https://samtools.github.io/hts-specs/VCFv4.3.pdf) format, a demodata for test run can be downloaded here: Demo_genotype_data [download](https://zenodo.org/records/10997393/files/Demo_genotype_BovReg.tar.gz?download=1) and a [Demodata/Geno_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Geno_input.tsv) file was provided with the file paths of different chromosomes.
+  
+   Note: For the trial run the folder containing all the vcf.gz files "Demo_genotype_BovReg.tar.gz" should be saved and uncompressed in the folder [Demodata](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata). 
 
 - The Phenotype data can be provided in any of the following formats and all the input files paths should be provides in a tsv file. An example tsv files with demodata is available in the folder [Demodata](https://github.com/BovReg/BovReg_eQTL/tree/main/Demodata)
 
-   1. Raw data (RNAseq expression data in fastq format): Demo_data [download](https://zenodo.org/records/7949616/files/Demo_RNAseqData_BovReg.tar.gz?download=1)
+   1. Raw data (RNAseq expression data in fastq format): Demo_data [download](https://zenodo.org/records/7949616/files/Demo_RNAseqData_BovReg.tar.gz?download=1) and a [Demodata/fastq_paired_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/fasta_paired_input.tsv) file was provided with the file paths for different fastq samples.
    
-      Note: For the test run, the [Demodata/fastq_paired_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/fasta_paired_input.tsv) file was provided with the file paths for different fastq samples, the folder containing the corresponding fastq files "Demo_RNAseqData_BovReg.tar.gz" should be saved and uncompressed in [Demodata](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata). 
+      Note: For the trial run the folder containing the corresponding fastq files "Demo_RNAseqData_BovReg.tar.gz" should be saved and uncompressed in the folder [Demodata](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata). 
 
-   2. Aligned reads (RNAseq expression data in bam format): Demo_data [download](https://zenodo.org/records/7950181/files/Demo_RNAseqBam_BovReg.tar.gz?download=1)
+   2. Aligned reads (RNAseq expression data in bam format): Demo_data [download](https://zenodo.org/records/7950181/files/Demo_RNAseqBam_BovReg.tar.gz?download=1) and a [Demodata/Bam_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Bam_input.tsv) file was provided with the file paths for different bam samples.
 
-      Note: For the test run, the [Demodata/Bam_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Bam_input.tsv) file was provided with the file paths for different bam samples, the folder containing the corresponding bam files "Demo_RNAseqBam_BovReg.tar.gz" should be saved and uncompressed in [Demodata](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata).
+      Note: For the trial run the folder containing the corresponding bam files "Demo_RNAseqBam_BovReg.tar.gz" should be saved and uncompressed in the folder [Demodata](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata).
 
    4. Expression counts across samples for genelevel, transcript level and spilcing counts (expression count matrices as text file): Demo_data [Demodata/Count_matrices.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Count_matrices.tsv). 
    
 
-- The genotype-phenotype corresponding samples information should be provided as text file : [Demo_data/RNA_WGS_CorresID_BovReg.txt](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/RNA_WGS_CorresID_BovReg.txt)
+- The genotype-phenotype corresponding samples information should be provided as text file: [Demo_data/RNA_WGS_CorresID_BovReg.txt](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/RNA_WGS_CorresID_BovReg.txt)
 
 - The reference genome and annotation file for the demo analysis can be downloaded here [reference genome: fasta format ](https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz) and [reference annotation: gtf format](https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz).
 
