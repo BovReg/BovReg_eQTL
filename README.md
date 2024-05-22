@@ -37,7 +37,7 @@ This analysis can run with a single script or by using modular scripts based on 
 
 - **Single command approach:** To run the whole pipeline with single command.
 
-      nextflow run main.nf
+        nextflow run main.nf
     
    - The alignment step can be skipped if the user has aligned bam files as input, which can be mentioned as boolean logic 'true' in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
 
@@ -49,7 +49,7 @@ This analysis can run with a single script or by using modular scripts based on 
 
   - Module 1: Indexing the reference genome and aligning the RNAseq reads
 
-           nextflow run module_1_eQTLDetect.nf
+        nextflow run module_1_eQTLDetect.nf
 
   - Module 2: Extract genotypes from samples having corresponding RNAseq data, Quantification and merging RNAseq samples counts.
 
@@ -57,7 +57,7 @@ This analysis can run with a single script or by using modular scripts based on 
 
   - Module 3: Perform cis, trans and sQTL mapping
     
-         nextflow run module_3_eQTLDetect.nf  
+        nextflow run module_3_eQTLDetect.nf  
  - **Required parameters**
    - Users should provide the read type and read strandedness for the RNAseq data with boolean logic true or false in the [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) file.
      - Read type: --pairedEnd_reads, --singleEnd_reads 
