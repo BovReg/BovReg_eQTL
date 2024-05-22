@@ -1,2 +1,0 @@
-2024-05-22 14:09:59	4.4s	modest_swanson	ERR	ff5218321ae64187ebb1d94b15bec9a8	b2ac0c99-54e0-4e51-a844-ddfaf62e278e	nextflow run module_2_eQTLDetect.nf -c conf/env_local.config
-2024-05-22 14:12:43	17.1s	hopeful_neumann	ERR	ff5218321ae64187ebb1d94b15bec9a8	19194568-170f-4231-b60a-42bbbacb529e	nextflow run module_2_eQTLDetect.nf -c conf/env_local.config -profile docker
