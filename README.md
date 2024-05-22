@@ -3,31 +3,31 @@
 
 # eQTL-Detect: Nextflow based pipeline for eQTL detection
 
-eQTL-Detect is a Nextflow based bioinformatics workflow to detect the cis, trans and splicing eQTLs (expresssion quantitative trait loci) by perfoming associations with genotype and expression data.
-This repository provides the [Nextflow](https://www.nextflow.io/) scripts and demo data for trial run. User can run the whole analysis with a single standalone script or using three separate script modules and all the required tools for running the pipeline can be installed using either docker or singularity or podman container tecnology. We also provided some basic profiles for running the pipeline on different HPC environments.
-This pipeline was primarily developed to detect eQTLs in cattle (Bos taurus), but users can adopte this pipeline for other species by providing the reference genome assembly and transcriptome annotation gtf files of the species of interest.
+eQTL-Detect is a [Nextflow](https://www.nextflow.io/) based bioinformatics workflow to detect the cis, trans and splicing eQTLs (expresssion quantitative trait loci) by perfoming associations with genotype and expression data.
+This repository provides the required Nextflow-DSL2 scripts to run the pipeline and demo data for trial run. User can run the whole analysis either with a single standalone script or using three separate script modules and all the required tools for running the pipeline can be installed using either docker or singularity or podman container tecnology. We also provided some basic profiles for running the pipeline on different HPC environments.
+This pipeline was primarily developed to detect eQTLs in cattle (Bos taurus), but users can adopt this pipeline for other species by providing the reference genome assembly and transcriptome annotation gtf files of the species of interest.
 
 ## Software required
-- Users need to install  [Nextflow](https://www.nextflow.io/)  and a container tool, which is either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
+- Users need to install [Nextflow](https://www.nextflow.io/) and a container tool, which is either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
 
 
-## Required specifications for input files and demo data for trail run
+## Required specifications for input files and test data for trail run
 Users can download the demo data and can perform a trail run of the pipeline and the links for downloading the test data are given below.
 
-- The reference genome and annotation file for trial run can be downloaded here [reference genome: fasta format ](https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz) and [reference annotation: gtf format](https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz). The path of the reference genome and the corresponding annotation file should be declared in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
+- The reference genome and annotation file for the trial run can be downloaded here [reference genome: fasta format ](https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz) and [reference annotation: gtf format](https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz). The path of the reference genome and the corresponding annotation file should be declared in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
   
 
-- The genotype should be provided in [vcf](https://samtools.github.io/hts-specs/VCFv4.3.pdf) format, a demodata for test run can be downloaded here: Demo_genotype_data [download](https://zenodo.org/records/10997393/files/Demo_genotype_BovReg.tar.gz?download=1) and a [Demodata/Geno_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Geno_input.tsv) file was provided with the file paths of different chromosomes.
+- The genotype should be provided in [vcf](https://samtools.github.io/hts-specs/VCFv4.3.pdf) format, a demo data for test run can be downloaded here: Demo_genotype_data [download](https://zenodo.org/records/10997393/files/Demo_genotype_BovReg.tar.gz?download=1) and a [Demodata/Geno_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Geno_input.tsv) file was provided with the file paths of different chromosomes present in the demo data.
   
    Note: For the trial run the downloaded folder containing all the vcf.gz files "Demo_genotype_BovReg.tar.gz" should be saved and uncompressed in the folder [Demodata](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata). 
 
 - The Phenotype data can be provided in any of the following formats and all the input files paths should be provides in a tsv file. An example tsv files with demodata is available in the folder [Demodata](https://github.com/BovReg/BovReg_eQTL/tree/main/Demodata).
 
-   1. Raw data (RNAseq expression data in fastq format): Demo_data [download](https://zenodo.org/records/7949616/files/Demo_RNAseqData_BovReg.tar.gz?download=1) and a [Demodata/fastq_paired_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/fasta_paired_input.tsv) file was provided with the file paths for different fastq samples.
+   1. Raw data (RNAseq expression data in fastq format): Demo_data [download](https://zenodo.org/records/7949616/files/Demo_RNAseqData_BovReg.tar.gz?download=1) and a [Demodata/fastq_paired_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/fasta_paired_input.tsv) file was provided with the file paths for different fastq samples present in the demo data.
    
       Note: For the trial run the downloaded folder containing the corresponding fastq files "Demo_RNAseqData_BovReg.tar.gz" should be saved and uncompressed in the folder [Demodata](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata). 
 
-   2. Aligned reads (RNAseq expression data in bam format): Demo_data [download](https://zenodo.org/records/7950181/files/Demo_RNAseqBam_BovReg.tar.gz?download=1) and a [Demodata/Bam_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Bam_input.tsv) file was provided with the file paths for different bam samples.
+   2. Aligned reads (RNAseq expression data in bam format): Demo_data [download](https://zenodo.org/records/7950181/files/Demo_RNAseqBam_BovReg.tar.gz?download=1) and a [Demodata/Bam_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Bam_input.tsv) file was provided with the file paths for different bam samples present in the demo data.
 
       Note: For the trial run the downloaded folder containing the corresponding bam files "Demo_RNAseqBam_BovReg.tar.gz" should be saved and uncompressed in the folder [Demodata](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata).
 
@@ -36,7 +36,6 @@ Users can download the demo data and can perform a trail run of the pipeline and
 
 - The genotype-phenotype corresponding samples information should be provided as text file: [Demo_data/RNA_WGS_CorresID_BovReg.txt](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/RNA_WGS_CorresID_BovReg.txt).
 
-- The reference genome and annotation file for the demo analysis can be downloaded here [reference genome: fasta format ](https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz) and [reference annotation: gtf format](https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz).
 
 ## Commands to run scripts:
 
