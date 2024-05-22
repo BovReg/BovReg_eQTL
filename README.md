@@ -4,8 +4,8 @@
 # eQTL-Detect: Nextflow based pipeline for eQTL detection
 
 eQTL-Detect is a Nextflow based bioinformatics workflow to detect the cis, trans and splicing eQTLs (expresssion quantitative trait loci) by perfoming associations with genotype and expression data.
-This repository provides the [Nextflow](https://www.nextflow.io/) scripts and demo data to test the eQTL analyses and run with large datasets. In this updated version user can run the whole analysis with a single command or in three separate modules and long with docker the user can opt for either singularity of podman container technologies to install all the required tools for the pipeline.
- It was primarily developed to detect eQTLs in cattle (Bos taurus), but it can be adopted for any other species by providing the reference genome assembly and transcriptome annotation gtf files of the species of interest.
+This repository provides the [Nextflow](https://www.nextflow.io/) scripts and demo data for trial run. User can run the whole analysis with a single standalone script or using three separate script modules and all the required tools for running the pipeline can be installed using either docker or singularity or podman container tecnology. We also provided some basic profiles for running the pipeline on different HPC environments.
+This pipeline was primarily developed to detect eQTLs in cattle (Bos taurus), but users can adopte this pipeline for other species by providing the reference genome assembly and transcriptome annotation gtf files of the species of interest.
 
 ## Software required
 - Users need to install  [Nextflow](https://www.nextflow.io/)  and a container tool, which is either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
@@ -13,6 +13,9 @@ This repository provides the [Nextflow](https://www.nextflow.io/) scripts and de
 
 ## Required specifications for input files and demo data for trail run
 Users can download the demo data and can perform a trail run of the pipeline and the links for downloading the test data are given below.
+
+- The reference genome and annotation file for trial run can be downloaded here [reference genome: fasta format ](https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz) and [reference annotation: gtf format](https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz). The path of the reference genome and the corresponding annotation file should be declared in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
+  
 
 - The genotype should be provided in [vcf](https://samtools.github.io/hts-specs/VCFv4.3.pdf) format, a demodata for test run can be downloaded here: Demo_genotype_data [download](https://zenodo.org/records/10997393/files/Demo_genotype_BovReg.tar.gz?download=1) and a [Demodata/Geno_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Geno_input.tsv) file was provided with the file paths of different chromosomes.
   
