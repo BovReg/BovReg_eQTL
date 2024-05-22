@@ -35,13 +35,6 @@ Users can download the demo data and can perform a trail run of the pipeline and
 
 This analysis can run with a single script or by using modular scripts based on user preferences.
 
--  Users should provide the read type and read strandedness for the RNAseq data with boolean logic true or false in the [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) file:
-
-  - **Parameters** 
-    - Read type: --pairedEnd_reads, --singleEnd_reads 
-    - Strandedness: --firstStranded, --secondStranded and --unStranded
-    - Additionally all the other parameters required to run the pipeline are defined in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) file, users can change the default values if required.
-
 - **Single command approach:** To run the whole pipeline with single command.
 
       nextflow run main.nf
@@ -49,7 +42,6 @@ This analysis can run with a single script or by using modular scripts based on 
    - The alignment step can be skipped if the user has aligned bam files as input, which can be mentioned as boolean logic 'true' in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
 
    - This script can also run only by providing the expression count matrices, which can be mentioned as boolean logic 'true' in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
-
 
 
 - **Modular approach:** For modular analysis users can opt for the following scripts.
@@ -66,4 +58,8 @@ This analysis can run with a single script or by using modular scripts based on 
   - Module 3: Perform cis, trans and sQTL mapping
     
          nextflow run module_3_eQTLDetect.nf  
-
+ - **Required parameters**
+   - Users should provide the read type and read strandedness for the RNAseq data with boolean logic true or false in the [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) file.
+     - Read type: --pairedEnd_reads, --singleEnd_reads 
+     - Strandedness: --firstStranded, --secondStranded and --unStranded
+   - Additionally, all the other parameters required to run the pipeline are defined in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) file, users can change the default values if required.
