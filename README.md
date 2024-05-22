@@ -37,7 +37,7 @@ Users can download the demo data and can perform a trail run of the pipeline and
 - The genotype-phenotype corresponding samples information should be provided as text file: [Demo_data/RNA_WGS_CorresID_BovReg.txt](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/RNA_WGS_CorresID_BovReg.txt).
 
 
-## Commands to run scripts:
+## Commands to run the pipeline:
 
 This analysis can run with a single script or by using modular scripts based on user preferences.
 
@@ -47,24 +47,27 @@ This analysis can run with a single script or by using modular scripts based on 
     - Read type: --pairedEnd_reads, --singleEnd_reads 
     - Strandedness: --firstStranded, --secondStranded and --unStranded
 
-   **Single command approach:** To run whole pipeline with single command.
+   1. **Single command approach:** To run the whole pipeline with single command.
 
-   _nextflow run [main.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/main.nf)_ 
+    nextflow run main.nf
+    
+   - The alignment step can be skipped if the user has aligned bam files as input, which can be mentioned as boolean logic 'true'  in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
 
-- The alignment step can be skipped if the user has aligned bam files as input, which can be mentioned as boolean logic 'true'  in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
+   - This script can also run only by providing the expression count matrices, which can be mentioned as boolean logic 'true'  in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
 
-- This script can also run only by providing the expression count matrices, which can be mentioned as boolean logic 'true'  in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
 
-  **Modular approach:**
+  2. **Modular approach:** For modular analysis users can opt for the following scripts.
+     Note: Users can skip Module 1, if they have aligned and sorted bam files and if users have count matrices the modules 1 and 2 can be ignored and only Module 3 can be used for eQTL detection.
 
-- For modular analysis users can opt for the following scripts. Users can skip Module 1, if they have aligned and sorted bam files and if users have count matrices the modules 1 and 2 can be ignored and only Module 3 can be used for eQTL detection.
+   -  Module 1: Indexing the reference genome and aligning the RNAseq reads
 
-  **Module 1:** Indexing the reference genome and aligning the RNAseq reads \
-  _nextflow run [module_1_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/module_1_eQTLDetect.nf)_  
+           nextflow run module_1_eQTLDetect.nf
 
-  **Module 2:** Extract genotypes from samples having corresponding RNAseq data, Quantification and merging RNAseq samples counts\
-  _nextflow run [module_2_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/module_2_eQTLDetect.nf)_
+  - Module 2: Extract genotypes from samples having corresponding RNAseq data, Quantification and merging RNAseq samples counts.
 
-  **Module 3:**  Perform cis, trans and sQTL mapping.\
-   _nextflow run [module_3_eQTLDetect.nf](https://github.com/BovReg/BovReg_eQTL/blob/main/module_3_eQTLDetect.nf)_  
+        nextflow run module_2_eQTLDetect.nf
+
+  - Module 3: Perform cis, trans and sQTL mapping
+    
+         nextflow run module_3_eQTLDetect.nf  
 
