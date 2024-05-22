@@ -1,0 +1,340 @@
+May-22 14:09:58.216 [main] DEBUG nextflow.cli.Launcher - $> nextflow run module_2_eQTLDetect.nf -c conf/env_local.config
+May-22 14:09:58.301 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+May-22 14:09:58.335 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/chitneedi/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+May-22 14:09:58.350 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+May-22 14:09:58.351 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+May-22 14:09:58.356 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+May-22 14:09:58.371 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+May-22 14:09:58.397 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/nextflow.config
+May-22 14:09:58.401 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/conf/env_local.config
+May-22 14:09:58.402 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/nextflow.config
+May-22 14:09:58.402 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/conf/env_local.config
+May-22 14:09:58.433 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+May-22 14:09:59.334 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+May-22 14:09:59.448 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+May-22 14:09:59.477 [main] INFO  nextflow.cli.CmdRun - Launching `module_2_eQTLDetect.nf` [modest_swanson] DSL2 - revision: ff5218321a
+May-22 14:09:59.478 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+May-22 14:09:59.478 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+May-22 14:09:59.499 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/chitneedi/.nextflow/secrets/store.json
+May-22 14:09:59.504 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@127a7272] - activable => nextflow.secret.LocalSecretsProvider@127a7272
+May-22 14:09:59.576 [main] DEBUG nextflow.Session - Session UUID: b2ac0c99-54e0-4e51-a844-ddfaf62e278e
+May-22 14:09:59.577 [main] DEBUG nextflow.Session - Run name: modest_swanson
+May-22 14:09:59.577 [main] DEBUG nextflow.Session - Executor pool size: 144
+May-22 14:09:59.586 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+May-22 14:09:59.592 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=432; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+May-22 14:09:59.619 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC (17:07 CEST)
+  System: Linux 6.5.0-28-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 14.0.2+12-Ubuntu-120.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 608498@30ngs2 [127.0.1.1]
+  CPUs: 144 - Mem: 1.7 TB (334.5 GB) - Swap: 186.3 GB (186.2 GB)
+May-22 14:09:59.649 [main] DEBUG nextflow.Session - Work-dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work [ext2/ext3]
+May-22 14:09:59.668 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+May-22 14:09:59.681 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+May-22 14:09:59.722 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+May-22 14:09:59.738 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 145; maxThreads: 1000
+May-22 14:09:59.866 [main] DEBUG nextflow.Session - Session start
+May-22 14:10:00.317 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+May-22 14:10:00.335 [main] INFO  nextflow.Nextflow - ==============================================================================================================
+                    eQTL-DETECT  [ *** SNP ---> Expression *** ]
+==============================================================================================================
+SampleInfo           : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/RNA_WGS_CorresID_BovReg.txt
+output               : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/../../../disk3/chitneedi/BovReg_eQTL_Output
+CountMatrices        : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Count_matrices.tsv
+Geno_input_files     : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Geno_input.tsv
+==============================================================================================================
+
+May-22 14:10:02.118 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-22 14:10:02.119 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 14:10:02.132 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+May-22 14:10:02.147 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=144; memory=1.7 TB; capacity=15; pollInterval=30s; dumpInterval=5m
+May-22 14:10:02.152 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+May-22 14:10:02.268 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-22 14:10:02.268 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 14:10:02.280 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-22 14:10:02.280 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 14:10:02.291 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-22 14:10:02.291 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 14:10:02.310 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-22 14:10:02.310 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 14:10:02.330 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-22 14:10:02.330 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 14:10:02.339 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-22 14:10:02.339 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 14:10:02.346 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-22 14:10:02.346 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 14:10:02.381 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-22 14:10:02.382 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-22 14:10:02.388 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:mergeNormalizedGeneCountMatrices, leafcutter_bamtojunc_library_firststranded, QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded, QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_cluster_junctions, stringtieQuant_library_unstranded, filter_Splicecounts, geneTSVfiles, QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:transcriptGTFfiles, tissuewise_extractGenotype, stringtieQuant_library_secondstranded, QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype, rnaspliceFilterJunc, transcriptGTFfiles, leafcutter_cluster_junctions, mergeNormalizedTranscriptCountMatrices, QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded, mergeNormalizedGeneCountMatrices, stringtieQuant_library_firststranded, QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:mergeNormalizedTranscriptCountMatrices, QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:geneTSVfiles, leafcutter_bamtojunc_library_unstranded, leafcutter_bamtojunc_library_secondstranded
+May-22 14:10:02.388 [main] DEBUG nextflow.Session - Igniting dataflow network (15)
+May-22 14:10:02.398 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > tissuewise_extractGenotype
+May-22 14:10:02.399 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded
+May-22 14:10:02.399 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded
+May-22 14:10:02.400 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype
+May-22 14:10:02.400 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:geneTSVfiles
+May-22 14:10:02.401 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:mergeNormalizedGeneCountMatrices
+May-22 14:10:02.402 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:transcriptGTFfiles
+May-22 14:10:02.403 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:mergeNormalizedTranscriptCountMatrices
+May-22 14:10:02.404 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_cluster_junctions
+May-22 14:10:02.407 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_831a237c8c690364: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./modules_dsl2/Tissuewise_Extract_Merge_Genotypes.nf
+  Script_4aca6a1b6fa18fe1: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/../modules_dsl2/Quantification_SpliceVariants.nf
+  Script_ff680b62e6271f07: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/../modules_dsl2/TranscriptCountMatrices_TenPercent.nf
+  Script_eb8e90fbc18743b5: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/QuantifcationExpressionCounts.nf
+  Script_cc9db916ac1cfb9d: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/../modules_dsl2/Quantification_GeneTranscript.nf
+  Script_b231f4237119494f: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/../modules_dsl2/GeneCountMatrices_TenPercent.nf
+  Script_60c1032592a65ed8: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/module_2_eQTLDetect.nf
+May-22 14:10:02.407 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+May-22 14:10:02.407 [main] DEBUG nextflow.Session - Session await
+May-22 14:10:02.846 [Actor Thread 120] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220116_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220116_merged_sorted.bam
+May-22 14:10:02.846 [Actor Thread 130] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171303_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171303_merged_sorted.bam
+May-22 14:10:02.846 [Actor Thread 126] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171115_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171115_leafcutter_merged_sorted.bam
+May-22 14:10:02.846 [Actor Thread 87] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_genotype_BovReg/Bovreg_demogeno_Chr2.vcf.gz -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_genotype_BovReg/Bovreg_demogeno_Chr2.vcf.gz
+May-22 14:10:02.846 [Actor Thread 132] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211121_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211121_leafcutter_merged_sorted.bam
+May-22 14:10:02.846 [Actor Thread 135] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211133_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211133_merged_sorted.bam
+May-22 14:10:02.846 [Actor Thread 133] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171310_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171310_leafcutter_merged_sorted.bam
+May-22 14:10:02.846 [Actor Thread 140] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno210103_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno210103_merged_sorted.bam
+May-22 14:10:02.846 [Actor Thread 84] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_genotype_BovReg/Bovreg_demogeno_Chr2.vcf.gz -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_genotype_BovReg/Bovreg_demogeno_Chr2.vcf.gz
+May-22 14:10:02.849 [Actor Thread 145] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno200304_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno200304_merged_sorted.bam
+May-22 14:10:02.849 [Actor Thread 105] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno240104_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno240104_leafcutter_merged_sorted.bam
+May-22 14:10:02.849 [Actor Thread 129] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171303_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171303_leafcutter_merged_sorted.bam
+May-22 14:10:02.847 [Actor Thread 130] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.849 [Actor Thread 112] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171012_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171012_merged_sorted.bam
+May-22 14:10:02.847 [Actor Thread 135] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.849 [Actor Thread 133] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171310_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171310_leafcutter_merged_sorted.bai
+May-22 14:10:02.847 [Actor Thread 132] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211121_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211121_leafcutter_merged_sorted.bai
+May-22 14:10:02.847 [Actor Thread 85] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170727_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170727_leafcutter_merged_sorted.bam
+May-22 14:10:02.849 [Actor Thread 145] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.847 [Actor Thread 126] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171115_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171115_leafcutter_merged_sorted.bai
+May-22 14:10:02.849 [Actor Thread 119] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220410_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220410_merged_sorted.bam
+May-22 14:10:02.847 [Actor Thread 107] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220411_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220411_leafcutter_merged_sorted.bam
+May-22 14:10:02.847 [Actor Thread 120] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.847 [Actor Thread 131] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220402_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220402_leafcutter_merged_sorted.bam
+May-22 14:10:02.847 [Actor Thread 98] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170804_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170804_merged_sorted.bam
+May-22 14:10:02.850 [Actor Thread 118] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171112_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171112_merged_sorted.bam
+May-22 14:10:02.848 [Actor Thread 143] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno200304_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno200304_leafcutter_merged_sorted.bam
+May-22 14:10:02.848 [Actor Thread 123] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171113_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171113_merged_sorted.bam
+May-22 14:10:02.848 [Actor Thread 111] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220112_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220112_leafcutter_merged_sorted.bam
+May-22 14:10:02.848 [Actor Thread 141] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno200302_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno200302_merged_sorted.bam
+May-22 14:10:02.850 [Actor Thread 107] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220411_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220411_leafcutter_merged_sorted.bai
+May-22 14:10:02.848 [Actor Thread 116] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220101_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220101_leafcutter_merged_sorted.bam
+May-22 14:10:02.848 [Actor Thread 109] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220410_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220410_leafcutter_merged_sorted.bam
+May-22 14:10:02.848 [Actor Thread 54] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno240104_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno240104_merged_sorted.bam
+May-22 14:10:02.849 [Actor Thread 128] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220101_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220101_merged_sorted.bam
+May-22 14:10:02.849 [Actor Thread 140] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.851 [Actor Thread 98] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.849 [Actor Thread 115] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211133_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211133_leafcutter_merged_sorted.bam
+May-22 14:10:02.849 [Actor Thread 114] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220411_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220411_merged_sorted.bam
+May-22 14:10:02.851 [Actor Thread 143] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno200304_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno200304_leafcutter_merged_sorted.bai
+May-22 14:10:02.849 [Actor Thread 105] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno240104_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno240104_leafcutter_merged_sorted.bai
+May-22 14:10:02.849 [Actor Thread 129] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171303_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171303_leafcutter_merged_sorted.bai
+May-22 14:10:02.849 [Actor Thread 112] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.851 [Actor Thread 54] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.850 [Actor Thread 85] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170727_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170727_leafcutter_merged_sorted.bai
+May-22 14:10:02.850 [Actor Thread 119] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.850 [Actor Thread 131] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220402_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220402_leafcutter_merged_sorted.bai
+May-22 14:10:02.850 [Actor Thread 118] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.850 [Actor Thread 110] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220116_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220116_leafcutter_merged_sorted.bam
+May-22 14:10:02.852 [Actor Thread 111] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220112_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220112_leafcutter_merged_sorted.bai
+May-22 14:10:02.852 [Actor Thread 109] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220410_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220410_leafcutter_merged_sorted.bai
+May-22 14:10:02.851 [Actor Thread 123] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.852 [Actor Thread 128] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.851 [Actor Thread 134] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171310_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171310_merged_sorted.bam
+May-22 14:10:02.851 [Actor Thread 141] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.852 [Actor Thread 115] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211133_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211133_leafcutter_merged_sorted.bai
+May-22 14:10:02.852 [Actor Thread 116] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220101_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220101_leafcutter_merged_sorted.bai
+May-22 14:10:02.852 [Actor Thread 114] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.853 [Actor Thread 138] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno180108_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno180108_merged_sorted.bam
+May-22 14:10:02.853 [Actor Thread 134] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.853 [Actor Thread 110] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220116_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220116_leafcutter_merged_sorted.bai
+May-22 14:10:02.853 [Actor Thread 86] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170727_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170727_merged_sorted.bam
+May-22 14:10:02.853 [Actor Thread 142] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno200302_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno200302_leafcutter_merged_sorted.bam
+May-22 14:10:02.854 [Actor Thread 95] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_genotype_BovReg/Bovreg_demogeno_Chr3.vcf.gz -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_genotype_BovReg/Bovreg_demogeno_Chr3.vcf.gz
+May-22 14:10:02.854 [Actor Thread 138] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.854 [Actor Thread 125] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171115_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171115_merged_sorted.bam
+May-22 14:10:02.854 [Actor Thread 136] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211125_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211125_merged_sorted.bam
+May-22 14:10:02.854 [Actor Thread 108] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170907_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170907_leafcutter_merged_sorted.bam
+May-22 14:10:02.854 [Actor Thread 142] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno200302_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno200302_leafcutter_merged_sorted.bai
+May-22 14:10:02.854 [Actor Thread 99] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_genotype_BovReg/Bovreg_demogeno_Chr3.vcf.gz -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_genotype_BovReg/Bovreg_demogeno_Chr3.vcf.gz
+May-22 14:10:02.854 [Actor Thread 117] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171012_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171012_leafcutter_merged_sorted.bam
+May-22 14:10:02.854 [Actor Thread 137] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno180108_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno180108_leafcutter_merged_sorted.bam
+May-22 14:10:02.853 [Actor Thread 144] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno210103_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno210103_leafcutter_merged_sorted.bam
+May-22 14:10:02.854 [Actor Thread 106] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170907_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170907_merged_sorted.bam
+May-22 14:10:02.854 [Actor Thread 86] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.855 [Actor Thread 108] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170907_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170907_leafcutter_merged_sorted.bai
+May-22 14:10:02.855 [Actor Thread 125] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.855 [Actor Thread 136] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.855 [Actor Thread 137] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno180108_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno180108_leafcutter_merged_sorted.bai
+May-22 14:10:02.856 [Actor Thread 106] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.856 [Actor Thread 144] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno210103_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno210103_leafcutter_merged_sorted.bai
+May-22 14:10:02.856 [Actor Thread 117] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171012_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171012_leafcutter_merged_sorted.bai
+May-22 14:10:02.856 [Actor Thread 139] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211121_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211121_merged_sorted.bam
+May-22 14:10:02.856 [Actor Thread 122] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171112_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171112_leafcutter_merged_sorted.bam
+May-22 14:10:02.856 [Actor Thread 139] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.857 [Actor Thread 121] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211125_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211125_leafcutter_merged_sorted.bam
+May-22 14:10:02.857 [Actor Thread 122] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171112_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171112_leafcutter_merged_sorted.bai
+May-22 14:10:02.857 [Actor Thread 121] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211125_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno211125_leafcutter_merged_sorted.bai
+May-22 14:10:02.858 [Actor Thread 53] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220402_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220402_merged_sorted.bam
+May-22 14:10:02.858 [Actor Thread 96] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170804_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170804_leafcutter_merged_sorted.bam
+May-22 14:10:02.859 [Actor Thread 53] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.859 [Actor Thread 96] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170804_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno170804_leafcutter_merged_sorted.bai
+May-22 14:10:02.860 [Actor Thread 127] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220112_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno220112_merged_sorted.bam
+May-22 14:10:02.860 [Actor Thread 124] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171113_leafcutter_merged_sorted.bam -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171113_leafcutter_merged_sorted.bam
+May-22 14:10:02.860 [Actor Thread 127] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.109.gtf
+May-22 14:10:02.861 [Actor Thread 124] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171113_leafcutter_merged_sorted.bai -- Cause: java.nio.file.NoSuchFileException: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Demo_RNAseqBam_BovReg/Pheno171113_leafcutter_merged_sorted.bai
+May-22 14:10:03.012 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.016 [Task submitter] INFO  nextflow.Session - [b6/7a99c0] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno211125)
+May-22 14:10:03.024 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.025 [Task submitter] INFO  nextflow.Session - [9f/c7a2ad] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno171310)
+May-22 14:10:03.031 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.031 [Task submitter] INFO  nextflow.Session - [84/37ae75] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno200304)
+May-22 14:10:03.037 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.038 [Task submitter] INFO  nextflow.Session - [ba/3bf412] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno171012)
+May-22 14:10:03.043 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.044 [Task submitter] INFO  nextflow.Session - [f2/01d350] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype (on chromosome 2)
+May-22 14:10:03.048 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.049 [Task submitter] INFO  nextflow.Session - [29/cda3a3] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno170727)
+May-22 14:10:03.053 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.054 [Task submitter] INFO  nextflow.Session - [bf/99bd8b] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno180108)
+May-22 14:10:03.060 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.061 [Task submitter] INFO  nextflow.Session - [6a/d9282e] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno170907)
+May-22 14:10:03.065 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.065 [Task submitter] INFO  nextflow.Session - [54/f01e4b] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno220112)
+May-22 14:10:03.069 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.070 [Task submitter] INFO  nextflow.Session - [25/24c3f3] Submitted process > tissuewise_extractGenotype (on chromosome 2)
+May-22 14:10:03.073 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.074 [Task submitter] INFO  nextflow.Session - [ee/fe95ce] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno220410)
+May-22 14:10:03.077 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.078 [Task submitter] INFO  nextflow.Session - [e9/f23525] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno210103)
+May-22 14:10:03.082 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.082 [Task submitter] INFO  nextflow.Session - [b4/b216a3] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno220101)
+May-22 14:10:03.086 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.086 [Task submitter] INFO  nextflow.Session - [94/b8acdd] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno220411)
+May-22 14:10:03.090 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.091 [Task submitter] INFO  nextflow.Session - [0b/1fdfa8] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno170804)
+May-22 14:10:03.114 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno211125); status: COMPLETED; exit: 127; error: -; workDir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/b6/7a99c0af1767b1271f568e0bfe027c]
+May-22 14:10:03.119 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-22 14:10:03.119 [Task submitter] INFO  nextflow.Session - [83/f67f1e] Submitted process > QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno170804)
+May-22 14:10:03.128 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno211125); work-dir=/disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/b6/7a99c0af1767b1271f568e0bfe027c
+  error [nextflow.exception.ProcessFailedException]: Process `QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno211125)` terminated with an error exit status (127)
+May-22 14:10:03.148 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno211125)'
+
+Caused by:
+  Process `QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno211125)` terminated with an error exit status (127)
+
+Command executed:
+
+  regtools junctions extract -s 1 -a 8 -m 50 -M 500000 Pheno211125_leafcutter_merged_sorted.bam -o Pheno211125.junc
+  
+  grep -v "?" Pheno211125.junc > Pheno211125_Mod.junc
+  
+  mv Pheno211125_Mod.junc Pheno211125.junc
+
+Command exit status:
+  127
+
+Command output:
+  (empty)
+
+Command error:
+  .command.sh: line 2: regtools: command not found
+
+Work dir:
+  /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/b6/7a99c0af1767b1271f568e0bfe027c
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+May-22 14:10:03.159 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno211125)` terminated with an error exit status (127)
+May-22 14:10:03.182 [Task monitor] DEBUG nextflow.Session - The following nodes are still active:
+[process] QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:geneTSVfiles
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:mergeNormalizedGeneCountMatrices
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: input_files
+  port 1: (cntrl) -     ; channel: $
+
+[process] QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:transcriptGTFfiles
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:mergeNormalizedTranscriptCountMatrices
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: input_files
+  port 1: (cntrl) -     ; channel: $
+
+[process] QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_cluster_junctions
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: junc_file
+  port 1: (value) bound ; channel: intron_min_len
+  port 2: (value) bound ; channel: inton_max_len
+  port 3: (value) bound ; channel: pheno_pcs
+  port 4: (cntrl) -     ; channel: $
+
+May-22 14:10:03.185 [main] DEBUG nextflow.Session - Session await > all processes finished
+May-22 14:10:03.185 [main] DEBUG nextflow.Session - Session await > all barriers passed
+May-22 14:10:03.188 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno171310); status: COMPLETED; exit: 127; error: -; workDir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/9f/c7a2ad7e41f56d02e11fb78711fb72]
+May-22 14:10:03.189 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno171310); work-dir=/disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/9f/c7a2ad7e41f56d02e11fb78711fb72
+  error [nextflow.exception.ProcessFailedException]: Process `QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno171310)` terminated with an error exit status (127)
+May-22 14:10:03.192 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno200304); status: COMPLETED; exit: 127; error: -; workDir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/84/37ae758e27f3698ed7556c19ffbf1e]
+May-22 14:10:03.192 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (14)
+May-22 14:10:03.192 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno200304); work-dir=/disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/84/37ae758e27f3698ed7556c19ffbf1e
+  error [nextflow.exception.ProcessFailedException]: Process `QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno200304)` terminated with an error exit status (127)
+May-22 14:10:03.195 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno171012); status: COMPLETED; exit: 127; error: -; workDir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/ba/3bf412cc21f3035ccee695c469363b]
+May-22 14:10:03.196 [Actor Thread 110] DEBUG nextflow.file.SortFileCollector - FileCollector temp dir not removed: null
+May-22 14:10:03.196 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno171012); work-dir=/disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/ba/3bf412cc21f3035ccee695c469363b
+  error [nextflow.exception.ProcessFailedException]: Process `QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno171012)` terminated with an error exit status (127)
+May-22 14:10:03.200 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype (on chromosome 2); status: COMPLETED; exit: 1; error: -; workDir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/f2/01d350b34bd52075aa8c1ae360559c]
+May-22 14:10:03.200 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype (on chromosome 2); work-dir=/disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/f2/01d350b34bd52075aa8c1ae360559c
+  error [nextflow.exception.ProcessFailedException]: Process `QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype (on chromosome 2)` terminated with an error exit status (1)
+May-22 14:10:03.203 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno170727); status: COMPLETED; exit: 127; error: -; workDir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/29/cda3a3290ed0398b6ae87b5fbd4a3c]
+May-22 14:10:03.203 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno170727); work-dir=/disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/29/cda3a3290ed0398b6ae87b5fbd4a3c
+  error [nextflow.exception.ProcessFailedException]: Process `QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno170727)` terminated with an error exit status (127)
+May-22 14:10:03.206 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno180108); status: COMPLETED; exit: 127; error: -; workDir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/bf/99bd8b7fdd9add4d3c0c3e5bde315f]
+May-22 14:10:03.206 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno180108); work-dir=/disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/bf/99bd8b7fdd9add4d3c0c3e5bde315f
+  error [nextflow.exception.ProcessFailedException]: Process `QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno180108)` terminated with an error exit status (127)
+May-22 14:10:03.208 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:tissuewise_extractGenotype (on chromosome 2) -- command: kill -TERM 608848; exit: 1 
+ bash: line 1: kill: (608848) - No such process
+
+May-22 14:10:03.208 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+May-22 14:10:03.216 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno170907) -- command: kill -TERM 608891; exit: 1 
+ bash: line 1: kill: (608891) - No such process
+
+May-22 14:10:03.223 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno220112) -- command: kill -TERM 608899; exit: 1 
+ bash: line 1: kill: (608899) - No such process
+
+May-22 14:10:03.231 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill tissuewise_extractGenotype (on chromosome 2) -- command: kill -TERM 608913; exit: 1 
+ bash: line 1: kill: (608913) - No such process
+
+May-22 14:10:03.238 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno220410) -- command: kill -TERM 608923; exit: 1 
+ bash: line 1: kill: (608923) - No such process
+
+May-22 14:10:03.259 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno210103) -- command: kill -TERM 608938; exit: 1 
+ bash: line 1: kill: (608938) - No such process
+
+May-22 14:10:03.266 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno220101) -- command: kill -TERM 608951; exit: 1 
+ bash: line 1: kill: (608951) - No such process
+
+May-22 14:10:03.272 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno220411) -- command: kill -TERM 608967; exit: 1 
+ bash: line 1: kill: (608967) - No such process
+
+May-22 14:10:03.279 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:stringtieQuant_library_firststranded (stringtieQuant on Pheno170804) -- command: kill -TERM 608982; exit: 1 
+ bash: line 1: kill: (608982) - No such process
+
+May-22 14:10:03.289 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill QUANTIFICATION_AND_MERGE_EXPRESSION_COUNTS:leafcutter_bamtojunc_library_firststranded (leafcutter_junc on Pheno170804) -- command: kill -TERM 609036; exit: 1 
+ bash: line 1: kill: (609036) - No such process
+
+May-22 14:10:03.291 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=8; ignoredCount=0; cachedCount=0; pendingCount=34; submittedCount=9; runningCount=-10; retriesCount=0; abortedCount=9; succeedDuration=0ms; failedDuration=59ms; cachedDuration=0ms;loadCpus=-10; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+May-22 14:10:03.377 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+May-22 14:10:03.406 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

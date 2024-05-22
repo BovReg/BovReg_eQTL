@@ -1,0 +1,2 @@
+Error: reference annotation file (Bos_taurus.ARS-UCD1.2.109.gtf) not found.
+/disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/f7/8321b16e26b920a62187579cc8e45a/.command.sh: line 2:    32 Aborted                 (core dumped) stringtie --rf -p 6 -e -B -G Bos_taurus.ARS-UCD1.2.109.gtf -o Pheno180108_stringtie.gtf -A Pheno180108_stringtie.tsv Pheno180108_merged_sorted.bam

@@ -1,0 +1,14 @@
+
+Program:	regtools
+Version:	0.5.2
+Minimum junction anchor length: 8
+Minimum intron length: 50
+Maximum intron length: 500000
+Alignment: Pheno220116_leafcutter_merged_sorted.bam
+Output file: Pheno220116.junc
+
+[E::hts_open_format] fail to open file 'Pheno220116_leafcutter_merged_sorted.bam'
+Unable to open BAM/SAM file.
+
+
+nxf-55nG6gmeeJ77mMZHwCQHZaBz

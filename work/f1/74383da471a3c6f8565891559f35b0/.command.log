@@ -1,0 +1,91 @@
+Unable to find image 'praveenchitneedi/qtltoolkit:v1.0.1' locally
+v1.0.1: Pulling from praveenchitneedi/qtltoolkit
+7c3b88808835: Pulling fs layer
+4c88fa7ec1da: Pulling fs layer
+65cdc9015007: Pulling fs layer
+0ac9fa609173: Pulling fs layer
+4d2da1b17569: Pulling fs layer
+e727c58ac8db: Pulling fs layer
+d74e54bc2530: Pulling fs layer
+0ac9fa609173: Waiting
+4d2da1b17569: Waiting
+65e36512dee7: Pulling fs layer
+7686dc47c59f: Pulling fs layer
+d74e54bc2530: Waiting
+65e36512dee7: Waiting
+df01c9cac72e: Pulling fs layer
+7686dc47c59f: Waiting
+d4025f3e6a3b: Pulling fs layer
+df01c9cac72e: Waiting
+ef9be62da7d1: Pulling fs layer
+d4025f3e6a3b: Waiting
+e727c58ac8db: Waiting
+4f4fb700ef54: Pulling fs layer
+ef9be62da7d1: Waiting
+4f4fb700ef54: Waiting
+7c3b88808835: Verifying Checksum
+7c3b88808835: Download complete
+65cdc9015007: Verifying Checksum
+65cdc9015007: Download complete
+0ac9fa609173: Verifying Checksum
+0ac9fa609173: Download complete
+4d2da1b17569: Download complete
+d74e54bc2530: Download complete
+e727c58ac8db: Verifying Checksum
+e727c58ac8db: Download complete
+7c3b88808835: Pull complete
+65e36512dee7: Download complete
+7686dc47c59f: Verifying Checksum
+7686dc47c59f: Download complete
+df01c9cac72e: Verifying Checksum
+df01c9cac72e: Download complete
+d4025f3e6a3b: Verifying Checksum
+d4025f3e6a3b: Download complete
+4c88fa7ec1da: Verifying Checksum
+4c88fa7ec1da: Download complete
+4f4fb700ef54: Download complete
+ef9be62da7d1: Verifying Checksum
+ef9be62da7d1: Download complete
+Error response from daemon: No such container: nxf-Cm0gjtpJA3NCEzAeY27JEyKd
+4c88fa7ec1da: Pull complete
+65cdc9015007: Pull complete
+0ac9fa609173: Pull complete
+4d2da1b17569: Pull complete
+e727c58ac8db: Pull complete
+d74e54bc2530: Pull complete
+65e36512dee7: Pull complete
+7686dc47c59f: Pull complete
+df01c9cac72e: Pull complete
+d4025f3e6a3b: Pull complete
+ef9be62da7d1: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:6893c13475287ca892e87bf26ba8b4c3ce7cd479023dc598504a7e51c16a0bea
+Status: Downloaded newer image for praveenchitneedi/qtltoolkit:v1.0.1
+
+VCFtools - 0.1.16
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--gzvcf Bovreg_demogeno_Chr3.vcf.gz
+	--keep dataSet_Common_GenoIds.txt
+	--out dataSet_Geno3
+	--recode
+
+stat error: No such file or directory
+Error: Can't determine file type of Bovreg_demogeno_Chr3.vcf.gz
+Error: Failed to open dataSet_Geno3.recode.vcf.
+PLINK v1.90b7.2 64-bit (11 Dec 2023)           www.cog-genomics.org/plink/1.9/
+(C) 2005-2023 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to dataSet_QC_Geno3.log.
+Options in effect:
+  --cow
+  --geno 0.5
+  --hwe 1e-6
+  --keep-allele-order
+  --maf 0.005
+  --mind 0.01
+  --out dataSet_QC_Geno3
+  --recode vcf
+  --vcf dataSet_Geno3.recode.vcf
+
+1806045 MB RAM detected; reserving 903022 MB for main workspace.

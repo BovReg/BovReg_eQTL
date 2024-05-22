@@ -4,7 +4,7 @@
 # eQTL-Detect: Nextflow based pipeline for eQTL detection
 
 eQTL-Detect is a [Nextflow](https://www.nextflow.io/) based bioinformatics workflow to detect the cis, trans and splicing eQTLs (expresssion quantitative trait loci) by perfoming associations with genotype and expression data.
-This repository provides the required Nextflow-DSL2 scripts to run the pipeline and demo data for trial run. User can run the whole analysis either with a single standalone script or using three separate script modules and all the required tools for running the pipeline can be installed using either docker or singularity or podman container tecnology. We also provided some basic profiles for running the pipeline on different HPC environments.
+This repository provides the required Nextflow-DSL2 scripts to run the pipeline and demo data for trial run. User can run the whole analysis either with a single standalone script or using three separate script modules and all the required tools for running the pipeline can be installed using either docker or singularity or podman container tecnology. We also provided some of the common configurations for running the pipeline on different high performance clusters (HPC).
 This pipeline was primarily developed to detect eQTLs in cattle (Bos taurus), but users can adopt this pipeline for other species by providing the reference genome assembly and transcriptome annotation gtf files of the species of interest.
 
 ## Software required
@@ -33,11 +33,11 @@ Users can download the demo data and can perform a trail run of the pipeline and
 
 ## Commands to run the pipeline:
 
-This analysis can run with a single script or by using modular scripts based on user preferences.
+Based on user preferences this analysis can run with a single script or by using modular scripts and they can choose and modify the [config file](https://github.com/BovReg/BovReg_eQTL/tree/main/conf) based on the available computational cluster.
 
 - **Single command approach:** To run the whole pipeline with single command.
 
-        nextflow run main.nf
+        nextflow run main.nf -c conf/env_local.config -profile docker
     
    - The alignment step can be skipped if the user has aligned bam files as input, which can be mentioned as boolean logic 'true' in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
 
@@ -49,15 +49,16 @@ This analysis can run with a single script or by using modular scripts based on 
 
   - Module 1: Indexing the reference genome and aligning the RNAseq reads
 
-        nextflow run module_1_eQTLDetect.nf
+        nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker
 
   - Module 2: Extract genotypes from samples having corresponding RNAseq data, Quantification and merging RNAseq samples counts.
 
-        nextflow run module_2_eQTLDetect.nf
+        nextflow run module_2_eQTLDetect.nf -c conf/env_local.config -profile docker
 
   - Module 3: Perform cis, trans and sQTL mapping
     
-        nextflow run module_3_eQTLDetect.nf  
+        nextflow run module_3_eQTLDetect.nf -c conf/env_local.config -profile docker
+
  - **Required parameters**
    - Users should provide the read type and read strandedness for the RNAseq data with boolean logic true or false in the [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) file.
      - Read type: --pairedEnd_reads, --singleEnd_reads 
