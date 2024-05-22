@@ -40,6 +40,7 @@ This analysis can run with a single script or by using modular scripts based on 
   - **Parameters** 
     - Read type: --pairedEnd_reads, --singleEnd_reads 
     - Strandedness: --firstStranded, --secondStranded and --unStranded
+    - Additionally all the other parameters required to run the pipeline are defined in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) file, users can change the default values if required.
 
 - **Single command approach:** To run the whole pipeline with single command.
 
