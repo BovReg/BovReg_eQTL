@@ -20,8 +20,7 @@ log.info """\
                      eQTL-DETECT  [ *** SNP ---> Expression *** ] script 01
  ==============================================================================================================
  starIndex            : ${params.starindex}
- fasta                : ${params.fasta}
- gtf                  : ${params.gtf}
+ fasta                : ${params.refGenome}
  Input_reads paired   : ${params.pairedreads}
  Input_reads single   : ${params.singlereads}
  SampleInfo           : ${params.corresponding_SampleInfo}
@@ -42,40 +41,41 @@ log.info """\
 */
     // Channels from tsv files
 Channel.fromPath(params.genoIpfiles)
-        .ifEmpty { error "Cannot find countmatices file in: ${params.genoIpfiles}" }
+        .ifEmpty { error "Cannot find genoIp tsv file: ${params.genoIpfiles}" }
         .splitCsv(header: true, sep: '\t')
         .map { row -> tuple(row.chromosome, file(row.vcfFile))  }
         .set {genotype_input_ch}
 
 Channel.fromPath(params.pairedreads)
-    .ifEmpty { error "Cannot find countmatices file in: ${params.pairedreads}" }
+    .ifEmpty { error "Cannot find fasta tsv file: ${params.pairedreads}" }
     .splitCsv(header: true, sep: '\t')
     .map{row -> tuple(row.sampleId, file(row.read1), file(row.read2))}
     .set { read_pairs_ch }
 
 Channel.fromPath(params.bamIpfiles)
-        .ifEmpty { error "Cannot find countmatices file in: ${params.bamIpfiles}" }
+        .ifEmpty { error "Cannot find bam tsv file: ${params.bamIpfiles}" }
         .splitCsv(header: true, sep: '\t')
         .map { row -> tuple(row.sampleId, file(row.stringTieBam))  }
         .set {stringtie_ip_di}
 
 
 Channel.fromPath(params.bamIpfiles)
-        .ifEmpty { error "Cannot find countmatices file in: ${params.bamIpfiles}" }
+        .ifEmpty { error "Cannot find bam tsv file: ${params.bamIpfiles}" }
         .splitCsv(header: true, sep: '\t')
         .map { row -> tuple(row.sampleId, file(row.leafcutterBam))  }
         .set {leafcutter_ip_di}
 
 
 Channel.fromPath(params.bamIpfiles)
-        .ifEmpty { error "Cannot find countmatices file in: ${params.bamIpfiles}" }
+        .ifEmpty { error "Cannot find bam index tsv file: ${params.bamIpfiles}" }
         .splitCsv(header: true, sep: '\t')
         .map { row -> tuple(row.sampleId, file(row.leafcutterBai))  }
         .set {leafcutter_ip_idx}
 
+
 /* single channel objects*/
-fasta = Channel.fromPath(params.fasta)
-gtf = Channel.fromPath(params.gtf)
+fasta = file(params.fasta)
+gtf = file(params.gtf)
 
   
 /*
@@ -106,16 +106,6 @@ intron_length_maximum_ch = params.intron_length_maximum
 include { makeSTARindex } from './modules_dsl2/Reference_Index'
 
 
-/*
-========================================================================================
-     Sub-Workflows
-========================================================================================
-*/
-
-
-include {PAIREDEND_END_READS} from "./subworkflows/pairedEndReads.nf"
-
-include {SINGLE_END_READS} from "./subworkflows/singleEndReads.nf"
                              
 
 /*
@@ -125,9 +115,9 @@ include {SINGLE_END_READS} from "./subworkflows/singleEndReads.nf"
 */
 
 
-include {PAIREDEND_END_READS} from "./subworkflows/pairedEndReads.nf"
+//include {PAIREDEND_END_READS} from "./subworkflows/pairedEndReads.nf"
 
-include {SINGLE_END_READS} from "./subworkflows/singleEndReads.nf"
+//include {SINGLE_END_READS} from "./subworkflows/singleEndReads.nf"
 
 
 workflow {

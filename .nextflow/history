@@ -1,0 +1,11 @@
+2024-07-05 11:44:10	7.6s	loving_poitras	ERR	5ab12dd0d683fc4f50e9c49c0518fb04	2de9fb23-8a71-4ee4-94b1-e3f9433e7231	nextflow run main.nf -c conf/env_local.config -profile docker
+2024-07-05 11:45:01	-	awesome_maxwell	-	6afcd2b28024c777827868fff25b6d88	0ec5e852-104e-402b-9f0d-e5850bbf2594	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-05 12:09:02	-	ridiculous_swanson	-	6afcd2b28024c777827868fff25b6d88	c65ea000-5bc3-40f3-ac89-d8e75c8d3efc	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-05 12:16:55	16.5s	berserk_baekeland	ERR	284bef98c98b41db19a7a81506804324	1fa9dd40-3944-492e-afbf-84fb06aa554b	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-05 12:18:16	27.1s	mighty_marconi	ERR	284bef98c98b41db19a7a81506804324	a29e4036-7053-41e8-87bc-6c7bd9af7844	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-05 12:24:32	24.2s	desperate_shockley	ERR	f530655aeea13d253c43b3a60e97bb03	34993e1b-c0b0-48ca-b333-d44a340bc560	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-05 13:09:44	24.7s	friendly_monod	ERR	e13ad34bea757d8851aea76bf4dd5f40	97fcde09-1e3e-48aa-815d-544ee0f23dbd	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-05 13:11:41	32.8s	sleepy_leavitt	ERR	e13ad34bea757d8851aea76bf4dd5f40	d64f769d-0b90-4a47-b54f-a22240df9846	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-05 13:16:12	35.6s	scruffy_mccarthy	ERR	17877e0b3d5e69dd04325dc1b5673528	d64f769d-0b90-4a47-b54f-a22240df9846	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker -resume
+2024-07-05 13:27:27	40.6s	stoic_lagrange	ERR	17877e0b3d5e69dd04325dc1b5673528	d64f769d-0b90-4a47-b54f-a22240df9846	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker -resume
+2024-07-05 13:41:09	-	serene_austin	-	d386b90d8c905f0e361b96ee6aa35f48	cc74ff2e-bf2b-4b1f-8444-6a00ef1fcf0e	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker

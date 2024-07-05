@@ -1,0 +1,711 @@
+Jul-05 13:27:26.443 [main] DEBUG nextflow.cli.Launcher - $> nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker -resume
+Jul-05 13:27:26.556 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Jul-05 13:27:26.584 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/chitneedi/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Jul-05 13:27:26.599 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul-05 13:27:26.600 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul-05 13:27:26.605 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jul-05 13:27:26.621 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jul-05 13:27:26.642 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/nextflow.config
+Jul-05 13:27:26.645 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/conf/env_local.config
+Jul-05 13:27:26.646 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/nextflow.config
+Jul-05 13:27:26.646 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/conf/env_local.config
+Jul-05 13:27:26.674 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Jul-05 13:27:27.586 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Jul-05 13:27:27.677 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [singularity, docker, podman]
+Jul-05 13:27:27.711 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Jul-05 13:27:27.736 [main] INFO  nextflow.cli.CmdRun - Launching `module_1_eQTLDetect.nf` [stoic_lagrange] DSL2 - revision: 17877e0b3d
+Jul-05 13:27:27.737 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul-05 13:27:27.737 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jul-05 13:27:27.750 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/chitneedi/.nextflow/secrets/store.json
+Jul-05 13:27:27.754 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@1de9b505] - activable => nextflow.secret.LocalSecretsProvider@1de9b505
+Jul-05 13:27:27.823 [main] DEBUG nextflow.Session - Session UUID: d64f769d-0b90-4a47-b54f-a22240df9846
+Jul-05 13:27:27.823 [main] DEBUG nextflow.Session - Run name: stoic_lagrange
+Jul-05 13:27:27.824 [main] DEBUG nextflow.Session - Executor pool size: 144
+Jul-05 13:27:27.846 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jul-05 13:27:27.852 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=432; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jul-05 13:27:27.880 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC (17:07 CEST)
+  System: Linux 6.5.0-35-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 14.0.2+12-Ubuntu-120.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 3858372@30ngs2 [127.0.1.1]
+  CPUs: 144 - Mem: 1.7 TB (628.7 GB) - Swap: 186.3 GB (186.2 GB)
+Jul-05 13:27:27.918 [main] DEBUG nextflow.Session - Work-dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work [ext2/ext3]
+Jul-05 13:27:27.940 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul-05 13:27:27.953 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jul-05 13:27:27.991 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jul-05 13:27:28.005 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 145; maxThreads: 1000
+Jul-05 13:27:28.156 [main] DEBUG nextflow.Session - Session start
+Jul-05 13:27:28.668 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul-05 13:27:28.684 [main] INFO  nextflow.Nextflow - 
+==============================================================================================================
+                     eQTL-DETECT  [ *** SNP ---> Expression *** ] script 01
+ ==============================================================================================================
+ starIndex            : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/BovReg_eQTL_Output/
+ fasta                : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/ref_genome.tsv
+ Input_reads paired   : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/fasta_paired_input.tsv
+ Input_reads single   : null
+ SampleInfo           : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/RNA_WGS_CorresID_BovReg.txt
+ output               : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/../../../disk3/chitneedi/BovReg_eQTL_Output
+ Bam_input_files      : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Bam_input.tsv
+ Geno_input_files     : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Geno_input.tsv
+ ==============================================================================================================
+
+
+Jul-05 13:27:30.865 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-05 13:27:30.865 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-05 13:27:30.875 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jul-05 13:27:30.885 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=144; memory=1.7 TB; capacity=15; pollInterval=30s; dumpInterval=5m
+Jul-05 13:27:30.889 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jul-05 13:27:31.014 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-05 13:27:31.014 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-05 13:27:31.039 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-05 13:27:31.039 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-05 13:27:31.071 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-05 13:27:31.071 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-05 13:27:31.088 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-05 13:27:31.088 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-05 13:27:31.108 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-05 13:27:31.108 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-05 13:27:31.136 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-05 13:27:31.137 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-05 13:27:31.167 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-05 13:27:31.168 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-05 13:27:31.175 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: starAlign_Splicing, PAIREDEND_END_READS:fastqc_PE, PAIREDEND_END_READS:trimmomatic, starAlign_GeneTranscript, makeSTARindex, samtools_merge_forStringtie, starAlign_singleEnd_GeneTranscript, trimmomatic_singleEnd, starAlign_singleEnd_Splicing, PAIREDEND_END_READS:starAlign_Splicing, PAIREDEND_END_READS:samtools_merge_forStringtie, trimmomatic, PAIREDEND_END_READS:starAlign_unpaired, PAIREDEND_END_READS:starAlign_GeneTranscript, PAIREDEND_END_READS:samtools_merge_forleafcutter, fastqc_SE, starAlign_unpaired, samtools_merge_forleafcutter, samtools_singleEnd_forleafcutter, fastqc_PE
+Jul-05 13:27:31.175 [main] DEBUG nextflow.Session - Igniting dataflow network (15)
+Jul-05 13:27:31.243 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > makeSTARindex
+Jul-05 13:27:31.245 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:fastqc_PE
+Jul-05 13:27:31.245 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:trimmomatic
+Jul-05 13:27:31.249 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:starAlign_GeneTranscript
+Jul-05 13:27:31.251 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:starAlign_Splicing
+Jul-05 13:27:31.251 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:starAlign_unpaired
+Jul-05 13:27:31.254 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:samtools_merge_forStringtie
+Jul-05 13:27:31.257 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:samtools_merge_forleafcutter
+Jul-05 13:27:31.259 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_5bb24803799f91f4: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/../modules_dsl2/Alignment.nf
+  Script_b57746199c368643: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/module_1_eQTLDetect.nf
+  Script_2464519fa5ce6f16: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/../modules_dsl2/Indexing.nf
+  Script_6af869e021a37b39: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./modules_dsl2/Reference_Index.nf
+  Script_7d17d372574dffc1: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/../modules_dsl2/QualityCheckandQualityControl.nf
+  Script_923705e8e88835df: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/pairedEndReads.nf
+  Script_7820ba16ebea8912: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/singleEndReads.nf
+Jul-05 13:27:31.260 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jul-05 13:27:31.260 [main] DEBUG nextflow.Session - Session await
+Jul-05 13:28:04.269 [Actor Thread 94] DEBUG nextflow.file.FilePorter - Unable to determine stage file integrity: source=/records/7949616/files/Pheno170907_R2_subset.fastq.gz; target=/disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/05/dee0b261e92ba91216eed72913d0a6/Pheno170907_R2_subset.fastq.gz
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno170907_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.FilePorter.checkPathIntegrity(FilePorter.groovy:398)
+	at nextflow.file.FilePorter.getCachePathFor(FilePorter.groovy:375)
+	at nextflow.file.FilePorter$Batch.addToForeign(FilePorter.groovy:235)
+	at nextflow.file.FilePorter$Batch$addToForeign$5.call(Unknown Source)
+	at nextflow.processor.TaskProcessor.normalizeInputToFiles(TaskProcessor.groovy:1848)
+	at jdk.internal.reflect.GeneratedMethodAccessor635.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:212)
+	at nextflow.processor.TaskProcessor.makeTaskContextStage2(TaskProcessor.groovy:2061)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)
+	at nextflow.processor.TaskProcessor.invokeTask(TaskProcessor.groovy:618)
+	at nextflow.processor.InvokeTaskAdapter.call(InvokeTaskAdapter.groovy:52)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.startTask(DataflowOperatorActor.java:120)
+	at groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor.access$001(ForkingDataflowOperatorActor.java:35)
+	at groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor$1.run(ForkingDataflowOperatorActor.java:58)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:04.472 [Actor Thread 94] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: https://zenodo.org/records/7949616/files/Pheno170907_R2_subset.fastq.gz?download=1 -- Cause: java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno170907_R2_subset.fastq.gz?download=1
+Jul-05 13:28:04.680 [Actor Thread 119] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: https://zenodo.org/records/7949616/files/Pheno171310_R2_subset.fastq.gz?download=1 -- Cause: java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171310_R2_subset.fastq.gz?download=1
+Jul-05 13:28:04.903 [Actor Thread 143] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: https://zenodo.org/records/7949616/files/Pheno211125_R2_subset.fastq.gz?download=1 -- Cause: java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno211125_R2_subset.fastq.gz?download=1
+Jul-05 13:28:05.113 [Actor Thread 130] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: https://zenodo.org/records/7949616/files/Pheno200304_R2_subset.fastq.gz?download=1 -- Cause: java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno200304_R2_subset.fastq.gz?download=1
+Jul-05 13:28:05.303 [Actor Thread 136] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: https://zenodo.org/records/7949616/files/Pheno220112_R2_subset.fastq.gz?download=1 -- Cause: java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220112_R2_subset.fastq.gz?download=1
+Jul-05 13:28:05.502 [Actor Thread 103] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: https://zenodo.org/records/7949616/files/Pheno171112_R2_subset.fastq.gz?download=1 -- Cause: java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171112_R2_subset.fastq.gz?download=1
+Jul-05 13:28:05.726 [Actor Thread 115] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: https://zenodo.org/records/7949616/files/Pheno171303_R2_subset.fastq.gz?download=1 -- Cause: java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171303_R2_subset.fastq.gz?download=1
+Jul-05 13:28:05.995 [Actor Thread 125] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: https://zenodo.org/records/7949616/files/Pheno220402_R2_subset.fastq.gz?download=1 -- Cause: java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220402_R2_subset.fastq.gz?download=1
+Jul-05 13:28:06.006 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Local cache found for foreign file https://zenodo.org/records/7949616/files/Pheno170804_R1_subset.fastq.gz?download=1 at /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/6e/05c726c0ab53512c6cba5db9fba543/Pheno170804_R1_subset.fastq.gz
+Jul-05 13:28:06.006 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Local cache found for foreign file https://zenodo.org/records/7949616/files/Pheno170804_R2_subset.fastq.gz?download=1 at /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/58/1d91d4351c272beb21a627039ae93c/Pheno170804_R2_subset.fastq.gz
+Jul-05 13:28:06.007 [FileTransfer-3] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/58/a9164826e8c785a40808710018353d/Pheno210103_R1_subset.fastq.gz
+Jul-05 13:28:06.007 [FileTransfer-4] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/dc/1509712fbd4e3289cefdbe0e6e02ed/Pheno210103_R2_subset.fastq.gz
+Jul-05 13:28:06.009 [FileTransfer-5] DEBUG nextflow.file.FilePorter - Local cache found for foreign file https://zenodo.org/records/7949616/files/Pheno171012_R1_subset.fastq.gz?download=1 at /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/ad/8dc93b7c06d38a6cfcca38dae349a3/Pheno171012_R1_subset.fastq.gz
+Jul-05 13:28:06.010 [FileTransfer-6] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno171012_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/3d/e86aac41bd2c7b78dadb341fa40833/Pheno171012_R2_subset.fastq.gz
+Jul-05 13:28:06.011 [FileTransfer-7] DEBUG nextflow.file.FilePorter - Local cache found for foreign file https://zenodo.org/records/7949616/files/Pheno171113_R1_subset.fastq.gz?download=1 at /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/5e/f1faf047ce3dc6eb9288bd7e59cdcf/Pheno171113_R1_subset.fastq.gz
+Jul-05 13:28:06.012 [FileTransfer-8] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/be/f1549ac8d65593691670683928b35d/Pheno171113_R2_subset.fastq.gz
+Jul-05 13:28:06.013 [FileTransfer-9] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/10/630af64be012de53826601c8a9e0c6/Pheno220410_R1_subset.fastq.gz
+Jul-05 13:28:06.014 [FileTransfer-10] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/b3/58c65cb712f99325b3da3cce228b23/Pheno220410_R2_subset.fastq.gz
+Jul-05 13:28:06.014 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/e6/de757be523adae2036062bc74f9ed0/Pheno220101_R1_subset.fastq.gz
+Jul-05 13:28:06.014 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/97/176f6a5d56673d956dee9acb12444b/Pheno220101_R2_subset.fastq.gz
+Jul-05 13:28:06.015 [FileTransfer-7] DEBUG nextflow.file.FilePorter - Local cache found for foreign file https://zenodo.org/records/7949616/files/Pheno171310_R2_subset.fastq.gz?download=1 at /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/8a/736194728af56d43637579402e4914/Pheno171310_R2_subset.fastq.gz
+Jul-05 13:28:06.015 [FileTransfer-5] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/00/bb6084175f3cdfb436371dcc5fb273/Pheno171310_R1_subset.fastq.gz
+Jul-05 13:28:06.016 [FileTransfer-7] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/3e/c47cc831f33569b06efa1f1d875473/Pheno211125_R1_subset.fastq.gz
+Jul-05 13:28:06.258 [FileTransfer-9] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1 (try 1) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.258 [FileTransfer-4] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1 (try 1) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.267 [FileTransfer-5] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1 (try 1) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.273 [FileTransfer-7] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1 (try 1) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.274 [FileTransfer-1] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1 (try 1) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.276 [FileTransfer-8] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1 (try 1) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.277 [FileTransfer-2] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1 (try 1) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.289 [FileTransfer-3] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1 (try 1) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.306 [FileTransfer-6] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno171012_R2_subset.fastq.gz?download=1 (try 1) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171012_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171012_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.334 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/97/176f6a5d56673d956dee9acb12444b/Pheno220101_R2_subset.fastq.gz
+Jul-05 13:28:06.347 [FileTransfer-10] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1 (try 1) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.348 [FileTransfer-3] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/58/a9164826e8c785a40808710018353d/Pheno210103_R1_subset.fastq.gz
+Jul-05 13:28:06.380 [FileTransfer-8] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/be/f1549ac8d65593691670683928b35d/Pheno171113_R2_subset.fastq.gz
+Jul-05 13:28:06.394 [FileTransfer-7] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/3e/c47cc831f33569b06efa1f1d875473/Pheno211125_R1_subset.fastq.gz
+Jul-05 13:28:06.418 [FileTransfer-9] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/10/630af64be012de53826601c8a9e0c6/Pheno220410_R1_subset.fastq.gz
+Jul-05 13:28:06.444 [FileTransfer-4] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/dc/1509712fbd4e3289cefdbe0e6e02ed/Pheno210103_R2_subset.fastq.gz
+Jul-05 13:28:06.477 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-05 13:28:06.480 [Task submitter] INFO  nextflow.Session - [d8/b9e2ac] Submitted process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno170804)
+Jul-05 13:28:06.492 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-05 13:28:06.492 [Task submitter] INFO  nextflow.Session - [a4/0d6659] Submitted process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno170804)
+Jul-05 13:28:06.526 [FileTransfer-10] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/b3/58c65cb712f99325b3da3cce228b23/Pheno220410_R2_subset.fastq.gz
+Jul-05 13:28:06.535 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/e6/de757be523adae2036062bc74f9ed0/Pheno220101_R1_subset.fastq.gz
+Jul-05 13:28:06.571 [FileTransfer-5] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/00/bb6084175f3cdfb436371dcc5fb273/Pheno171310_R1_subset.fastq.gz
+Jul-05 13:28:06.596 [FileTransfer-8] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1 (try 2) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.606 [FileTransfer-3] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1 (try 2) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.619 [FileTransfer-6] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno171012_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/3d/e86aac41bd2c7b78dadb341fa40833/Pheno171012_R2_subset.fastq.gz
+Jul-05 13:28:06.628 [FileTransfer-1] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1 (try 2) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.636 [FileTransfer-7] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1 (try 2) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.652 [FileTransfer-9] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1 (try 2) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.695 [FileTransfer-9] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/10/630af64be012de53826601c8a9e0c6/Pheno220410_R1_subset.fastq.gz
+Jul-05 13:28:06.696 [FileTransfer-4] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1 (try 2) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.759 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/97/176f6a5d56673d956dee9acb12444b/Pheno220101_R2_subset.fastq.gz
+Jul-05 13:28:06.780 [FileTransfer-3] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/58/a9164826e8c785a40808710018353d/Pheno210103_R1_subset.fastq.gz
+Jul-05 13:28:06.815 [FileTransfer-10] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1 (try 2) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.824 [FileTransfer-2] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1 (try 2) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.826 [FileTransfer-5] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1 (try 2) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.840 [FileTransfer-8] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/be/f1549ac8d65593691670683928b35d/Pheno171113_R2_subset.fastq.gz
+Jul-05 13:28:06.863 [FileTransfer-7] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/3e/c47cc831f33569b06efa1f1d875473/Pheno211125_R1_subset.fastq.gz
+Jul-05 13:28:06.875 [FileTransfer-4] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/dc/1509712fbd4e3289cefdbe0e6e02ed/Pheno210103_R2_subset.fastq.gz
+Jul-05 13:28:06.898 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/e6/de757be523adae2036062bc74f9ed0/Pheno220101_R1_subset.fastq.gz
+Jul-05 13:28:06.928 [FileTransfer-6] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno171012_R2_subset.fastq.gz?download=1 (try 2) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171012_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171012_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.936 [FileTransfer-10] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/b3/58c65cb712f99325b3da3cce228b23/Pheno220410_R2_subset.fastq.gz
+Jul-05 13:28:06.940 [FileTransfer-9] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1 (try 3) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:06.983 [FileTransfer-3] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1 (try 3) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:07.021 [FileTransfer-1] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1 (try 3) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:07.051 [FileTransfer-5] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/00/bb6084175f3cdfb436371dcc5fb273/Pheno171310_R1_subset.fastq.gz
+Jul-05 13:28:07.062 [FileTransfer-8] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1 (try 3) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:07.079 [FileTransfer-3] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/58/a9164826e8c785a40808710018353d/Pheno210103_R1_subset.fastq.gz
+Jul-05 13:28:07.108 [FileTransfer-2] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1 (try 3) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:07.110 [FileTransfer-4] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1 (try 3) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:07.123 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/e6/de757be523adae2036062bc74f9ed0/Pheno220101_R1_subset.fastq.gz
+Jul-05 13:28:07.124 [FileTransfer-7] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1 (try 3) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:07.189 [FileTransfer-10] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1 (try 3) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:07.194 [FileTransfer-9] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/10/630af64be012de53826601c8a9e0c6/Pheno220410_R1_subset.fastq.gz
+Jul-05 13:28:07.195 [FileTransfer-7] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/3e/c47cc831f33569b06efa1f1d875473/Pheno211125_R1_subset.fastq.gz
+Jul-05 13:28:07.223 [FileTransfer-6] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno171012_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/3d/e86aac41bd2c7b78dadb341fa40833/Pheno171012_R2_subset.fastq.gz
+Jul-05 13:28:07.283 [FileTransfer-5] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1 (try 3) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:07.300 [FileTransfer-3] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno211125_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/b1/5fea5aa62a61ad7c83ac17c8ceb9ba/Pheno211125_R2_subset.fastq.gz
+Jul-05 13:28:07.303 [Actor Thread 135] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=PAIREDEND_END_READS:fastqc_PE (13); work-dir=null
+  error [nextflow.exception.ProcessStageException]: Can't stage file https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1 -- reason: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1
+Jul-05 13:28:07.303 [Actor Thread 134] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=PAIREDEND_END_READS:trimmomatic (13); work-dir=null
+  error [nextflow.exception.ProcessStageException]: Can't stage file https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1 -- reason: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1
+Jul-05 13:28:07.311 [Actor Thread 72] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=PAIREDEND_END_READS:trimmomatic; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Jul-05 13:28:07.312 [FileTransfer-4] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno210103_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/dc/1509712fbd4e3289cefdbe0e6e02ed/Pheno210103_R2_subset.fastq.gz
+Jul-05 13:28:07.316 [Actor Thread 135] ERROR nextflow.processor.TaskProcessor - Error executing process > 'PAIREDEND_END_READS:fastqc_PE (13)'
+
+Caused by:
+  Can't stage file https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1 -- reason: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1
+
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+Jul-05 13:28:07.316 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220101_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/97/176f6a5d56673d956dee9acb12444b/Pheno220101_R2_subset.fastq.gz
+Jul-05 13:28:07.319 [Actor Thread 135] DEBUG nextflow.Session - Session aborted -- Cause: Can't stage file https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1 -- reason: Unable to access path: https://zenodo.org/records/7949616/files/Pheno210103_R1_subset.fastq.gz?download=1
+Jul-05 13:28:07.332 [FileTransfer-5] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/00/bb6084175f3cdfb436371dcc5fb273/Pheno171310_R1_subset.fastq.gz
+Jul-05 13:28:07.343 [Actor Thread 135] DEBUG nextflow.Session - The following nodes are still active:
+[process] makeSTARindex
+  status=ACTIVE
+  port 0: (queue) closed; channel: fasta
+  port 1: (queue) OPEN  ; channel: gtf
+  port 2: (cntrl) -     ; channel: $
+
+[process] PAIREDEND_END_READS:fastqc_PE
+  status=ACTIVE
+  port 0: (queue) closed; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] PAIREDEND_END_READS:starAlign_GeneTranscript
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: gtf
+  port 2: (value) OPEN  ; channel: index
+  port 3: (cntrl) -     ; channel: $
+
+[process] PAIREDEND_END_READS:starAlign_Splicing
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: gtf
+  port 2: (value) OPEN  ; channel: index
+  port 3: (cntrl) -     ; channel: $
+
+[process] PAIREDEND_END_READS:starAlign_unpaired
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: gtf
+  port 2: (value) OPEN  ; channel: index
+  port 3: (cntrl) -     ; channel: $
+
+[process] PAIREDEND_END_READS:samtools_merge_forStringtie
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] PAIREDEND_END_READS:samtools_merge_forleafcutter
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Jul-05 13:28:07.345 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jul-05 13:28:07.345 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul-05 13:28:07.345 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jul-05 13:28:07.350 [Actor Thread 71] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=makeSTARindex; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Jul-05 13:28:07.350 [Actor Thread 74] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=PAIREDEND_END_READS:fastqc_PE; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Jul-05 13:28:07.351 [FileTransfer-8] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno171113_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/be/f1549ac8d65593691670683928b35d/Pheno171113_R2_subset.fastq.gz
+Jul-05 13:28:07.356 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (2)
+Jul-05 13:28:07.378 [Actor Thread 140] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=PAIREDEND_END_READS:trimmomatic (17); work-dir=null
+  error [nextflow.exception.ProcessStageException]: Can't stage file https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1 -- reason: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1
+Jul-05 13:28:07.378 [Actor Thread 145] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=PAIREDEND_END_READS:fastqc_PE (17); work-dir=null
+  error [nextflow.exception.ProcessStageException]: Can't stage file https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1 -- reason: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220101_R1_subset.fastq.gz?download=1
+Jul-05 13:28:07.378 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno211121_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/88/7746cfd8c7655fb6e69ca3dd995007/Pheno211121_R1_subset.fastq.gz
+Jul-05 13:28:07.415 [FileTransfer-9] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno211121_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/fb/3ed99719b0903ced23276398c01526/Pheno211121_R2_subset.fastq.gz
+Jul-05 13:28:07.415 [Actor Thread 144] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=PAIREDEND_END_READS:trimmomatic (21); work-dir=null
+  error [nextflow.exception.ProcessStageException]: Can't stage file https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1 -- reason: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1
+Jul-05 13:28:07.415 [Actor Thread 124] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=PAIREDEND_END_READS:fastqc_PE (21); work-dir=null
+  error [nextflow.exception.ProcessStageException]: Can't stage file https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1 -- reason: Unable to access path: https://zenodo.org/records/7949616/files/Pheno220410_R1_subset.fastq.gz?download=1
+Jul-05 13:28:07.416 [FileTransfer-10] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220410_R2_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/b3/58c65cb712f99325b3da3cce228b23/Pheno220410_R2_subset.fastq.gz
+Jul-05 13:28:07.423 [Actor Thread 143] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=PAIREDEND_END_READS:fastqc_PE (15); work-dir=null
+  error [nextflow.exception.ProcessStageException]: Can't stage file https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1 -- reason: Unable to access path: https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1
+Jul-05 13:28:07.423 [FileTransfer-7] DEBUG nextflow.file.FilePorter - Copying foreign file https://zenodo.org/records/7949616/files/Pheno220402_R1_subset.fastq.gz?download=1 to work dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work/stage-d64f769d-0b90-4a47-b54f-a22240df9846/1b/78bd68d032651761170a011401a886/Pheno220402_R1_subset.fastq.gz
+Jul-05 13:28:07.423 [Actor Thread 142] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=PAIREDEND_END_READS:trimmomatic (15); work-dir=null
+  error [nextflow.exception.ProcessStageException]: Can't stage file https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1 -- reason: Unable to access path: https://zenodo.org/records/7949616/files/Pheno211125_R1_subset.fastq.gz?download=1
+Jul-05 13:28:07.429 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=2; runningCount=-2; retriesCount=0; abortedCount=2; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=-2; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Jul-05 13:28:07.452 [FileTransfer-6] WARN  nextflow.file.FilePorter - Unable to stage foreign file: https://zenodo.org/records/7949616/files/Pheno171012_R2_subset.fastq.gz?download=1 (try 3) -- Cause: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171012_R2_subset.fastq.gz?download=1
+java.io.IOException: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171012_R2_subset.fastq.gz?download=1
+	at nextflow.file.http.XFileSystemProvider.readAttributes(XFileSystemProvider.groovy:453)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843)
+	at nextflow.file.CopyMoveHelper.copyToForeignTarget(CopyMoveHelper.java:155)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:962)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile0(FilePorter.groovy:352)
+	at nextflow.file.FilePorter$FileTransfer.stageForeignFile(FilePorter.groovy:319)
+	at nextflow.file.FilePorter$FileTransfer.run(FilePorter.groovy:300)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Jul-05 13:28:07.557 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jul-05 13:28:07.572 [FileTransfer-1] DEBUG nextflow.plugin.PluginsFacade - Using Default plugin manager
+Jul-05 13:28:07.580 [FileTransfer-5] DEBUG nextflow.plugin.PluginsFacade - Using Default plugin manager
+Jul-05 13:28:07.581 [FileTransfer-1] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul-05 13:28:07.582 [FileTransfer-1] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul-05 13:28:07.585 [FileTransfer-1] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jul-05 13:28:07.585 [FileTransfer-3] DEBUG nextflow.plugin.PluginsFacade - Using Default plugin manager
+Jul-05 13:28:07.588 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
+Jul-05 13:28:07.589 [Actor Thread 118] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=PAIREDEND_END_READS:fastqc_PE (9); work-dir=null
+  error [nextflow.exception.ProcessStageException]: Can't stage file https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1 -- reason: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1
+Jul-05 13:28:07.589 [Actor Thread 119] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=PAIREDEND_END_READS:trimmomatic (9); work-dir=null
+  error [nextflow.exception.ProcessStageException]: Can't stage file https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1 -- reason: Unable to access path: https://zenodo.org/records/7949616/files/Pheno171310_R1_subset.fastq.gz?download=1
+Jul-05 13:28:07.595 [FileTransfer-4] DEBUG nextflow.plugin.PluginsFacade - Using Default plugin manager

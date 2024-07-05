@@ -1,0 +1,3 @@
+## Reference genome for trial run
+
+- The reference genome and annotation file for the trial run can be downloaded here: [reference genome:](https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz) fasta format and [reference annotation:](https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz) gtf format. The path of the reference genome and the corresponding annotation file should be declared in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
