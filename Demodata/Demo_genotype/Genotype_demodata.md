@@ -1,0 +1,3 @@
+## Demo data
+
+The genotype should be provided in [vcf](https://samtools.github.io/hts-specs/VCFv4.3.pdf) format, a demo data for test run can be downloaded here: Demo_genotype_data [download](https://zenodo.org/records/10997393/files/Demo_genotype_BovReg.tar.gz?download=1) and a [Demodata/Geno_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Geno_input.tsv) file was provided with the file paths of different chromosomes present in the demo data. ( Note: For the trial run the downloaded folder containing all the vcf.gz files "Demo_genotype_BovReg.tar.gz" should be saved and uncompressed in the folder [Demo_genotype_BovReg](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Demo_genotype_BovReg)).

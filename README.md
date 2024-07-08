@@ -10,9 +10,8 @@ This pipeline was primarily developed to detect eQTLs in cattle (Bos taurus), bu
 ## Software required
 Users need to install [Nextflow](https://www.nextflow.io/) and a container tool, which is either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
 
-
 ## Pipeline parameters
-All the parameters with default values and input files required to run the pipeline are declared in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config). 
+The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) include all the input parameters to run the pipeline and also users should declare all the paths for the input files and path for the output directory to store all the output results. The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) include the default parameters along with the path for the demo data.
 - The input data include the reference genome, reference annotation file and the path of the .tsv files which include the expression data and genotype data. The output path to store the results is also declared in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) file. By default the pipeline takes paired-end read FASTA files as input. Users can alter the parameters based on the available input (fasta, bam or count matrices). 
 
 ##  Input file formats and demo data
@@ -20,7 +19,6 @@ Users can download the demo data and can perform a trail run of the pipeline and
 
 - The reference genome and reference annotation file should be provided as fasta format and gtf format respectively. We provided bovine reference genome for trial run which can be downloaded here: [reference genome:](https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz) fasta format and [reference annotation:](https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz) gtf format.
   
-
 - The genotype should be provided in [vcf](https://samtools.github.io/hts-specs/VCFv4.3.pdf) format.
 
   Demo data for test run can be downloaded here: Demo_genotype_data [download](https://zenodo.org/records/10997393/files/Demo_genotype_BovReg.tar.gz?download=1) and a [Demodata/Geno_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Geno_input.tsv) file was provided with the file paths of different chromosomes present in the demo data. ( Note: For the trial run the downloaded folder containing all the vcf.gz files "Demo_genotype_BovReg.tar.gz" should be saved and uncompressed in the folder [Demodata](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Demo_genotype_BovReg)) . 
@@ -37,7 +35,6 @@ Users can download the demo data and can perform a trail run of the pipeline and
 - The genotype-phenotype corresponding samples information should be provided as text file: [Demo_data/RNA_WGS_CorresID_BovReg.txt](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/RNA_WGS_CorresID_BovReg.txt).
 
 
-
 ## Commands to run the pipeline:
 
 Based on user preferences this analysis can run with a single script or by using modular scripts and they can choose and modify the [config file](https://github.com/BovReg/BovReg_eQTL/tree/main/conf) based on the available computational cluster.
@@ -49,7 +46,6 @@ Based on user preferences this analysis can run with a single script or by using
    - The alignment step can be skipped if the user has aligned bam files as input, which can be mentioned as boolean logic 'true' in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
 
    - This script can also run only by providing the expression count matrices, which can be mentioned as boolean logic 'true' in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config).
-
 
 - **Modular approach:** For modular analysis users can opt for the following scripts.
      Note: Users can skip Module 1, if they have aligned and sorted bam files and if users have count matrices the modules 1 and 2 can be ignored and only Module 3 can be used for eQTL detection.
