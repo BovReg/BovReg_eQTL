@@ -11,20 +11,21 @@ This pipeline was primarily developed to detect eQTLs in cattle (Bos taurus), bu
 Users need to install [Nextflow](https://www.nextflow.io/) and a container tool, which is either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
 
 ## Pipeline parameters
-The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) include all the input parameters to run the pipeline and also users should declare all the paths for the input files and path for the output directory to store all the output results. The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) include the default parameters along with the path for the demo data.
-- The input data include the reference genome, reference annotation file and the path of the .tsv files which include the expression data and genotype data. The output path to store the results is also declared in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) file. By default the pipeline takes paired-end read FASTA files as input. Users can alter the parameters based on the available input (fasta, bam or count matrices). 
+The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) include all the input parameters to run the pipeline with default values and also the paths for different input files and path for the output directory to store the output results. 
+- The input data include the reference genome, reference annotation file and the paths of .tsv files. These .tsv files include the IDs and path of genotype data and expression data..  
 
 ##  Input file formats and demo data
 Users can download the demo data and can perform a trial run of the pipeline and the links for downloading the test data are given below.
+The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) include the default parameters along with the paths for the demo data. (NOTE: Also with the input phenotype file user should also declare the type of input files provided with boolean parameters (true or false) based on the available phenotype input (fasta or bam or count matrices) in the [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config). By default the pipeline takes paired-end read FASTA files as input.)
 
 - The reference genome and reference annotation file should be provided as fasta format and gtf format respectively. We provided bovine reference genome for trial run which can be downloaded here: [reference genome:](https://ftp.ensembl.org/pub/release-109/fasta/bos_taurus/dna/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa.gz) fasta format and [reference annotation:](https://ftp.ensembl.org/pub/release-109/gtf/bos_taurus/Bos_taurus.ARS-UCD1.2.109.gtf.gz) gtf format.
   
 - The genotype should be provided in [vcf](https://samtools.github.io/hts-specs/VCFv4.3.pdf) format and in a TSV(Tab-Separated Values) text file user should give the chromosome number and file path of the corresponding vcf files.
 
-  For the test run the Demo_genotype_data can be [downloaded here](https://zenodo.org/records/10997393/files/Demo_genotype_BovReg.tar.gz?download=1) and also an examples tsv file [Demodata/Geno_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Geno_input.tsv) was provided. 
+  For the test run the Demo genotype data can be [downloaded here](https://zenodo.org/records/10997393/files/Demo_genotype_BovReg.tar.gz?download=1) and also an examples tsv file [Demodata/Geno_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Geno_input.tsv) was provided. 
   (Note: For the trial run the "Demo_genotype_BovReg.tar.gz" should be saved and uncompressed in the folder [Demodata_genotype](https://github.com/BovReg/BovReg_eQTL/tree/main/Demodata/Demo_genotype)). 
 
-- The Phenotype data can be provided in any of the following formats and all the input files paths should be provided in a TSV text file. TSV files with demodata of different formats is available in the folder [Demodata](https://github.com/BovReg/BovReg_eQTL/tree/main/Demodata).
+- The Phenotype data can be provided in any of the following formats and all the input files paths should be given in a TSV text file. TSV files with demodata of different formats is available in the folder [Demodata](https://github.com/BovReg/BovReg_eQTL/tree/main/Demodata).
 
    1. Raw data (RNAseq expression data in fastq format): Demo_data can be [downloaded here](https://zenodo.org/records/7949616/files/Demo_RNAseqData_BovReg.tar.gz?download=1) and a [Demodata/fastq_paired_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/fasta_paired_input.tsv) file was provided with the file paths for different fastq samples present in the demo data. ( Note: For the trial run the downloaded folder containing the corresponding fastq files "Demo_RNAseqData_BovReg.tar.gz" should be saved and uncompressed in the folder [Demo_RNAseqFastq](https://github.com/BovReg/BovReg_eQTL/tree/main/Demodata/Demo_RNAseqFastq)). 
 
@@ -33,7 +34,6 @@ Users can download the demo data and can perform a trial run of the pipeline and
    4. Expression counts across samples for gene level, transcript level and splicing counts (expression count matrices as text file): Demo_data is automatically downloaded during the execution of the [Demodata/Count_matrices.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Count_matrices.tsv) file. 
    
 - The genotype-phenotype corresponding samples information should be provided as text file: [Demo_data/RNA_WGS_CorresID_BovReg.txt](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/RNA_WGS_CorresID_BovReg.txt).
-
 
 ## Commands to run the pipeline:
 
@@ -63,6 +63,7 @@ Based on user preferences this analysis can run with a single script or by using
         nextflow run module_3_eQTLDetect.nf -c conf/env_local.config -profile docker
 
  - **Required parameters**
+
    - Users should provide the read type and read strandedness for the RNAseq data with boolean logic true or false in the [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) file.
      - Read type: --pairedEnd_reads, --singleEnd_reads 
      - Strandedness: --firstStranded, --secondStranded and --unStranded
