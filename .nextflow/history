@@ -1,0 +1,14 @@
+2024-07-18 16:46:52	59m 31s	adoring_hugle	ERR	5ab12dd0d683fc4f50e9c49c0518fb04	877c3e03-300f-4894-adb4-c55be1c46a4d	nextflow run main.nf -c conf/env_local.config -profile docker
+2024-07-19 10:08:52	25m 26s	awesome_lichterman	OK	5ab12dd0d683fc4f50e9c49c0518fb04	877c3e03-300f-4894-adb4-c55be1c46a4d	nextflow run main.nf -c conf/env_local.config -profile docker -resume
+2024-07-19 10:39:48	1h 27m 26s	hopeful_miescher	OK	5ab12dd0d683fc4f50e9c49c0518fb04	612c87a7-a2a8-4581-8d2a-67beebc0bbb8	nextflow run main.nf -c conf/env_local.config -profile docker
+2024-07-19 12:22:50	-	admiring_yonath	-	aba6bddcabddb3d8f4c244d0e4668487	93110efb-b62d-4010-af9d-4af2e4bbbce8	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-19 12:28:06	32m 18s	pensive_jang	ERR	9435382807aae2144e6bed69c31bec22	20ed3579-5372-4f98-be32-fc5c3e53816b	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-19 12:32:58	3m 11s	mighty_wing	OK	ff5218321ae64187ebb1d94b15bec9a8	dfaea9be-6717-4492-906e-8fc7e29467de	nextflow run module_2_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-19 12:34:03	33.7s	gigantic_liskov	ERR	dd88c2f5a3f94b9261444c25db06eb3c	ae2f733b-faf9-4586-9037-6ca4f284faf8	nextflow run module_3_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-19 12:43:54	9m 55s	high_mercator	OK	dd88c2f5a3f94b9261444c25db06eb3c	4e6c7dfb-3701-4360-bfd3-dc0bdd8266df	nextflow run module_3_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-19 13:01:50	31m 24s	lonely_ptolemy	ERR	9435382807aae2144e6bed69c31bec22	01d67ccd-5bbd-4bc8-ae26-416814919aea	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-19 14:10:08	1h 13m 50s	nasty_franklin	OK	07a9e3df188c301547260116d9a7df66	71b9bbf3-a103-4613-8a83-d18b9a852173	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker
+2024-07-19 16:35:02	34.3s	nasty_pauling	OK	07a9e3df188c301547260116d9a7df66	71b9bbf3-a103-4613-8a83-d18b9a852173	nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker -with-report module_1_eQTLDetect.report -resume
+2024-07-19 16:42:18	3m 10s	grave_brown	OK	ff5218321ae64187ebb1d94b15bec9a8	71b9bbf3-a103-4613-8a83-d18b9a852173	nextflow run module_2_eQTLDetect.nf -c conf/env_local.config -profile docker -with-report module_2_eQTLDetect.report -resume
+2024-07-19 16:45:36	8m 55s	admiring_bhaskara	OK	dd88c2f5a3f94b9261444c25db06eb3c	71b9bbf3-a103-4613-8a83-d18b9a852173	nextflow run module_3_eQTLDetect.nf -c conf/env_local.config -profile docker -resume -with-report module_3_eQTLDetect.report
+2024-07-19 16:55:22	10m 35s	fervent_pesquet	OK	5ab12dd0d683fc4f50e9c49c0518fb04	71b9bbf3-a103-4613-8a83-d18b9a852173	nextflow run main.nf -c conf/env_local.config -profile docker -resume -with-report main_eQTLDetect.report

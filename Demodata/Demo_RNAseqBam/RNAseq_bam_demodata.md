@@ -1,3 +1,0 @@
-## Demo data
-
-Aligned reads (RNAseq expression data in bam format): Demo_data can be [downloaded here](https://zenodo.org/records/7950181/files/Demo_RNAseqBam_BovReg.tar.gz) and a [Demodata/Bam_input.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Bam_input.tsv) file was provided with the file paths for different bam samples present in the demo data. (Note: For the trial run the downloaded folder containing the corresponding bam files "Demo_RNAseqBam_BovReg.tar.gz" should be saved and uncompressed in the folder [Demo_RNAseqBam](https://github.com/BovReg/BovReg_eQTL/tree/main/Demodata/Demo_RNAseqBam).

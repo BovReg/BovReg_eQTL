@@ -1,0 +1,266 @@
+Jul-19 16:35:00.606 [main] DEBUG nextflow.cli.Launcher - $> nextflow run module_1_eQTLDetect.nf -c conf/env_local.config -profile docker -with-report module_1_eQTLDetect.report -resume
+Jul-19 16:35:00.721 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Jul-19 16:35:00.749 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/chitneedi/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Jul-19 16:35:00.764 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul-19 16:35:00.765 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul-19 16:35:00.770 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jul-19 16:35:00.786 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jul-19 16:35:00.809 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/nextflow.config
+Jul-19 16:35:00.813 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/conf/env_local.config
+Jul-19 16:35:00.813 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/nextflow.config
+Jul-19 16:35:00.813 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/conf/env_local.config
+Jul-19 16:35:00.843 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Jul-19 16:35:01.726 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Jul-19 16:35:01.834 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [singularity, docker, podman]
+Jul-19 16:35:01.882 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Jul-19 16:35:01.908 [main] INFO  nextflow.cli.CmdRun - Launching `module_1_eQTLDetect.nf` [nasty_pauling] DSL2 - revision: 07a9e3df18
+Jul-19 16:35:01.909 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul-19 16:35:01.909 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jul-19 16:35:01.922 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/chitneedi/.nextflow/secrets/store.json
+Jul-19 16:35:01.926 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@7b122839] - activable => nextflow.secret.LocalSecretsProvider@7b122839
+Jul-19 16:35:01.999 [main] DEBUG nextflow.Session - Session UUID: 71b9bbf3-a103-4613-8a83-d18b9a852173
+Jul-19 16:35:02.000 [main] DEBUG nextflow.Session - Run name: nasty_pauling
+Jul-19 16:35:02.000 [main] DEBUG nextflow.Session - Executor pool size: 144
+Jul-19 16:35:02.010 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jul-19 16:35:02.016 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=432; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jul-19 16:35:02.044 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC (17:07 CEST)
+  System: Linux 6.5.0-35-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 14.0.2+12-Ubuntu-120.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 590831@30ngs2 [127.0.1.1]
+  CPUs: 144 - Mem: 1.7 TB (570.5 GB) - Swap: 186.3 GB (186.2 GB)
+Jul-19 16:35:02.083 [main] DEBUG nextflow.Session - Work-dir: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/work [ext2/ext3]
+Jul-19 16:35:02.105 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul-19 16:35:02.118 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jul-19 16:35:02.175 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jul-19 16:35:02.191 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 145; maxThreads: 1000
+Jul-19 16:35:02.422 [main] DEBUG nextflow.Session - Session start
+Jul-19 16:35:02.922 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul-19 16:35:02.938 [main] INFO  nextflow.Nextflow - 
+==============================================================================================================
+                     eQTL-DETECT  [ *** SNP ---> Expression *** ] script 01
+ ==============================================================================================================
+ starIndex            : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/eQTL_Output/
+ fasta                : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Reference_Genome/Bos_taurus.ARS-UCD1.2.dna.toplevel.fa
+ Input_reads paired   : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/fasta_paired_input.tsv
+ Input_reads single   : null
+ SampleInfo           : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/RNA_WGS_CorresID_BovReg.txt
+ output               : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/eQTL_Output
+ Bam_input_files      : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Bam_input.tsv
+ Geno_input_files     : /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/Demodata/Geno_input.tsv
+ ==============================================================================================================
+
+
+Jul-19 16:35:04.809 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-19 16:35:04.810 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-19 16:35:04.818 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jul-19 16:35:04.827 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=144; memory=1.7 TB; capacity=15; pollInterval=30s; dumpInterval=5m
+Jul-19 16:35:04.831 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jul-19 16:35:04.950 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-19 16:35:04.950 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-19 16:35:04.973 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-19 16:35:04.973 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-19 16:35:05.017 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-19 16:35:05.017 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-19 16:35:05.033 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-19 16:35:05.033 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-19 16:35:05.123 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-19 16:35:05.123 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-19 16:35:05.135 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-19 16:35:05.135 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-19 16:35:05.147 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jul-19 16:35:05.147 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-19 16:35:05.152 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: starAlign_Splicing, PAIREDEND_END_READS:fastqc_PE, PAIREDEND_END_READS:trimmomatic, starAlign_GeneTranscript, makeSTARindex, samtools_merge_forStringtie, starAlign_singleEnd_GeneTranscript, trimmomatic_singleEnd, starAlign_singleEnd_Splicing, PAIREDEND_END_READS:starAlign_Splicing, PAIREDEND_END_READS:samtools_merge_forStringtie, trimmomatic, PAIREDEND_END_READS:starAlign_unpaired, PAIREDEND_END_READS:starAlign_GeneTranscript, PAIREDEND_END_READS:samtools_merge_forleafcutter, fastqc_SE, starAlign_unpaired, samtools_merge_forleafcutter, samtools_singleEnd_forleafcutter, fastqc_PE
+Jul-19 16:35:05.152 [main] DEBUG nextflow.Session - Igniting dataflow network (15)
+Jul-19 16:35:05.162 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > makeSTARindex
+Jul-19 16:35:05.163 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:fastqc_PE
+Jul-19 16:35:05.164 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:trimmomatic
+Jul-19 16:35:05.164 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:starAlign_GeneTranscript
+Jul-19 16:35:05.165 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:starAlign_Splicing
+Jul-19 16:35:05.168 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:starAlign_unpaired
+Jul-19 16:35:05.171 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:samtools_merge_forStringtie
+Jul-19 16:35:05.173 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PAIREDEND_END_READS:samtools_merge_forleafcutter
+Jul-19 16:35:05.175 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_5bb24803799f91f4: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/../modules_dsl2/Alignment.nf
+  Script_2464519fa5ce6f16: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/../modules_dsl2/Indexing.nf
+  Script_6af869e021a37b39: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./modules_dsl2/Reference_Index.nf
+  Script_7d17d372574dffc1: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/../modules_dsl2/QualityCheckandQualityControl.nf
+  Script_923705e8e88835df: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/pairedEndReads.nf
+  Script_7820ba16ebea8912: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/./subworkflows/singleEndReads.nf
+  Script_4fd39ba958ca7cc4: /disk2/chitneedi/NextFlow/BovReg_eQTL_May24/BovReg_eQTL/module_1_eQTLDetect.nf
+Jul-19 16:35:05.175 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jul-19 16:35:05.176 [main] DEBUG nextflow.Session - Session await
+Jul-19 16:35:05.826 [Actor Thread 83] INFO  nextflow.processor.TaskProcessor - [49/da4ac7] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno170907)
+Jul-19 16:35:05.826 [Actor Thread 138] INFO  nextflow.processor.TaskProcessor - [14/ffae6d] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno220410)
+Jul-19 16:35:05.826 [Actor Thread 74] INFO  nextflow.processor.TaskProcessor - [d6/b6e4d8] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno170727)
+Jul-19 16:35:05.826 [Actor Thread 140] INFO  nextflow.processor.TaskProcessor - [c8/177cc2] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno220112)
+Jul-19 16:35:05.826 [Actor Thread 87] INFO  nextflow.processor.TaskProcessor - [22/212aaa] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno171012)
+Jul-19 16:35:05.826 [Actor Thread 94] INFO  nextflow.processor.TaskProcessor - [30/a11115] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno171113)
+Jul-19 16:35:05.826 [Actor Thread 124] INFO  nextflow.processor.TaskProcessor - [04/3cb966] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno211121)
+Jul-19 16:35:05.826 [Actor Thread 101] INFO  nextflow.processor.TaskProcessor - [a1/cfc8fc] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno171303)
+Jul-19 16:35:05.826 [Actor Thread 121] INFO  nextflow.processor.TaskProcessor - [8c/33ada2] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno210103)
+Jul-19 16:35:05.826 [Actor Thread 143] INFO  nextflow.processor.TaskProcessor - [82/b681d1] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno220112)
+Jul-19 16:35:05.827 [Actor Thread 105] INFO  nextflow.processor.TaskProcessor - [ab/107941] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno171310)
+Jul-19 16:35:05.827 [Actor Thread 129] INFO  nextflow.processor.TaskProcessor - [8d/d331f6] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno211125)
+Jul-19 16:35:05.827 [Actor Thread 82] INFO  nextflow.processor.TaskProcessor - [f2/5a9853] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno170907)
+Jul-19 16:35:05.829 [Actor Thread 139] INFO  nextflow.processor.TaskProcessor - [e1/ffc636] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno220101)
+Jul-19 16:35:05.830 [Actor Thread 75] INFO  nextflow.processor.TaskProcessor - [04/63c7d0] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno170727)
+Jul-19 16:35:05.838 [Actor Thread 136] INFO  nextflow.processor.TaskProcessor - [98/25ea18] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno220101)
+Jul-19 16:35:05.838 [Actor Thread 137] INFO  nextflow.processor.TaskProcessor - [06/1e8833] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno220411)
+Jul-19 16:35:05.838 [Actor Thread 132] INFO  nextflow.processor.TaskProcessor - [67/cc6854] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno240104)
+Jul-19 16:35:05.838 [Actor Thread 97] INFO  nextflow.processor.TaskProcessor - [b8/802828] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno171115)
+Jul-19 16:35:05.839 [Actor Thread 102] INFO  nextflow.processor.TaskProcessor - [54/7e1dc9] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno171303)
+Jul-19 16:35:05.839 [Actor Thread 112] INFO  nextflow.processor.TaskProcessor - [db/b726ba] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno200302)
+Jul-19 16:35:05.839 [Actor Thread 141] INFO  nextflow.processor.TaskProcessor - [96/6f212d] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno220402)
+Jul-19 16:35:05.839 [Actor Thread 126] INFO  nextflow.processor.TaskProcessor - [52/c442d1] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno240104)
+Jul-19 16:35:05.839 [Actor Thread 79] INFO  nextflow.processor.TaskProcessor - [89/243150] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno170804)
+Jul-19 16:35:05.839 [Actor Thread 110] INFO  nextflow.processor.TaskProcessor - [00/5fb4ed] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno180108)
+Jul-19 16:35:05.840 [Actor Thread 130] INFO  nextflow.processor.TaskProcessor - [c6/ed125f] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno211125)
+Jul-19 16:35:05.840 [Actor Thread 131] INFO  nextflow.processor.TaskProcessor - [2f/5f2279] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno220410)
+Jul-19 16:35:05.841 [Actor Thread 100] INFO  nextflow.processor.TaskProcessor - [02/8759a9] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno171115)
+Jul-19 16:35:05.841 [Actor Thread 145] INFO  nextflow.processor.TaskProcessor - [b4/da6ee0] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno220411)
+Jul-19 16:35:05.841 [Actor Thread 142] INFO  nextflow.processor.TaskProcessor - [91/a5003a] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno220116)
+Jul-19 16:35:05.841 [Actor Thread 65] INFO  nextflow.processor.TaskProcessor - [b0/0d1662] Cached process > makeSTARindex (star)
+Jul-19 16:35:05.841 [Actor Thread 135] INFO  nextflow.processor.TaskProcessor - [4f/ad0d90] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno211133)
+Jul-19 16:35:05.841 [Actor Thread 95] INFO  nextflow.processor.TaskProcessor - [37/e3fe00] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno171113)
+Jul-19 16:35:05.842 [Actor Thread 119] INFO  nextflow.processor.TaskProcessor - [01/98f47f] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno200304)
+Jul-19 16:35:05.842 [Actor Thread 91] INFO  nextflow.processor.TaskProcessor - [ee/fce1a8] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno171112)
+Jul-19 16:35:05.842 [Actor Thread 106] INFO  nextflow.processor.TaskProcessor - [86/cd8a05] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno171310)
+Jul-19 16:35:05.842 [Actor Thread 90] INFO  nextflow.processor.TaskProcessor - [ab/4feb59] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno171112)
+Jul-19 16:35:05.843 [Actor Thread 134] INFO  nextflow.processor.TaskProcessor - [28/0602fd] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno220402)
+Jul-19 16:35:05.843 [Actor Thread 133] INFO  nextflow.processor.TaskProcessor - [ef/c6fd9e] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno211133)
+Jul-19 16:35:05.843 [Actor Thread 115] INFO  nextflow.processor.TaskProcessor - [0b/27feb5] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno200302)
+Jul-19 16:35:05.843 [Actor Thread 109] INFO  nextflow.processor.TaskProcessor - [3b/951852] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno180108)
+Jul-19 16:35:05.845 [Actor Thread 86] INFO  nextflow.processor.TaskProcessor - [81/d91673] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno171012)
+Jul-19 16:35:05.845 [Actor Thread 116] INFO  nextflow.processor.TaskProcessor - [f4/02f4c7] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno200304)
+Jul-19 16:35:05.846 [Actor Thread 122] INFO  nextflow.processor.TaskProcessor - [79/1cbdc3] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno210103)
+Jul-19 16:35:05.847 [Actor Thread 78] INFO  nextflow.processor.TaskProcessor - [66/a909bf] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno170804)
+Jul-19 16:35:05.847 [Actor Thread 127] INFO  nextflow.processor.TaskProcessor - [56/e0051c] Cached process > PAIREDEND_END_READS:fastqc_PE (FASTQC on Pheno211121)
+Jul-19 16:35:05.847 [Actor Thread 144] INFO  nextflow.processor.TaskProcessor - [94/90f452] Cached process > PAIREDEND_END_READS:trimmomatic (trimmomatic on Pheno220116)
+Jul-19 16:35:05.942 [Actor Thread 119] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=432; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jul-19 16:35:05.988 [Actor Thread 123] INFO  nextflow.processor.TaskProcessor - [e7/156818] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno171012)
+Jul-19 16:35:05.993 [Actor Thread 54] INFO  nextflow.processor.TaskProcessor - [57/838e79] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno220410)
+Jul-19 16:35:06.002 [Actor Thread 118] INFO  nextflow.processor.TaskProcessor - [3f/b86ce4] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno170727)
+Jul-19 16:35:06.002 [Actor Thread 64] INFO  nextflow.processor.TaskProcessor - [e7/6117d4] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno171112)
+Jul-19 16:35:06.010 [Actor Thread 69] INFO  nextflow.processor.TaskProcessor - [3d/1f6680] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno200302)
+Jul-19 16:35:06.013 [Actor Thread 137] INFO  nextflow.processor.TaskProcessor - [7e/fd2447] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno200304)
+Jul-19 16:35:06.014 [Actor Thread 72] INFO  nextflow.processor.TaskProcessor - [8e/ca19ac] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno220411)
+Jul-19 16:35:06.016 [Actor Thread 98] INFO  nextflow.processor.TaskProcessor - [04/81bb79] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno220112)
+Jul-19 16:35:06.017 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [c0/744408] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno171303)
+Jul-19 16:35:06.017 [Actor Thread 145] INFO  nextflow.processor.TaskProcessor - [8c/702a65] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno220402)
+Jul-19 16:35:06.018 [Actor Thread 76] INFO  nextflow.processor.TaskProcessor - [28/f260b6] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno170804)
+Jul-19 16:35:06.018 [Actor Thread 73] INFO  nextflow.processor.TaskProcessor - [b6/2bcc52] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno171113)
+Jul-19 16:35:06.018 [Actor Thread 139] INFO  nextflow.processor.TaskProcessor - [ad/120df2] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno220116)
+Jul-19 16:35:06.018 [Actor Thread 67] INFO  nextflow.processor.TaskProcessor - [53/449ecd] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno171115)
+Jul-19 16:35:06.019 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [57/05a305] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno211133)
+Jul-19 16:35:06.019 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [e0/6137b7] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno211121)
+Jul-19 16:35:06.019 [Actor Thread 93] INFO  nextflow.processor.TaskProcessor - [d0/dae030] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno171310)
+Jul-19 16:35:06.019 [Actor Thread 68] INFO  nextflow.processor.TaskProcessor - [24/42e29b] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno240104)
+Jul-19 16:35:06.019 [Actor Thread 106] INFO  nextflow.processor.TaskProcessor - [de/5cbe4e] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno211125)
+Jul-19 16:35:06.020 [Actor Thread 60] INFO  nextflow.processor.TaskProcessor - [4e/13f7b4] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno220101)
+Jul-19 16:35:06.021 [Actor Thread 82] INFO  nextflow.processor.TaskProcessor - [59/40f31a] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno180108)
+Jul-19 16:35:06.021 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [8f/608bd4] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno170907)
+Jul-19 16:35:06.023 [Actor Thread 55] INFO  nextflow.processor.TaskProcessor - [2a/db377a] Cached process > PAIREDEND_END_READS:starAlign_unpaired (starAlingment on Pheno210103)
+Jul-19 16:35:06.137 [Actor Thread 79] INFO  nextflow.processor.TaskProcessor - [2f/f94797] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno171310)
+Jul-19 16:35:06.139 [Actor Thread 85] INFO  nextflow.processor.TaskProcessor - [aa/f27ab5] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno240104)
+Jul-19 16:35:06.140 [Actor Thread 127] INFO  nextflow.processor.TaskProcessor - [fb/639f4d] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno220411)
+Jul-19 16:35:06.140 [Actor Thread 104] INFO  nextflow.processor.TaskProcessor - [e6/51f27c] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno240104)
+Jul-19 16:35:06.140 [Actor Thread 92] INFO  nextflow.processor.TaskProcessor - [ed/664dc7] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno171112)
+Jul-19 16:35:06.141 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [ae/53bfe3] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno200302)
+Jul-19 16:35:06.141 [Actor Thread 77] INFO  nextflow.processor.TaskProcessor - [17/5f585c] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno171112)
+Jul-19 16:35:06.141 [Actor Thread 89] INFO  nextflow.processor.TaskProcessor - [28/3851f5] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno170907)
+Jul-19 16:35:06.141 [Actor Thread 84] INFO  nextflow.processor.TaskProcessor - [22/c0cb58] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno210103)
+Jul-19 16:35:06.176 [Actor Thread 80] INFO  nextflow.processor.TaskProcessor - [d5/676c2b] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno171115)
+Jul-19 16:35:06.175 [Actor Thread 91] INFO  nextflow.processor.TaskProcessor - [ca/653d82] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno171310)
+Jul-19 16:35:06.176 [Actor Thread 107] INFO  nextflow.processor.TaskProcessor - [14/5f19f0] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno220411)
+Jul-19 16:35:06.175 [Actor Thread 95] INFO  nextflow.processor.TaskProcessor - [b4/0c1425] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno171303)
+Jul-19 16:35:06.176 [Actor Thread 102] INFO  nextflow.processor.TaskProcessor - [3b/c5238f] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno211125)
+Jul-19 16:35:06.176 [Actor Thread 65] INFO  nextflow.processor.TaskProcessor - [98/77d9ee] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno220116)
+Jul-19 16:35:06.175 [Actor Thread 86] INFO  nextflow.processor.TaskProcessor - [c2/b854be] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno220116)
+Jul-19 16:35:06.176 [Actor Thread 110] INFO  nextflow.processor.TaskProcessor - [6c/8cf658] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno220410)
+Jul-19 16:35:06.176 [Actor Thread 100] INFO  nextflow.processor.TaskProcessor - [3f/2cbb35] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno170804)
+Jul-19 16:35:06.176 [Actor Thread 125] INFO  nextflow.processor.TaskProcessor - [ce/dc6818] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno171113)
+Jul-19 16:35:06.176 [Actor Thread 129] INFO  nextflow.processor.TaskProcessor - [09/163ec7] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno211133)
+Jul-19 16:35:06.176 [Actor Thread 103] INFO  nextflow.processor.TaskProcessor - [3d/bd1f82] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno220101)
+Jul-19 16:35:06.177 [Actor Thread 74] INFO  nextflow.processor.TaskProcessor - [2f/18c871] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno220112)
+Jul-19 16:35:06.177 [Actor Thread 96] INFO  nextflow.processor.TaskProcessor - [b3/971a5a] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno220410)
+Jul-19 16:35:06.177 [Actor Thread 99] INFO  nextflow.processor.TaskProcessor - [01/de56be] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno210103)
+Jul-19 16:35:06.177 [Actor Thread 83] INFO  nextflow.processor.TaskProcessor - [8b/a250bb] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno211125)
+Jul-19 16:35:06.177 [Actor Thread 126] INFO  nextflow.processor.TaskProcessor - [a6/1174fa] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno171303)
+Jul-19 16:35:06.177 [Actor Thread 141] INFO  nextflow.processor.TaskProcessor - [f7/4da72f] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno200304)
+Jul-19 16:35:06.177 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [3e/97aa0b] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno171012)
+Jul-19 16:35:06.178 [Actor Thread 121] INFO  nextflow.processor.TaskProcessor - [79/68d359] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno180108)
+Jul-19 16:35:06.178 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [8c/864836] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno211121)
+Jul-19 16:35:06.178 [Actor Thread 132] INFO  nextflow.processor.TaskProcessor - [4f/531628] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno171012)
+Jul-19 16:35:06.178 [Actor Thread 75] INFO  nextflow.processor.TaskProcessor - [e7/2102e3] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno170907)
+Jul-19 16:35:06.179 [Actor Thread 81] INFO  nextflow.processor.TaskProcessor - [3a/b225c3] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno211121)
+Jul-19 16:35:06.179 [Actor Thread 111] INFO  nextflow.processor.TaskProcessor - [a5/bec043] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno200302)
+Jul-19 16:35:06.179 [Actor Thread 131] INFO  nextflow.processor.TaskProcessor - [d5/20c083] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno211133)
+Jul-19 16:35:06.179 [Actor Thread 78] INFO  nextflow.processor.TaskProcessor - [f0/8e2c1c] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno200304)
+Jul-19 16:35:06.179 [Actor Thread 88] INFO  nextflow.processor.TaskProcessor - [15/1f0532] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno220402)
+Jul-19 16:35:06.179 [Actor Thread 108] INFO  nextflow.processor.TaskProcessor - [f4/bfc370] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno220402)
+Jul-19 16:35:06.179 [Actor Thread 114] INFO  nextflow.processor.TaskProcessor - [e4/0adc7a] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno170804)
+Jul-19 16:35:06.179 [Actor Thread 140] INFO  nextflow.processor.TaskProcessor - [49/f4c47a] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno180108)
+Jul-19 16:35:06.179 [Actor Thread 122] INFO  nextflow.processor.TaskProcessor - [34/aea8aa] Cached process > PAIREDEND_END_READS:starAlign_GeneTranscript (starAlingment on Pheno170727)
+Jul-19 16:35:06.180 [Actor Thread 116] INFO  nextflow.processor.TaskProcessor - [22/a4e09e] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno170727)
+Jul-19 16:35:06.180 [Actor Thread 109] INFO  nextflow.processor.TaskProcessor - [35/d8a9d4] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno171113)
+Jul-19 16:35:06.180 [Actor Thread 117] INFO  nextflow.processor.TaskProcessor - [19/8cd78f] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno220101)
+Jul-19 16:35:06.181 [Actor Thread 138] INFO  nextflow.processor.TaskProcessor - [dc/2d9642] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno220112)
+Jul-19 16:35:06.181 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [17/982d3d] Cached process > PAIREDEND_END_READS:starAlign_Splicing (starAlingment on Pheno171115)
+Jul-19 16:35:06.186 [Actor Thread 76] INFO  nextflow.processor.TaskProcessor - [f2/5daf9c] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno240104)
+Jul-19 16:35:06.187 [Actor Thread 105] INFO  nextflow.processor.TaskProcessor - [08/7a4100] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno171310)
+Jul-19 16:35:06.190 [Actor Thread 85] INFO  nextflow.processor.TaskProcessor - [b0/b9df2c] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno240104)
+Jul-19 16:35:06.193 [Actor Thread 136] INFO  nextflow.processor.TaskProcessor - [de/c388ee] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno220411)
+Jul-19 16:35:06.215 [Actor Thread 106] INFO  nextflow.processor.TaskProcessor - [4a/a86095] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno171112)
+Jul-19 16:35:06.223 [Actor Thread 60] INFO  nextflow.processor.TaskProcessor - [8b/37316f] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno200304)
+Jul-19 16:35:06.230 [Actor Thread 66] INFO  nextflow.processor.TaskProcessor - [ae/7bda00] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno170804)
+Jul-19 16:35:06.231 [Actor Thread 85] INFO  nextflow.processor.TaskProcessor - [9c/77614d] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno220112)
+Jul-19 16:35:06.233 [Actor Thread 78] INFO  nextflow.processor.TaskProcessor - [81/082853] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno220410)
+Jul-19 16:35:06.233 [Actor Thread 105] INFO  nextflow.processor.TaskProcessor - [1f/bc5038] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno170907)
+Jul-19 16:35:06.235 [Actor Thread 55] INFO  nextflow.processor.TaskProcessor - [c0/b9cd68] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno170907)
+Jul-19 16:35:06.235 [Actor Thread 93] INFO  nextflow.processor.TaskProcessor - [f5/f02765] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno180108)
+Jul-19 16:35:06.235 [Actor Thread 96] INFO  nextflow.processor.TaskProcessor - [47/500732] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno210103)
+Jul-19 16:35:06.238 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [c1/e2de78] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno180108)
+Jul-19 16:35:06.238 [Actor Thread 82] INFO  nextflow.processor.TaskProcessor - [8f/078081] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno220101)
+Jul-19 16:35:06.239 [Actor Thread 121] INFO  nextflow.processor.TaskProcessor - [a2/e7eeb4] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno200304)
+Jul-19 16:35:06.239 [Actor Thread 104] INFO  nextflow.processor.TaskProcessor - [03/550cc5] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno220101)
+Jul-19 16:35:06.239 [Actor Thread 136] INFO  nextflow.processor.TaskProcessor - [94/5d07ca] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno171115)
+Jul-19 16:35:06.241 [Actor Thread 127] INFO  nextflow.processor.TaskProcessor - [ab/ec8550] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno171113)
+Jul-19 16:35:06.241 [Actor Thread 89] INFO  nextflow.processor.TaskProcessor - [01/e99983] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno171112)
+Jul-19 16:35:06.241 [Actor Thread 141] INFO  nextflow.processor.TaskProcessor - [2f/557de7] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno220116)
+Jul-19 16:35:06.241 [Actor Thread 84] INFO  nextflow.processor.TaskProcessor - [d8/d169fe] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno220411)
+Jul-19 16:35:06.241 [Actor Thread 65] INFO  nextflow.processor.TaskProcessor - [bd/225e0b] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno171115)
+Jul-19 16:35:06.241 [Actor Thread 77] INFO  nextflow.processor.TaskProcessor - [00/d2fd6d] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno171310)
+Jul-19 16:35:06.241 [Actor Thread 114] INFO  nextflow.processor.TaskProcessor - [6b/7df898] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno200302)
+Jul-19 16:35:06.242 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [a2/9ee637] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno170804)
+Jul-19 16:35:06.242 [Actor Thread 138] INFO  nextflow.processor.TaskProcessor - [97/db16e4] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno171303)
+Jul-19 16:35:06.243 [Actor Thread 68] INFO  nextflow.processor.TaskProcessor - [cc/8a93e9] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno211121)
+Jul-19 16:35:06.243 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [36/854c03] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno210103)
+Jul-19 16:35:06.243 [Actor Thread 103] INFO  nextflow.processor.TaskProcessor - [da/d66d08] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno200302)
+Jul-19 16:35:06.244 [Actor Thread 67] INFO  nextflow.processor.TaskProcessor - [bc/a618ab] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno171303)
+Jul-19 16:35:06.244 [Actor Thread 95] INFO  nextflow.processor.TaskProcessor - [dd/87b3ce] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno211125)
+Jul-19 16:35:06.244 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [86/c24352] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno170727)
+Jul-19 16:35:06.244 [Actor Thread 76] INFO  nextflow.processor.TaskProcessor - [97/272f5d] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno211133)
+Jul-19 16:35:06.244 [Actor Thread 100] INFO  nextflow.processor.TaskProcessor - [c5/426af2] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno211133)
+Jul-19 16:35:06.244 [Actor Thread 92] INFO  nextflow.processor.TaskProcessor - [6d/89ade2] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno171113)
+Jul-19 16:35:06.245 [Actor Thread 54] INFO  nextflow.processor.TaskProcessor - [67/798abd] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno220116)
+Jul-19 16:35:06.245 [Actor Thread 125] INFO  nextflow.processor.TaskProcessor - [f5/23ea53] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno171012)
+Jul-19 16:35:06.245 [Actor Thread 91] INFO  nextflow.processor.TaskProcessor - [9e/6cbd1d] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno211121)
+Jul-19 16:35:06.245 [Actor Thread 140] INFO  nextflow.processor.TaskProcessor - [28/0b3fa0] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno220410)
+Jul-19 16:35:06.245 [Actor Thread 106] INFO  nextflow.processor.TaskProcessor - [8d/348d2a] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno220112)
+Jul-19 16:35:06.245 [Actor Thread 80] INFO  nextflow.processor.TaskProcessor - [34/33e1e7] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno220402)
+Jul-19 16:35:06.245 [Actor Thread 145] INFO  nextflow.processor.TaskProcessor - [8c/8cac2a] Cached process > PAIREDEND_END_READS:samtools_merge_forleafcutter (samtools index on Pheno171012)
+Jul-19 16:35:06.246 [Actor Thread 75] INFO  nextflow.processor.TaskProcessor - [82/450c47] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno220402)
+Jul-19 16:35:06.246 [Actor Thread 129] INFO  nextflow.processor.TaskProcessor - [76/60b037] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno170727)
+Jul-19 16:35:06.246 [Actor Thread 139] INFO  nextflow.processor.TaskProcessor - [c5/64a734] Cached process > PAIREDEND_END_READS:samtools_merge_forStringtie (samtools index on Pheno211125)
+Jul-19 16:35:06.250 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jul-19 16:35:34.840 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jul-19 16:35:34.840 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul-19 16:35:34.847 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Jul-19 16:35:34.857 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=162; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=9h 43m 28s;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Jul-19 16:35:34.857 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Jul-19 16:35:36.272 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jul-19 16:35:36.302 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Jul-19 16:35:36.303 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

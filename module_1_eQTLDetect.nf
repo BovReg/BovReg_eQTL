@@ -20,7 +20,7 @@ log.info """\
                      eQTL-DETECT  [ *** SNP ---> Expression *** ] script 01
  ==============================================================================================================
  starIndex            : ${params.starindex}
- fasta                : ${params.refGenome}
+ fasta                : ${params.fasta}
  Input_reads paired   : ${params.pairedreads}
  Input_reads single   : ${params.singlereads}
  SampleInfo           : ${params.corresponding_SampleInfo}
@@ -74,8 +74,8 @@ Channel.fromPath(params.bamIpfiles)
 
 
 /* single channel objects*/
-fasta = file(params.fasta)
-gtf = file(params.gtf)
+fasta = Channel.fromPath(params.fasta)
+gtf = Channel.fromPath(params.gtf)
 
   
 /*
@@ -115,9 +115,9 @@ include { makeSTARindex } from './modules_dsl2/Reference_Index'
 */
 
 
-//include {PAIREDEND_END_READS} from "./subworkflows/pairedEndReads.nf"
+include {PAIREDEND_END_READS} from "./subworkflows/pairedEndReads.nf"
 
-//include {SINGLE_END_READS} from "./subworkflows/singleEndReads.nf"
+include {SINGLE_END_READS} from "./subworkflows/singleEndReads.nf"
 
 
 workflow {
