@@ -1,9 +1,5 @@
 [![Nextflow version](https://img.shields.io/badge/Nextflow-v20.01.0-brightgreen)](https://www.nextflow.io/) [![Docker version](https://img.shields.io/badge/Docker-v20.10.8-blue)](https://www.docker.com/) [![Singularity-ce version](https://img.shields.io/badge/Singularity-v3.11.4-green.svg)](https://www.sylabs.io/) [![Podman version](https://img.shields.io/badge/Podman-v3.4.4-violet.svg)](https://podman.io/)
 
-<img width="500" alt="Fig1" src="https://github.com/user-attachments/assets/4c790fb5-1506-488f-ae9d-a4df8642f0e1">
-<img width="600" alt="Fig2" src="https://github.com/user-attachments/assets/e78e92f4-3262-42bc-ad9c-c38594610901">
-
-
 # eQTL-Detect: Nextflow based pipeline for eQTL detection
 
 eQTL-Detect is a [Nextflow](https://www.nextflow.io/) based bioinformatics workflow to detect the cis, trans and splicing eQTLs (expression quantitative trait loci) by performing associations with genotype and expression data.
@@ -12,6 +8,10 @@ This pipeline was primarily developed to detect eQTLs in cattle (Bos taurus), bu
 
 ## Software required
 Users need to install [Nextflow](https://www.nextflow.io/) and a container tool, which is either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
+
+<img width="500" alt="Fig1" src="https://github.com/user-attachments/assets/4c790fb5-1506-488f-ae9d-a4df8642f0e1"> <img width="600" alt="Fig2" src="https://github.com/user-attachments/assets/e78e92f4-3262-42bc-ad9c-c38594610901">
+
+
 
 ## Pipeline parameters
 The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) include all the input parameters to run the pipeline with default values and also the paths for different input files and path for the output directory to store the output results. 
