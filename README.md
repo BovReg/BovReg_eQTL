@@ -9,7 +9,7 @@ This pipeline was primarily developed to detect eQTLs in cattle (Bos taurus), bu
 ## Software required
 Users need to install [Nextflow](https://www.nextflow.io/) and a container tool, which is either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
 
-<img width="500" alt="Fig1" src="https://github.com/user-attachments/assets/4c790fb5-1506-488f-ae9d-a4df8642f0e1"> <img width="1563" alt="Fig2" src="https://github.com/user-attachments/assets/e78e92f4-3262-42bc-ad9c-c38594610901">
+<img width="500" alt="Fig1" src="https://github.com/user-attachments/assets/4c790fb5-1506-488f-ae9d-a4df8642f0e1"> 
 
 
 
@@ -37,6 +37,10 @@ The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.c
    4. Expression counts across samples for gene level, transcript level and splicing counts (expression count matrices as text file): Demo_data is automatically downloaded during the execution of the [Demodata/Count_matrices.tsv](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/Count_matrices.tsv) file. 
    
 - The genotype-phenotype corresponding samples information should be provided as text file: [Demo_data/RNA_WGS_CorresID_BovReg.txt](https://github.com/BovReg/BovReg_eQTL/blob/main/Demodata/RNA_WGS_CorresID_BovReg.txt).
+
+
+<img width="1563" alt="Fig2" src="https://github.com/user-attachments/assets/e78e92f4-3262-42bc-ad9c-c38594610901">
+
 
 ## Commands to run the pipeline:
 
