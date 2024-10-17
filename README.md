@@ -22,7 +22,7 @@ The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.c
 - The input data include the reference genome, reference annotation file and the paths of .tsv files. These .tsv files include the IDs and path of genotype data and expression data..  
 
 ##  Input file formats and demo data
-<img width="824" alt="Fig1" src="https://github.com/user-attachments/assets/96702e80-2fd3-4448-b0db-e0f5010a0a3b">
+<img width="400" alt="Fig1" src="https://github.com/user-attachments/assets/96702e80-2fd3-4448-b0db-e0f5010a0a3b">
 
 
 Users can download the demo data and can perform a trial run of the pipeline and the links for downloading the test data are given below.
