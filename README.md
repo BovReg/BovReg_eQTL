@@ -1,6 +1,6 @@
 [![Nextflow version](https://img.shields.io/badge/Nextflow-v20.01.0-brightgreen)](https://www.nextflow.io/) [![Docker version](https://img.shields.io/badge/Docker-v20.10.8-blue)](https://www.docker.com/) [![Singularity-ce version](https://img.shields.io/badge/Singularity-v3.11.4-green.svg)](https://www.sylabs.io/) [![Podman version](https://img.shields.io/badge/Podman-v3.4.4-violet.svg)](https://podman.io/)
 
-<img width="824" alt="Fig1" src="https://github.com/user-attachments/assets/4c790fb5-1506-488f-ae9d-a4df8642f0e1">
+<img width="500" alt="Fig1" src="https://github.com/user-attachments/assets/4c790fb5-1506-488f-ae9d-a4df8642f0e1">
 
 
 # eQTL-Detect: Nextflow based pipeline for eQTL detection
