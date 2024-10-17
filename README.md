@@ -6,6 +6,10 @@ eQTL-Detect is a [Nextflow](https://www.nextflow.io/) based bioinformatics workf
 This repository provides the required Nextflow-DSL2 scripts to run the pipeline and demo data for trial run. User can run the whole analysis either with a single standalone script or using three separate script modules and all the required tools for running the pipeline can be installed using either docker or singularity or podman container technology. We also provided some of the common configurations for running the pipeline on different high performance clusters (HPC).
 This pipeline was primarily developed to detect eQTLs in cattle (Bos taurus), but users can adopt this pipeline for other species by providing the reference genome assembly and transcriptome annotation gtf files of the species of interest.
 
+<img width="1541" alt="Fig2" src="https://github.com/user-attachments/assets/49124b72-def8-45b8-ab5e-0327aac8c4cb">
+
+
+
 ## Software required
 Users need to install [Nextflow](https://www.nextflow.io/) and a container tool, which is either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
 
@@ -18,7 +22,8 @@ The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.c
 - The input data include the reference genome, reference annotation file and the paths of .tsv files. These .tsv files include the IDs and path of genotype data and expression data..  
 
 ##  Input file formats and demo data
-<img width="500" alt="Fig1" src="https://github.com/user-attachments/assets/4c790fb5-1506-488f-ae9d-a4df8642f0e1"> 
+<img width="824" alt="Fig1" src="https://github.com/user-attachments/assets/96702e80-2fd3-4448-b0db-e0f5010a0a3b">
+
 
 Users can download the demo data and can perform a trial run of the pipeline and the links for downloading the test data are given below.
 The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) include the default parameters along with the paths for the demo data. (NOTE: Also with the input phenotype file user should also declare the type of input files provided with boolean parameters (true or false) based on the available phenotype input (fasta or bam or count matrices) in the [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config). By default the pipeline takes paired-end read FASTA files as input.
@@ -46,7 +51,6 @@ The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.c
 
 ## Commands to run the pipeline:
 
-<img width="1563" alt="Fig2" src="https://github.com/user-attachments/assets/e78e92f4-3262-42bc-ad9c-c38594610901">
 
 Based on user preferences this analysis can run with a single script or by using modular scripts and they can choose and modify the [config file](https://github.com/BovReg/BovReg_eQTL/tree/main/conf) based on the available computational cluster.
 
