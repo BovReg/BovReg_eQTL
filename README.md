@@ -13,10 +13,6 @@ This pipeline was primarily developed to detect eQTLs in cattle (Bos taurus), bu
 ## Software required
 Users need to install [Nextflow](https://www.nextflow.io/) and a container tool, which is either [Docker](https://www.docker.com/) or [Singularity](https://www.sylabs.io/) or [Podman](https://podman.io/).
 
-
-
-
-
 ## Pipeline parameters
 The [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) include all the input parameters to run the pipeline with default values and also the paths for different input files and path for the output directory to store the output results. 
 - The input data include the reference genome, reference annotation file and the paths of .tsv files. These .tsv files include the IDs and path of genotype data and expression data..  
@@ -83,3 +79,6 @@ Based on user preferences this analysis can run with a single script or by using
      - Read type: --pairedEnd_reads, --singleEnd_reads 
      - Strandedness: --firstStranded, --secondStranded and --unStranded
    - Additionally, all the other parameters required to run the pipeline are defined in [nextflow.config](https://github.com/BovReg/BovReg_eQTL/blob/main/nextflow.config) file, users can change the default values if required.
+  
+ ## Citation
+If you use eQTL-Detect for your analysis, please cite the following article [chtineedi et al. 2024 NAR Genomics & Bioinformatics](https://doi.org/10.1093/nargab/lqae122)
